@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject player_model;
     [SerializeField] private float player_speed = 5f;
     [SerializeField] private float model_scale_x = 5f;
-    [SerializeField] private Vector2 move_direction;
+    [SerializeField] private float move_direction = 1f;
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private float jump_height = 5f;
     [SerializeField] private Vector2 jump_direction;
@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     {
         this.player_model = GameObject.Find("Player/Model");
         this.rigid_body = this.player_model.GetComponent<Rigidbody2D>();
-        this.move_direction.y = 0f;
         this.animations = GameObject.Find("Player/PlayerAnimations").GetComponent<PlayerAnimation>();
         this.jump_direction.x = 0f;
         this.jump_direction.y = 5f;
@@ -35,7 +34,8 @@ public class PlayerMovement : MonoBehaviour
     }
     protected void Moving()
     {
-        rigid_body.MovePosition(rigid_body.position + move_direction * player_speed * Time.fixedDeltaTime);
+        /*rigid_body.MovePosition(rigid_body.position + move_direction * player_speed * Time.fixedDeltaTime);*/
+        transform.parent.position += new Vector3(this.move_direction * this.player_speed * Time.deltaTime, 0, 0);
     }
     protected void Jumpping()
     {
@@ -46,16 +46,16 @@ public class PlayerMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A))
         {
-            this.move_direction.x = -1;
-            this.RotatePlayer(this.move_direction.x);
+            this.move_direction = -1;
+            this.RotatePlayer(this.move_direction);
             this.Moving();
             animations.SetBoolRuningAnimation(true);
             return;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.move_direction.x = 1;
-            this.RotatePlayer(this.move_direction.x);
+            this.move_direction = 1;
+            this.RotatePlayer(this.move_direction);
             this.Moving();
             animations.SetBoolRuningAnimation(true);
             return;
@@ -67,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         animations.SetBoolRuningAnimation(false);
-
     }
     protected void RotatePlayer(float value)
     {
