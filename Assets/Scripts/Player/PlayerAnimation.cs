@@ -2,25 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAnimation : OnionBehaviour
 {
     [SerializeField] private Animator animator;
     private readonly int isRunning = Animator.StringToHash("isRunning");
-    private readonly int isJumpping = Animator.StringToHash("isJumpping");
+    private readonly int isJumpUp = Animator.StringToHash("isJumpUp");
+    private readonly int isJumpDown = Animator.StringToHash("isJumpDown");
     private void Awake()
     {
         this.LoadComponent();
     }
     void Start()
     {
-      
+       
     }
 
     void Update()
     {
         
     }
-    protected void LoadComponent()
+    
+    protected override void LoadComponent()
     {
         this.LoadAnimator();
     }
@@ -33,8 +35,12 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetBool(isRunning, value);
     }
-    public void SetBoolJumppingAnimation(bool value)
+    public void SetBoolJumpUpgAnimation(bool value)
     {
-        animator.SetBool(isJumpping, value);
+        animator.SetBool(isJumpUp, value);
+    }
+    public void SetBoolJumpDowngAnimation(bool value)
+    {
+        animator.SetBool(isJumpDown, value);
     }
 }

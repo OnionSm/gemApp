@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : OnionBehaviour
 {
-    [SerializeField] private Rigidbody2D rigid_body;
     [SerializeField] private GameObject player_model;
     [SerializeField] private float player_speed = 5f;
     [SerializeField] private float model_scale_x = 5f;
     [SerializeField] private float move_direction = 1f;
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private float jump_height = 5f;
-    [SerializeField] private Vector2 jump_direction;
+    [SerializeField] private bool can_jumpping = false;
+    [SerializeField] private Transform circle_jump_checking;
+    [SerializeField] private LayerMask ground;
  
     private void Awake()
     {
         this.player_model = GameObject.Find("Player/Model");
-        this.rigid_body = this.player_model.GetComponent<Rigidbody2D>();
         this.animations = GameObject.Find("Player/PlayerAnimations").GetComponent<PlayerAnimation>();
-        this.jump_direction.x = 0f;
-        this.jump_direction.y = 5f;
     }
     void Start()
     {
@@ -30,21 +28,20 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
-       this.CanMoving();
+        this.CanRunning();
+        this.CanJumpping();    
     }
     protected void Moving()
     {
-        /*rigid_body.MovePosition(rigid_body.position + move_direction * player_speed * Time.fixedDeltaTime);*/
         transform.parent.position += new Vector3(this.move_direction * this.player_speed * Time.deltaTime, 0, 0);
     }
     protected void Jumpping()
     {
-        rigid_body.MovePosition(rigid_body.position + jump_direction * player_speed * Time.fixedDeltaTime);
-        Debug.Log(jump_direction);
+        transform.parent.position += new Vector3(this.jump_height * this.player_speed * Time.deltaTime, 0, 0);
     }
-    protected void CanMoving()
+    protected void CanRunning()
     {
-        if(Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
             this.move_direction = -1;
             this.RotatePlayer(this.move_direction);
@@ -60,12 +57,6 @@ public class PlayerMovement : MonoBehaviour
             animations.SetBoolRuningAnimation(true);
             return;
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            this.Jumpping();
-            animations.SetBoolJumppingAnimation(true);
-            return;
-        }
         animations.SetBoolRuningAnimation(false);
     }
     protected void RotatePlayer(float value)
@@ -73,4 +64,17 @@ public class PlayerMovement : MonoBehaviour
         Vector3 new_scale = new Vector3(value * model_scale_x, player_model.transform.localScale.y, player_model.transform.localScale.z);
         player_model.transform.localScale = new_scale;
     }
+    protected void CanJumpping()
+    {
+        this.can_jumpping = Physics2D.OverlapCircle(circle_jump_checking.position, 0.2f, ground);
+        if ((Input.GetKey(KeyCode.Space)) && can_jumpping)
+        {
+            this.can_jumpping = false;
+            this.RotatePlayer(this.move_direction);
+            this.Jumpping();
+            return;
+        }
+    }
 }
+
+
