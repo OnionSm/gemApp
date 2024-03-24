@@ -6,8 +6,8 @@ public class PlayerAnimation : OnionBehaviour
 {
     [SerializeField] private Animator animator;
     private readonly int isRunning = Animator.StringToHash("isRunning");
-    private readonly int isJumpUp = Animator.StringToHash("isJumpUp");
-    private readonly int isJumpDown = Animator.StringToHash("isJumpDown");
+    private readonly int isJump = Animator.StringToHash("isJump");
+    private readonly int Jump = Animator.StringToHash("Jump");
     private void Awake()
     {
         this.LoadComponent();
@@ -35,12 +35,12 @@ public class PlayerAnimation : OnionBehaviour
     {
         animator.SetBool(isRunning, value);
     }
-    public void SetBoolJumpUpgAnimation(bool value)
+    public void SetBoolJumpAnimation(bool value)
     {
-        animator.SetBool(isJumpUp, value);
+        animator.SetBool(isJump, value);
     }
-    public void SetBoolJumpDowngAnimation(bool value)
+    public void SetFloatJumpAnimation(float value)
     {
-        animator.SetBool(isJumpDown, value);
+        animator.SetFloat(Jump, value);
     }
 }
