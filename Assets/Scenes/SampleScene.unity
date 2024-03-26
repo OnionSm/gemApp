@@ -1098,7 +1098,7 @@ MonoBehaviour:
   model_scale_x: 5
   move_direction: 1
   animations: {fileID: 0}
-  jump_height: 6
+  jump_height: 8
   can_jumpping: 0
   circle_jump_checking: {fileID: 193519004}
   ground:
@@ -1267,6 +1267,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model_scale_x: 5
   animations: {fileID: 505632811}
+  can_use_skill: 0
+  melee_attack_time: 0.983
+  skill_1_time: 1.817
+  skill_2_time: 1.6
+  skill_3_time: 1.917
+  count_endskill_time: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -18835,9 +18841,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1345865595}
+  - {fileID: 1639651535}
   - {fileID: 1088706417}
   - {fileID: 505632810}
   - {fileID: 887804857}
   - {fileID: 1773946069}
-  - {fileID: 1639651535}
   - {fileID: 905713201}

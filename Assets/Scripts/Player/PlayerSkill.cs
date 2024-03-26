@@ -5,6 +5,13 @@ using UnityEngine;
 public class PlayerSkill : Player
 {
     [SerializeField] private PlayerAnimation animations;
+    [SerializeField] private bool can_use_skill;
+    [SerializeField] private float melee_attack_time = 0.983f;
+    [SerializeField] private float skill_1_time = 1.817f;
+    [SerializeField] private float skill_2_time = 1.6f;
+    [SerializeField] private float skill_3_time = 1.917f;
+    [SerializeField] private float count_endskill_time;
+
     private void Awake()
     {
         this.animations = GetComponent<PlayerAnimation>();
@@ -21,20 +28,31 @@ public class PlayerSkill : Player
     {
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            Debug.Log("OK");
+            this.count_endskill_time = Time.time + melee_attack_time;
             this.Normal_Attack();
+            return;
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W))
         {
+            this.count_endskill_time = Time.time + skill_1_time;
             this.UseSkill_1();
+            return;
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E))
         {
+            this.count_endskill_time = Time.time + skill_2_time;
             this.UseSkill_2();
+            return;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
+            this.count_endskill_time = Time.time + skill_3_time;
             this.UseSkill_3();
+            return;
+        }
+        if (Time.time >= count_endskill_time)
+        {
+            animations.SetBoolUseSkill(false);
         }
     }
     private void Normal_Attack()

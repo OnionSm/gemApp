@@ -9,7 +9,7 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private float model_scale_x = 5f;
     [SerializeField] private float move_direction = 1f;
     [SerializeField] private PlayerAnimation animations;
-    [SerializeField] private float jump_height = 6f;
+    [SerializeField] private float jump_height = 8f;
     [SerializeField] private bool can_jumpping = false;
     [SerializeField] private Transform circle_jump_checking;
     [SerializeField] private LayerMask ground;
@@ -32,7 +32,8 @@ public class PlayerMovement : OnionBehaviour
     {
         this.CanRunning();
         this.CanJumpping();
-       //this.CanJumpDown();
+        this.CanJumpDown();
+        
     }
     protected void Moving()
     {
@@ -42,7 +43,7 @@ public class PlayerMovement : OnionBehaviour
     }
     protected void Jumpping()
     {
-        rigid_body.velocity = new Vector2(rigid_body.velocity.x, jump_height);
+        rigid_body.velocity = Vector2.up * jump_height;
         animations.SetBoolJumpAnimation(true);
         animations.SetFloatJumpAnimation(0);
         animations.SetBoolRuningAnimation(false);
@@ -86,13 +87,14 @@ public class PlayerMovement : OnionBehaviour
             return;
         }   
     }
-   /* protected void CanJumpDown()
+    protected void CanJumpDown()
     {
-        this.can_jump_down = Physics2D.OverlapCircle(circle_jump_checking.position, 0.1f, ceil);
-        Debug.Log(can_jump_down);
-        if (!can_jump_down) return;
-        animations.SetFloatJumpAnimation(1);
-    }*/
+        if(rigid_body.velocity.y <= 0 && can_jumpping == false)
+        {
+            Debug.Log("Down");
+            animations.SetFloatJumpAnimation(1);
+        }
+    }
 }
 
 
