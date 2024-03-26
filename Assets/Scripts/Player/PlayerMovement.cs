@@ -15,7 +15,7 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private Rigidbody2D rigid_body;
     [SerializeField] private LayerMask ceil;
-    [SerializeField] private bool can_jump_down = false;
+    //[SerializeField] private bool can_jump_down = false;
  
     private void Awake()
     {
@@ -37,6 +37,7 @@ public class PlayerMovement : OnionBehaviour
     protected void Moving()
     {
         transform.position += new Vector3(this.move_direction * this.player_speed * Time.deltaTime, 0, 0);
+        animations.SetBoolUseSkill(false);
         animations.SetBoolRuningAnimation(true);
     }
     protected void Jumpping()
@@ -45,6 +46,7 @@ public class PlayerMovement : OnionBehaviour
         animations.SetBoolJumpAnimation(true);
         animations.SetFloatJumpAnimation(0);
         animations.SetBoolRuningAnimation(false);
+        animations.SetBoolUseSkill(false);
     }
     protected void CanRunning()
     {
@@ -79,7 +81,6 @@ public class PlayerMovement : OnionBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && this.can_jumpping)
         {
-            Debug.Log("OK");
             this.RotatePlayer(this.move_direction);
             this.Jumpping();
             return;
