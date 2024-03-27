@@ -11,10 +11,15 @@ public class PlayerSkill : Player
     [SerializeField] private float skill_2_time = 1.6f;
     [SerializeField] private float skill_3_time = 1.917f;
     [SerializeField] private float count_endskill_time;
+    [SerializeField] private GameObject bullet_prefab;
 
     private void Awake()
     {
         this.animations = GetComponent<PlayerAnimation>();
+        if(bullet_prefab == null)
+        {
+            this.bullet_prefab = GameObject.Find("BulletManaget/Prefabs/Arrow");
+        }
     }
     void Start()
     {
@@ -57,6 +62,7 @@ public class PlayerSkill : Player
     }
     private void Normal_Attack()
     {
+
         animations.SetBoolUseSkill(true);
         animations.SetFloatSkill(0);
     }
@@ -76,4 +82,16 @@ public class PlayerSkill : Player
         animations.SetFloatSkill(1);
     }
 
+    private void CheckEndSkill()
+    {
+        if (Time.time >= count_endskill_time)
+        {
+            animations.SetBoolUseSkill(false);
+        }
+    }
+
+    /*private void InstantiateArrow()
+    {
+        GameObje
+    }*/
 }
