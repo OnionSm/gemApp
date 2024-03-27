@@ -15,6 +15,10 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private Rigidbody2D rigid_body;
     [SerializeField] private LayerMask ceil;
+    [SerializeField] private bool isDash = false;
+    [SerializeField] private float dash_time = 0.767f;
+    [SerializeField] private float end_dash_time;
+    [SerializeField] private float dash_force = 5f;
     //[SerializeField] private bool can_jump_down = false;
  
     private void Awake()
@@ -33,6 +37,12 @@ public class PlayerMovement : OnionBehaviour
         this.CanRunning();
         this.CanJumpping();
         this.CanJumpDown();
+        this.CanDash();
+        
+    }
+    private void FixedUpdate()
+    {
+        if (!isDash) return;
         
     }
     protected void Moving()
@@ -51,6 +61,10 @@ public class PlayerMovement : OnionBehaviour
     }
     protected void CanRunning()
     {
+        if (isDash)
+        {
+            return;
+        }
         if (Input.GetKey(KeyCode.A))
         {
             this.move_direction = -1;
@@ -75,6 +89,10 @@ public class PlayerMovement : OnionBehaviour
 
     protected void CanJumpping()
     {
+        if(isDash)
+        {
+            return;
+        }
         this.can_jumpping = Physics2D.OverlapCircle(circle_jump_checking.position, 0.1f, ground);
         if(can_jumpping)
         {
@@ -94,6 +112,29 @@ public class PlayerMovement : OnionBehaviour
             Debug.Log("Down");
             animations.SetFloatJumpAnimation(1);
         }
+    }
+    protected void CanDash()
+    { 
+        if (Input.GetKey(KeyCode.T) && isDash == false)
+        {
+            this.isDash = true;
+            this.end_dash_time = Time.time + dash_time;
+            animations.SetBoolDashAnimation(true);
+            return;
+        }
+        if (Time.time >= end_dash_time)
+        {
+            this.isDash = false;
+            animations.SetBoolDashAnimation(false);
+        }
+        else if(Time.time < end_dash_time && isDash == true)
+        {
+            this.Dash();
+        }
+    }
+    protected void Dash()
+    {
+        transform.position += new Vector3(this.move_direction * this.dash_force * Time.deltaTime, 0, 0);
     }
 }
 

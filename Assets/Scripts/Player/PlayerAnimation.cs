@@ -10,6 +10,7 @@ public class PlayerAnimation : OnionBehaviour
     private readonly int Jump = Animator.StringToHash("Jump");
     private readonly int UseSkill = Animator.StringToHash("useSkill");
     private readonly int Skill = Animator.StringToHash("Skill");
+    private readonly int isDash = Animator.StringToHash("isDash");
 
     private void Awake()
     {
@@ -55,5 +56,9 @@ public class PlayerAnimation : OnionBehaviour
     public void SetFloatSkill(float value)
     {
         animator.SetFloat(Skill, value);
+    }
+    public void SetBoolDashAnimation(bool value)
+    {
+        animator.SetBool(isDash, value);
     }
 }
