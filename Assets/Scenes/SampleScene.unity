@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 244453148}
   - component: {fileID: 244453147}
   - component: {fileID: 244453150}
+  - component: {fileID: 244453151}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -883,8 +884,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5c417db2fe73d4d91b7addf254c6bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_spped: 0
+  bullet_speed: 0
   bullet_direction: 0
+--- !u!114 &244453151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244453144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8db2c47fb71fee4a82389450deec8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  max_distance: 100
+  distance: 0
+  main_cam: {fileID: 519420032}
 --- !u!1 &399549179
 GameObject:
   m_ObjectHideFlags: 0

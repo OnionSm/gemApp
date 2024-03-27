@@ -22,6 +22,7 @@ public class PlayerSkill : PlayerManager
             this.bullet_prefab = GameObject.Find("BulletManaget/Prefabs/Arrow");
         }
     }
+
     void Start()
     {
         
@@ -57,7 +58,10 @@ public class PlayerSkill : PlayerManager
             return;
         }
         this.CheckEndSkill();
+        this.CreateArrow();
     }
+
+
     private void Normal_Attack()
     {
 
@@ -66,7 +70,6 @@ public class PlayerSkill : PlayerManager
     }
     private void UseSkill_1()
     {
-        StartCoroutine(InstantiateArrow());
         this.use_skill_1 = true;
         animations.SetBoolUseSkill(true);
         animations.SetFloatSkill(0.33f);
@@ -82,24 +85,32 @@ public class PlayerSkill : PlayerManager
         animations.SetFloatSkill(1);
     }
 
+
     private void CheckEndSkill()
     {
         if (Time.time >= count_endskill_time)
         {
-            /*if (use_skill_1)
-            {
-                StartCoroutine(InstantiateArrow());
-                this.use_skill_1 = false;
-            }*/
             animations.SetBoolUseSkill(false);
         }
     }
+
     IEnumerator InstantiateArrow()
     {
         yield return new WaitForSeconds(1.1f);
         Vector3 spawn_position = new Vector3(transform.position.x+1.7f, transform.position.y-1.2f, 0f);
         GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
         bullet.SetActive(true);
+    }
+
+    private void CreateArrow()
+    {
+        if (use_skill_1 && Time.time >= count_endskill_time - 0.7)
+        {
+            this.use_skill_1 = false;
+            Vector3 spawn_position = new Vector3(transform.position.x + 1.7f, transform.position.y - 1.2f, 0f);
+            GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
+            bullet.SetActive(true);
+        }
     }
    
 }
