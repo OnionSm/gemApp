@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private List<BulletShoot> list_bullet_prefabs;
     void Start()
     {
         

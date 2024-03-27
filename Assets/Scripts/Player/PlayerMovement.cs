@@ -7,7 +7,6 @@ public class PlayerMovement : OnionBehaviour
 {
     [SerializeField] private float player_speed = 5f;
     [SerializeField] private float model_scale_x = 5f;
-    [SerializeField] private float move_direction = 1f;
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private float jump_height = 8f;
     [SerializeField] private bool can_jumpping = false;
@@ -47,7 +46,7 @@ public class PlayerMovement : OnionBehaviour
     }
     protected void Moving()
     {
-        transform.position += new Vector3(this.move_direction * this.player_speed * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(PlayerManager.Instance.player_direction * this.player_speed * Time.deltaTime, 0, 0);
         animations.SetBoolUseSkill(false);
         animations.SetBoolRuningAnimation(true);
     }
@@ -67,15 +66,15 @@ public class PlayerMovement : OnionBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            this.move_direction = -1;
-            this.RotatePlayer(this.move_direction);
+            PlayerManager.Instance.player_direction = -1;
+            this.RotatePlayer(PlayerManager.Instance.player_direction);
             this.Moving();
             return;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.move_direction = 1;
-            this.RotatePlayer(this.move_direction);
+            PlayerManager.Instance.player_direction = 1;
+            this.RotatePlayer(PlayerManager.Instance.player_direction);
             this.Moving();
             return;
         }
@@ -100,7 +99,7 @@ public class PlayerMovement : OnionBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && this.can_jumpping)
         {
-            this.RotatePlayer(this.move_direction);
+            this.RotatePlayer(PlayerManager.Instance.player_direction);
             this.Jumpping();
             return;
         }   
@@ -134,7 +133,7 @@ public class PlayerMovement : OnionBehaviour
     }
     protected void Dash()
     {
-        transform.position += new Vector3(this.move_direction * this.dash_force * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(PlayerManager.Instance.player_direction * this.dash_force * Time.deltaTime, 0, 0);
     }
 }
 

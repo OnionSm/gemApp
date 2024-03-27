@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSkill : Player
+public class PlayerSkill : PlayerManager
 {
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private bool can_use_skill;
@@ -12,6 +12,7 @@ public class PlayerSkill : Player
     [SerializeField] private float skill_3_time = 1.917f;
     [SerializeField] private float count_endskill_time;
     [SerializeField] private GameObject bullet_prefab;
+    [SerializeField] private bool use_skill_1 = false;
 
     private void Awake()
     {
@@ -55,10 +56,7 @@ public class PlayerSkill : Player
             this.UseSkill_3();
             return;
         }
-        if (Time.time >= count_endskill_time)
-        {
-            animations.SetBoolUseSkill(false);
-        }
+        this.CheckEndSkill();
     }
     private void Normal_Attack()
     {
@@ -68,6 +66,8 @@ public class PlayerSkill : Player
     }
     private void UseSkill_1()
     {
+        StartCoroutine(InstantiateArrow());
+        this.use_skill_1 = true;
         animations.SetBoolUseSkill(true);
         animations.SetFloatSkill(0.33f);
     }
@@ -86,12 +86,20 @@ public class PlayerSkill : Player
     {
         if (Time.time >= count_endskill_time)
         {
+            /*if (use_skill_1)
+            {
+                StartCoroutine(InstantiateArrow());
+                this.use_skill_1 = false;
+            }*/
             animations.SetBoolUseSkill(false);
         }
     }
-
-    /*private void InstantiateArrow()
+    IEnumerator InstantiateArrow()
     {
-        GameObje
-    }*/
+        yield return new WaitForSeconds(1.1f);
+        Vector3 spawn_position = new Vector3(transform.position.x+1.7f, transform.position.y-1.2f, 0f);
+        GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
+        bullet.SetActive(true);
+    }
+   
 }
