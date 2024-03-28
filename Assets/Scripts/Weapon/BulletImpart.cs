@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class BulletImpart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    void OnCollisionEnter(Collision collision)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            
+            Debug.Log("Player collided with an Enemy!");
+            collision.gameObject.SetActive(false);
+        }
     }
 }
