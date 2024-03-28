@@ -706,6 +706,7 @@ GameObject:
   - component: {fileID: 244453150}
   - component: {fileID: 244453151}
   - component: {fileID: 244453152}
+  - component: {fileID: 244453153}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -869,9 +870,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Interpolate: 1
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &244453150
 MonoBehaviour:
@@ -914,6 +915,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd0a7dcdc86fcb4e9e6869eaf4a71d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage_sender: {fileID: 0}
+--- !u!114 &244453153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244453144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5540d1ac4d198b14daedebbacb5abefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &399549179
 GameObject:
   m_ObjectHideFlags: 0
@@ -18495,6 +18510,7 @@ GameObject:
   - component: {fileID: 1683410940}
   - component: {fileID: 1683410939}
   - component: {fileID: 1683410938}
+  - component: {fileID: 1683410941}
   m_Layer: 0
   m_Name: PunchingMan
   m_TagString: Enemy
@@ -18546,7 +18562,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00038911402, y: -0.0000000037252903}
@@ -18577,7 +18593,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -18641,6 +18657,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1683410941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683410936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80cebdd9e3d2a4e449411c0116ec13a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy_hp: 0
+  max_hp: 10
 --- !u!1 &1773946067
 GameObject:
   m_ObjectHideFlags: 0
@@ -19295,7 +19325,7 @@ GameObject:
   - component: {fileID: 2131318621}
   m_Layer: 0
   m_Name: EnemyManager
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

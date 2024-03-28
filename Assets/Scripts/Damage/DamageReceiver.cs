@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHp : MonoBehaviour
+public class DamageReceiver : MonoBehaviour
 {
     [SerializeField] private float enemy_hp;
     [SerializeField] private float max_hp = 10;
@@ -14,7 +14,7 @@ public class EnemyHp : MonoBehaviour
     {
         this.Despawning();
     }
-    protected void DamageReceiver(float damage)
+    public void DecreaseHP(float damage)
     {
         this.enemy_hp -= damage;
     }

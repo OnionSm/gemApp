@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class BulletImpart : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision)
+    [SerializeField] private DamageSender damage_sender;
+    private void Awake()
     {
-        
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            
-            Debug.Log("Player collided with an Enemy!");
-            collision.gameObject.SetActive(false);
-        }
+        this.damage_sender = GetComponent<DamageSender>();
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("OK");
+        this.damage_sender.Send(other.transform);
+        gameObject.SetActive(false);    
+    }
+
 }
+        
