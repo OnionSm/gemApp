@@ -7,12 +7,31 @@ public class PlayerManager: OnionBehaviour
     [SerializeField] private float model_scale_x = 5f;
     [SerializeField] public float player_direction = 1f;
     [SerializeField] public static PlayerManager Instance;
+    [SerializeField] public List<GameObject> game_object;
     private void Awake()
     {
-        if(PlayerManager.Instance == null)
+        if (PlayerManager.Instance == null)
         {
             PlayerManager.Instance = this;
         }
+        //this below code is used for print all name of playermanager child object
+
+        /*GameObject playerManager = GameObject.Find("PlayerManager");
+        Transform[] children = playerManager.GetComponentsInChildren<Transform>();
+        game_object = new List<GameObject>();
+
+        foreach (Transform child in children)
+        {
+           
+            if (child.gameObject != playerManager)
+            {
+                game_object.Add(child.gameObject);
+            }
+        }
+        foreach (GameObject obj in game_object)
+        {
+            Debug.Log(obj.name);
+        }*/
     }
     void Start()
     {

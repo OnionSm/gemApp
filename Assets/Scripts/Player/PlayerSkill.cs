@@ -11,16 +11,16 @@ public class PlayerSkill : PlayerManager
     [SerializeField] private float skill_2_time = 1.6f;
     [SerializeField] private float skill_3_time = 1.917f;
     [SerializeField] private float count_endskill_time;
-    [SerializeField] private GameObject bullet_prefab;
+    [SerializeField] private string prefab_name = "Arrow";
     [SerializeField] private bool use_skill_1 = false;
 
     private void Awake()
     {
         this.animations = GetComponent<PlayerAnimation>();
-        if(bullet_prefab == null)
+       /* if(bullet_prefab == null)
         {
             this.bullet_prefab = GameObject.Find("BulletManaget/Prefabs/Arrow");
-        }
+        }*/
     }
 
     void Start()
@@ -94,13 +94,14 @@ public class PlayerSkill : PlayerManager
         }
     }
 
-    IEnumerator InstantiateArrow()
+    /*IEnumerator InstantiateArrow()
     {
         yield return new WaitForSeconds(1.1f);
         Vector3 spawn_position = new Vector3(transform.position.x+1.7f, transform.position.y-1.2f, 0f);
-        GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
-        bullet.SetActive(true);
-    }
+        //GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
+        Spawner.Instance.Spawn(prefab_name, spawn_position, Quaternion.identity);
+        //bullet.SetActive(true);
+    }*/
 
     private void CreateArrow()
     {
@@ -108,8 +109,8 @@ public class PlayerSkill : PlayerManager
         {
             this.use_skill_1 = false;
             Vector3 spawn_position = new Vector3(transform.position.x + 1.7f, transform.position.y - 1.2f, 0f);
-            GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
-            bullet.SetActive(true);
+            Spawner.Instance.Spawn(prefab_name, spawn_position, Quaternion.identity);
+            //bullet.SetActive(true);
         }
     }
    

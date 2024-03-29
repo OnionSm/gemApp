@@ -9,12 +9,12 @@ public class BulletShoot : MonoBehaviour
 
     private void Awake()
     {
-        this.bullet_direction = PlayerManager.Instance.player_direction;
+        //this.bullet_direction = PlayerManager.Instance.player_direction;
     }
 
     void Start()
     {
-        
+        this.bullet_direction = PlayerManager.Instance.player_direction;
     }
 
     

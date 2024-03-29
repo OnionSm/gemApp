@@ -713,7 +713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &244453145
 Transform:
   m_ObjectHideFlags: 0
@@ -1510,6 +1510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model_scale_x: 5
   player_direction: 1
+  game_object: []
   animations: {fileID: 505632811}
   can_use_skill: 0
   melee_attack_time: 0.983
@@ -1517,7 +1518,7 @@ MonoBehaviour:
   skill_2_time: 1.6
   skill_3_time: 1.917
   count_endskill_time: 0
-  bullet_prefab: {fileID: 244453144}
+  prefab_name: Arrow
   use_skill_1: 0
 --- !u!114 &505632818
 MonoBehaviour:
@@ -1533,6 +1534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model_scale_x: 5
   player_direction: 1
+  game_object: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,7 +1572,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.46012816, g: 0.4646276, b: 0.4716981, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -4037,7 +4039,7 @@ GameObject:
   - component: {fileID: 1088706416}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19386,6 +19388,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2131328486}
+  - component: {fileID: 2131328487}
   m_Layer: 0
   m_Name: BulletManager
   m_TagString: Untagged
@@ -19409,6 +19412,21 @@ Transform:
   - {fileID: 701928970}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2131328487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131328485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2618f6a50b232e4c9e444da4489b19a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holder: {fileID: 1836059924}
+  prefabs: []
+  poolObject: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
