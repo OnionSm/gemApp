@@ -9,12 +9,12 @@ public class BulletShoot : MonoBehaviour
 
     private void Awake()
     {
-        //this.bullet_direction = PlayerManager.Instance.player_direction;
+
     }
 
     void Start()
     {
-        this.bullet_direction = PlayerManager.Instance.player_direction;
+        this.LoadDirection();
     }
 
     
@@ -26,5 +26,9 @@ public class BulletShoot : MonoBehaviour
     {
         Vector3 direction = new Vector3(bullet_direction, 0, 0);
         transform.Translate(direction * 50 * Time.deltaTime);
+    }
+    public void LoadDirection()
+    {
+        this.bullet_direction = PlayerManager.Instance.player_direction;
     }
 }

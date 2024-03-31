@@ -1990,7 +1990,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701928970}
-  - component: {fileID: 701928971}
   m_Layer: 0
   m_Name: Prefabs
   m_TagString: Untagged
@@ -2014,19 +2013,6 @@ Transform:
   - {fileID: 244453145}
   m_Father: {fileID: 2131328486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &701928971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701928969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85e5540dc96143e489b8eb3ff228ac41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  list_bullet_prefabs: []
 --- !u!224 &744692464 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3881087803549984436, guid: ec536a7718376554185e4a856d5ae230, type: 3}
@@ -19421,10 +19407,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2131328485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2618f6a50b232e4c9e444da4489b19a, type: 3}
+  m_Script: {fileID: 11500000, guid: b75f282d728054a41a852227213b981d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holder: {fileID: 1836059924}
+  holder: {fileID: 0}
   prefabs: []
   poolObject: []
 --- !u!1660057539 &9223372036854775807

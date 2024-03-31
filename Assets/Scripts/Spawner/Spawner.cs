@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Spawner : OnionBehaviour
 {
-    [SerializeField] private Transform holder;
-    [SerializeField] private List<Transform> prefabs;
-    [SerializeField] private List<Transform> poolObject = new List<Transform>();
-    [SerializeField] public static Spawner Instance;
-    private void Awake()
+    [SerializeField] protected Transform holder;
+    [SerializeField] protected List<Transform> prefabs;
+    [SerializeField] protected List<Transform> poolObject = new List<Transform>();
+    public virtual void Awake()
     {
-        if(Spawner.Instance == null)
-        {
-            Spawner.Instance = this;
-        }
         this.LoadComponent();
     }
     protected override void LoadComponent()
@@ -56,7 +52,7 @@ public class Spawner : OnionBehaviour
     protected void LoadHolder()
     {
         if (this.holder != null) return;
-        this.holder = transform.Find("Holder");
+        this.holder = GameObject.Find("Holder").transform;
     }
 
 
@@ -69,7 +65,7 @@ public class Spawner : OnionBehaviour
         }
     }
 
-    public virtual Transform Spawn(string prefab_name, Vector3 spawn_pos, Quaternion rotation)
+    public virtual Transform Spawn(string prefab_name, Vector3 spawn_pos, Vector3 scale)
     {
         Transform prefab = this.GetPrefabByName(prefab_name);
         if (prefab == null)
@@ -77,7 +73,7 @@ public class Spawner : OnionBehaviour
             return null;
         }
         Transform new_prefab = this.GetObjectFromPool(prefab);
-        new_prefab.SetPositionAndRotation(spawn_pos, rotation);
+        SetPositionAndScale(new_prefab, spawn_pos, scale);
         new_prefab.parent = this.holder;
         return new_prefab;
     }
@@ -85,6 +81,7 @@ public class Spawner : OnionBehaviour
     {
         foreach (Transform poolObj in this.poolObject)
         {
+            // bug bug bug bug bug bug bug, not bug if if (poolObj.name == prefab.name)
             if (poolObj.name == prefab.name)
             {
                 this.poolObject.Remove(poolObj);
@@ -92,7 +89,9 @@ public class Spawner : OnionBehaviour
             }
         }
         Transform new_prefab = Instantiate(prefab);
-        new_prefab.name = prefab.name;
+        new_prefab.name = prefab.name + "(Clone)";
+        Debug.Log(transform.name + ": Clone new Obj", transform.gameObject);
+        new_prefab.gameObject.SetActive(true);
         return new_prefab;
     }
     public virtual void Despawn(Transform obj)
@@ -108,5 +107,11 @@ public class Spawner : OnionBehaviour
             if (prefab.name == prefab_name) return prefab;
         }
         return null;
+    }
+    protected virtual void SetPositionAndScale(Transform new_prefab, Vector3 position, Vector3 scale)
+    {
+        new_prefab.position = position;
+
+        new_prefab.localScale = scale;
     }
 }

@@ -16,6 +16,6 @@ public abstract class Despawn : OnionBehaviour
     }
     protected virtual void DespawnObject()
     {
-        Destroy(gameObject);
+        BulletSpawner.Instance.Despawn(gameObject.transform);
     }
 }

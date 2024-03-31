@@ -13,7 +13,6 @@ public class BulletImpart : MonoBehaviour
     {
         Debug.Log("OK");
         this.damage_sender.Send(other.transform);
-        gameObject.SetActive(false);    
     }
 
 }

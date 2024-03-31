@@ -16,10 +16,10 @@ public class DamageSender : MonoBehaviour
     protected virtual void SendDamage(DamageReceiver damage_receiver)
     {
         damage_receiver.DecreaseHP(this.damage);
-        this.DestroyObject();
+        this.ReturnToPool();
     }
-    protected void DestroyObject()
+    protected void ReturnToPool()
     {
-        Destroy(gameObject);
+        BulletSpawner.Instance.Despawn(this.transform);
     }
 }

@@ -109,8 +109,10 @@ public class PlayerSkill : PlayerManager
         {
             this.use_skill_1 = false;
             Vector3 spawn_position = new Vector3(transform.position.x + 1.7f, transform.position.y - 1.2f, 0f);
-            Spawner.Instance.Spawn(prefab_name, spawn_position, Quaternion.identity);
-            //bullet.SetActive(true);
+            Vector3 scale = new Vector3(PlayerManager.Instance.player_direction, 1, 1);
+            Transform bullet = BulletSpawner.Instance.Spawn(prefab_name, spawn_position, scale);
+            if(bullet.gameObject.activeSelf) return;
+            bullet.gameObject.SetActive(true);
         }
     }
    
