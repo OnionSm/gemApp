@@ -18,6 +18,8 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private float dash_time = 0.767f;
     [SerializeField] private float end_dash_time;
     [SerializeField] private float dash_force = 5f;
+    [SerializeField] private string current_animation;
+    [SerializeField] private bool can_jump_down = false;
     //[SerializeField] private bool can_jump_down = false;
  
     private void Awake()
@@ -37,48 +39,47 @@ public class PlayerMovement : OnionBehaviour
         this.CanJumpping();
         this.CanJumpDown();
         this.CanDash();
+        Debug.Log(current_animation);
         
     }
     private void FixedUpdate()
     {
-        if (!isDash) return;
+        //if (!isDash) return;
         
     }
+
+
     protected void Moving()
     {
         transform.position += new Vector3(PlayerManager.Instance.player_direction * this.player_speed * Time.deltaTime, 0, 0);
-        animations.SetBoolUseSkill(false);
-        animations.SetBoolRuningAnimation(true);
     }
     protected void Jumpping()
     {
         rigid_body.velocity = Vector2.up * jump_height;
-        animations.SetBoolJumpAnimation(true);
-        animations.SetFloatJumpAnimation(0);
-        animations.SetBoolRuningAnimation(false);
-        animations.SetBoolUseSkill(false);
     }
+
+
     protected void CanRunning()
     {
-        if (isDash)
-        {
-            return;
-        }
+        if (Dashing()) return;
         if (Input.GetKey(KeyCode.A))
         {
             PlayerManager.Instance.player_direction = -1;
             this.RotatePlayer(PlayerManager.Instance.player_direction);
+            ChangeAnimationState("PlayerRun");
             this.Moving();
             return;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))    
         {
             PlayerManager.Instance.player_direction = 1;
             this.RotatePlayer(PlayerManager.Instance.player_direction);
+            ChangeAnimationState("PlayerRun");
             this.Moving();
             return;
         }
-        animations.SetBoolRuningAnimation(false);
+        if(current_animation == "PlayerRun")
+            ChangeAnimationState("PlayerIdle");
     }
     protected void RotatePlayer(float value)
     {
@@ -88,45 +89,44 @@ public class PlayerMovement : OnionBehaviour
 
     protected void CanJumpping()
     {
-        if(isDash)
-        {
-            return;
-        }
+        if (Dashing()) return;
         this.can_jumpping = Physics2D.OverlapCircle(circle_jump_checking.position, 0.1f, ground);
-        if(can_jumpping)
+        if (current_animation == "PlayerJumpDown" && this.can_jumpping)
         {
-            animations.SetBoolJumpAnimation(false);
+            ChangeAnimationState("PlayerIdle");
         }
         if (Input.GetKey(KeyCode.Space) && this.can_jumpping)
         {
             this.RotatePlayer(PlayerManager.Instance.player_direction);
+            this.can_jump_down = true;
+            ChangeAnimationState("PlayerJumpUp");
             this.Jumpping();
             return;
         }   
     }
     protected void CanJumpDown()
     {
-        if(rigid_body.velocity.y <= 0 && can_jumpping == false)
+        if (rigid_body.velocity.y <= 0 && this.can_jump_down)
         {
             Debug.Log("Down");
-            animations.SetFloatJumpAnimation(1);
+            this.can_jump_down = false;
+            ChangeAnimationState("PlayerJumpDown");
         }
     }
     protected void CanDash()
     { 
-        if (Input.GetKey(KeyCode.T) && isDash == false)
+        if (Input.GetKey(KeyCode.T) && !this.Dashing())
         {
             this.isDash = true;
             this.end_dash_time = Time.time + dash_time;
-            animations.SetBoolDashAnimation(true);
+            ChangeAnimationState("PlayerDash");
             return;
         }
-        if (Time.time >= end_dash_time)
-        {
-            this.isDash = false;
-            animations.SetBoolDashAnimation(false);
+        if (Time.time >= end_dash_time && this.Dashing())
+        {   
+            ChangeAnimationState("PlayerIdle");
         }
-        else if(Time.time < end_dash_time && isDash == true)
+        else if(Time.time < end_dash_time && Dashing())
         {
             this.Dash();
         }
@@ -134,6 +134,23 @@ public class PlayerMovement : OnionBehaviour
     protected void Dash()
     {
         transform.position += new Vector3(PlayerManager.Instance.player_direction * this.dash_force * Time.deltaTime, 0, 0);
+    }
+
+    void ChangeAnimationState(string newAnimation)
+    {
+        if (current_animation == newAnimation) return;
+        animations.SetAnimation(newAnimation);
+        current_animation = newAnimation;
+    }
+
+    protected bool Dashing()
+    {
+        if (current_animation != "PlayerDash") return false;
+        return true;
+    }
+    protected void isJump()
+    {
+
     }
 }
 

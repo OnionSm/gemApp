@@ -13,6 +13,7 @@ public class PlayerSkill : PlayerManager
     [SerializeField] private float count_endskill_time;
     [SerializeField] private string prefab_name = "Arrow";
     [SerializeField] private bool use_skill_1 = false;
+    [SerializeField] private bool use_skill = false;
 
     private void Awake()
     {
@@ -64,33 +65,33 @@ public class PlayerSkill : PlayerManager
 
     private void Normal_Attack()
     {
-
-        animations.SetBoolUseSkill(true);
-        animations.SetFloatSkill(0);
+        this.use_skill = true;
+        animations.SetAnimation("Attack_1");
     }
     private void UseSkill_1()
     {
+        this.use_skill = true;
         this.use_skill_1 = true;
-        animations.SetBoolUseSkill(true);
-        animations.SetFloatSkill(0.33f);
+        animations.SetAnimation("Attack_2");
     }
     private void UseSkill_2()
     {
-        animations.SetBoolUseSkill(true);
-        animations.SetFloatSkill(0.66f);
-    }
+        this.use_skill = true;
+        animations.SetAnimation("Attack_3");
+    }   
     private void UseSkill_3()
     {
-        animations.SetBoolUseSkill(true);
-        animations.SetFloatSkill(1);
+        this.use_skill = true;
+        animations.SetAnimation("Attack_SP");
     }
 
 
     private void CheckEndSkill()
     {
-        if (Time.time >= count_endskill_time)
+        if (Time.time >= count_endskill_time && this.use_skill)
         {
-            animations.SetBoolUseSkill(false);
+            animations.SetAnimation("PlayerIdle");
+            this.use_skill = false;
         }
     }
 

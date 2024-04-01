@@ -1286,6 +1286,7 @@ GameObject:
   - component: {fileID: 505632811}
   - component: {fileID: 505632817}
   - component: {fileID: 505632818}
+  - component: {fileID: 505632819}
   m_Layer: 0
   m_Name: PlayerManager
   m_TagString: Player
@@ -1351,6 +1352,7 @@ MonoBehaviour:
   dash_time: 0.767
   end_dash_time: 0
   dash_force: 5
+  current_animation: 
 --- !u!95 &505632813
 Animator:
   serializedVersion: 5
@@ -1404,7 +1406,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.028837502, y: -0.31544095}
+  m_Offset: {x: -0.028837502, y: -0.30961287}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1415,7 +1417,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37967443, y: 0.3691181}
+  m_Size: {x: 0.37967443, y: 0.35746187}
   m_EdgeRadius: 0
 --- !u!50 &505632815
 Rigidbody2D:
@@ -1520,6 +1522,7 @@ MonoBehaviour:
   count_endskill_time: 0
   prefab_name: Arrow
   use_skill_1: 0
+  use_skill: 0
 --- !u!114 &505632818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,6 +1538,21 @@ MonoBehaviour:
   model_scale_x: 5
   player_direction: 1
   game_object: []
+--- !u!114 &505632819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505632809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd43794741158804f9916181d17833e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations: {fileID: 0}
+  block_animation_time: 0
+  end_block_time: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
