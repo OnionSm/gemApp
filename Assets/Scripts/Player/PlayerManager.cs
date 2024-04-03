@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerManager: OnionBehaviour
 {
-    [SerializeField] private float model_scale_x = 5f;
+    [SerializeField] public float model_scale_x = 5f;
     [SerializeField] public float player_direction = 1f;
     [SerializeField] public static PlayerManager Instance;
     [SerializeField] public List<GameObject> game_object;
+    [SerializeField] public string current_animation;
+    [SerializeField] public bool is_using_skill = false;
     private void Awake()
     {
         if (PlayerManager.Instance == null)

@@ -65,44 +65,37 @@ public class PlayerSkill : PlayerManager
 
     private void Normal_Attack()
     {
-        this.use_skill = true;
+        PlayerManager.Instance.is_using_skill = true;
         animations.SetAnimation("Attack_1");
     }
     private void UseSkill_1()
     {
-        this.use_skill = true;
         this.use_skill_1 = true;
+        PlayerManager.Instance.is_using_skill = true;
         animations.SetAnimation("Attack_2");
     }
     private void UseSkill_2()
     {
         this.use_skill = true;
+        PlayerManager.Instance.is_using_skill = true;
         animations.SetAnimation("Attack_3");
     }   
     private void UseSkill_3()
     {
         this.use_skill = true;
+        PlayerManager.Instance.is_using_skill = true;
         animations.SetAnimation("Attack_SP");
     }
 
 
     private void CheckEndSkill()
     {
-        if (Time.time >= count_endskill_time && this.use_skill)
+        if (Time.time >= count_endskill_time && PlayerManager.Instance.is_using_skill) 
         {
             animations.SetAnimation("PlayerIdle");
             this.use_skill = false;
         }
     }
-
-    /*IEnumerator InstantiateArrow()
-    {
-        yield return new WaitForSeconds(1.1f);
-        Vector3 spawn_position = new Vector3(transform.position.x+1.7f, transform.position.y-1.2f, 0f);
-        //GameObject bullet = Instantiate(bullet_prefab, spawn_position, Quaternion.identity);
-        Spawner.Instance.Spawn(prefab_name, spawn_position, Quaternion.identity);
-        //bullet.SetActive(true);
-    }*/
 
     private void CreateArrow()
     {
@@ -116,5 +109,4 @@ public class PlayerSkill : PlayerManager
             bullet.gameObject.SetActive(true);
         }
     }
-   
 }

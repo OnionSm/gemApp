@@ -23,15 +23,19 @@ public class PlayerDefend : OnionBehaviour
     protected void CanDefend()
     {
         if (Input.GetKeyDown(KeyCode.F))
+        {
             this.Defend();
+            this.hold_button_f_time = 0f;
+        }
         if (Input.GetKey(KeyCode.F))
-            this.hold_button_f_time += Time.deltaTime;
+        this.hold_button_f_time += Time.deltaTime;
         if (Input.GetKeyUp(KeyCode.F))
         {
             Debug.Log("F key released!");
             this.hold_button_f_time = 0f;
+            animations.SetAnimation("PlayerIdle");
         }
-        if(this.hold_button_f_time > 1.3f)
+        if(this.hold_button_f_time > 0.9f)
             animations.SetAnimation("PlayerDefend_2");
     }
 

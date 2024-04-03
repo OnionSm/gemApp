@@ -5,13 +5,6 @@ using UnityEngine;
 public class PlayerAnimation : OnionBehaviour
 {
     [SerializeField] private Animator animator;
-/*    private readonly int isRunning = Animator.StringToHash("isRunning");
-    private readonly int isJump = Animator.StringToHash("isJump");
-    private readonly int Jump = Animator.StringToHash("Jump");
-    private readonly int UseSkill = Animator.StringToHash("useSkill");
-    private readonly int Skill = Animator.StringToHash("Skill");
-    private readonly int isDash = Animator.StringToHash("isDash");
-    private readonly int isDefend = Animator.StringToHash("isDefend");*/
     private void Awake()
     {
         this.LoadComponent();

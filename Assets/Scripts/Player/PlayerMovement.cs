@@ -18,7 +18,6 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private float dash_time = 0.767f;
     [SerializeField] private float end_dash_time;
     [SerializeField] private float dash_force = 5f;
-    [SerializeField] private string current_animation;
     [SerializeField] private bool can_jump_down = false;
     //[SerializeField] private bool can_jump_down = false;
  
@@ -39,7 +38,7 @@ public class PlayerMovement : OnionBehaviour
         this.CanJumpping();
         this.CanJumpDown();
         this.CanDash();
-        Debug.Log(current_animation);
+        Debug.Log(PlayerManager.Instance.current_animation);
         
     }
     private void FixedUpdate()
@@ -67,6 +66,7 @@ public class PlayerMovement : OnionBehaviour
             PlayerManager.Instance.player_direction = -1;
             this.RotatePlayer(PlayerManager.Instance.player_direction);
             ChangeAnimationState("PlayerRun");
+            PlayerManager.Instance.is_using_skill = false;
             this.Moving();
             return;
         }
@@ -75,10 +75,11 @@ public class PlayerMovement : OnionBehaviour
             PlayerManager.Instance.player_direction = 1;
             this.RotatePlayer(PlayerManager.Instance.player_direction);
             ChangeAnimationState("PlayerRun");
+            PlayerManager.Instance.is_using_skill = false;
             this.Moving();
             return;
         }
-        if(current_animation == "PlayerRun")
+        if(PlayerManager.Instance.current_animation == "PlayerRun")
             ChangeAnimationState("PlayerIdle");
     }
     protected void RotatePlayer(float value)
@@ -91,7 +92,7 @@ public class PlayerMovement : OnionBehaviour
     {
         if (Dashing()) return;
         this.can_jumpping = Physics2D.OverlapCircle(circle_jump_checking.position, 0.1f, ground);
-        if (current_animation == "PlayerJumpDown" && this.can_jumpping)
+        if (PlayerManager.Instance.current_animation == "PlayerJumpDown" && this.can_jumpping)
         {
             ChangeAnimationState("PlayerIdle");
         }
@@ -100,6 +101,7 @@ public class PlayerMovement : OnionBehaviour
             this.RotatePlayer(PlayerManager.Instance.player_direction);
             this.can_jump_down = true;
             ChangeAnimationState("PlayerJumpUp");
+            PlayerManager.Instance.is_using_skill = false;
             this.Jumpping();
             return;
         }   
@@ -119,6 +121,7 @@ public class PlayerMovement : OnionBehaviour
         {
             this.isDash = true;
             this.end_dash_time = Time.time + dash_time;
+            PlayerManager.Instance.is_using_skill = false;
             ChangeAnimationState("PlayerDash");
             return;
         }
@@ -138,14 +141,14 @@ public class PlayerMovement : OnionBehaviour
 
     void ChangeAnimationState(string newAnimation)
     {
-        if (current_animation == newAnimation) return;
+        if (PlayerManager.Instance.current_animation == newAnimation) return;
         animations.SetAnimation(newAnimation);
-        current_animation = newAnimation;
+        PlayerManager.Instance.current_animation = newAnimation;
     }
 
     protected bool Dashing()
     {
-        if (current_animation != "PlayerDash") return false;
+        if (PlayerManager.Instance.current_animation != "PlayerDash") return false;
         return true;
     }
     protected void isJump()
