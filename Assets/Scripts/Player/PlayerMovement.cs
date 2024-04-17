@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : OnionBehaviour
 {
     [SerializeField] private float player_speed = 5f;
-    [SerializeField] private float model_scale_x = 5f;
+
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private float jump_height = 8f;
     [SerializeField] private bool can_jumpping = false;
@@ -19,7 +19,7 @@ public class PlayerMovement : OnionBehaviour
     [SerializeField] private float end_dash_time;
     [SerializeField] private float dash_force = 5f;
     [SerializeField] private bool can_jump_down = false;
-    //[SerializeField] private bool can_jump_down = false;
+    
  
     private void Awake()
     {
@@ -34,11 +34,11 @@ public class PlayerMovement : OnionBehaviour
     
     void Update()
     {
-        this.CanRunning();
+        /*this.CanRunning();
         this.CanJumpping();
         this.CanJumpDown();
         this.CanDash();
-        Debug.Log(PlayerManager.Instance.current_animation);
+        Debug.Log(PlayerManager.Instance.current_animation);*/
         
     }
     private void FixedUpdate()
@@ -47,12 +47,15 @@ public class PlayerMovement : OnionBehaviour
         
     }
 
-
-    protected void Moving()
+    public void Moving(float value)
     {
-        transform.position += new Vector3(PlayerManager.Instance.player_direction * this.player_speed * Time.deltaTime, 0, 0);
+        transform.position += new Vector3(value * this.player_speed*100 * Time.deltaTime, 0, 0);
+        animations.SetWalking(true);
+        PlayerManager.Instance.player_direction = value;
     }
-    protected void Jumpping()
+
+    
+   /* protected void Jumpping()
     {
         rigid_body.velocity = Vector2.up * jump_height;
     }
@@ -84,7 +87,7 @@ public class PlayerMovement : OnionBehaviour
     }
     protected void RotatePlayer(float value)
     {
-        Vector3 new_scale = new Vector3(value * model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        Vector3 new_scale = new Vector3(value * PlayerManager.Instance.model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         gameObject.transform.localScale = new_scale;
     }
 
@@ -142,7 +145,7 @@ public class PlayerMovement : OnionBehaviour
     void ChangeAnimationState(string newAnimation)
     {
         if (PlayerManager.Instance.current_animation == newAnimation) return;
-        animations.SetAnimation(newAnimation);
+        //animations.SetAnimation(newAnimation);
         PlayerManager.Instance.current_animation = newAnimation;
     }
 
@@ -154,7 +157,7 @@ public class PlayerMovement : OnionBehaviour
     protected void isJump()
     {
 
-    }
+    }*/
 }
 
 

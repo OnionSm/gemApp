@@ -1479,7 +1479,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 198469898}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 881558724}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Moving
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &198469898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85423,7 +85435,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 866824970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 881558724}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: Moving
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &866824970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85609,6 +85633,9 @@ GameObject:
   - component: {fileID: 881558721}
   - component: {fileID: 881558720}
   - component: {fileID: 881558723}
+  - component: {fileID: 881558724}
+  - component: {fileID: 881558726}
+  - component: {fileID: 881558725}
   m_Layer: 0
   m_Name: Ranger
   m_TagString: Untagged
@@ -85778,6 +85805,70 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &881558724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881558718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60ad71a3dcdbdb40b191cd04d3f2b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_speed: 5
+  animations: {fileID: 0}
+  jump_height: 8
+  can_jumpping: 0
+  circle_jump_checking: {fileID: 0}
+  ground:
+    serializedVersion: 2
+    m_Bits: 0
+  rigid_body: {fileID: 0}
+  ceil:
+    serializedVersion: 2
+    m_Bits: 0
+  isDash: 0
+  dash_time: 0.767
+  end_dash_time: 0
+  dash_force: 5
+  can_jump_down: 0
+--- !u!114 &881558725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881558718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65b6035c6ba4ad64890452c0f84492e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 881558723}
+--- !u!114 &881558726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881558718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81814dbad8060948ba5ac015425653c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model_scale_x: 0
+  model_scale_y: 0
+  player_direction: 0
+  max_hp: 0
+  current_hp: 0
+  max_mana: 0
+  current_mana: 0
+  game_object: []
+  current_animation: 
+  is_using_skill: 0
 --- !u!1 &881985113
 GameObject:
   m_ObjectHideFlags: 0
@@ -118292,6 +118383,10 @@ PrefabInstance:
     - target: {fileID: 9060249659666789600, guid: 5b4cd9c12554c8c4b822e7f129076e8a, type: 3}
       propertyPath: m_Name
       value: Sea_BG
+      objectReference: {fileID: 0}
+    - target: {fileID: 9060249659666789600, guid: 5b4cd9c12554c8c4b822e7f129076e8a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class PlayerManager: OnionBehaviour
 {
-    [SerializeField] public float model_scale_x = 5f;
-    [SerializeField] public float player_direction = 1f;
+    public float model_scale_x;
+    public float model_scale_y;
+
+    public float player_direction;
+
+    public float max_hp;
+    public float current_hp;
+
+    public float max_mana;
+    public float current_mana;
+
     [SerializeField] public static PlayerManager Instance;
     [SerializeField] public List<GameObject> game_object;
     [SerializeField] public string current_animation;
@@ -16,38 +25,49 @@ public class PlayerManager: OnionBehaviour
         {
             PlayerManager.Instance = this;
         }
-        //this below code is used for print all name of playermanager child object
-
-        /*GameObject playerManager = GameObject.Find("PlayerManager");
-        Transform[] children = playerManager.GetComponentsInChildren<Transform>();
-        game_object = new List<GameObject>();
-
-        foreach (Transform child in children)
-        {
-           
-            if (child.gameObject != playerManager)
-            {
-                game_object.Add(child.gameObject);
-            }
-        }
-        foreach (GameObject obj in game_object)
-        {
-            Debug.Log(obj.name);
-        }*/
+        this.LoadComponent();
+        
     }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
+    protected override void LoadComponent()
+    {
+        this.LoadModelScale();
+        this.LoadDirection();
+        this.LoadHP();
+        this.LoadMana();
+    }
+
     protected void RotatePlayer(float value)
     {
         Vector3 new_scale = new Vector3(value * model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         gameObject.transform.localScale = new_scale;
     }
+    protected void LoadModelScale()
+    {
+        this.model_scale_x = 1f;
+        this.model_scale_y = 1f;
+    }
+    protected void LoadDirection()
+    {
+        this.player_direction = 1f;
+    }
+    protected void LoadHP()
+    {
+        this.max_hp = 100f;
+        this.current_hp = this.max_hp;
+    }
+    protected void LoadMana()
+    {
+        this.max_mana = 100f;
+        this.current_mana = this.max_mana;
+    }
 }
+

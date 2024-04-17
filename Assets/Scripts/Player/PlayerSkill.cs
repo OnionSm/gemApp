@@ -28,7 +28,7 @@ public class PlayerSkill : PlayerManager
     {
         
     }
-    void Update()
+/*    void Update()
     {
         this.CanUseSkill();
     }
@@ -108,5 +108,5 @@ public class PlayerSkill : PlayerManager
             if(bullet.gameObject.activeSelf) return;
             bullet.gameObject.SetActive(true);
         }
-    }
+    }*/
 }
