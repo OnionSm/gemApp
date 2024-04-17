@@ -7,6 +7,8 @@ public class PlayerMovement : OnionBehaviour
 {
     [SerializeField] private float player_speed = 5f;
 
+    private int move_direct = 0;
+
     [SerializeField] private PlayerAnimation animations;
     [SerializeField] private float jump_height = 8f;
     [SerializeField] private bool can_jumpping = false;
@@ -34,11 +36,7 @@ public class PlayerMovement : OnionBehaviour
     
     void Update()
     {
-        /*this.CanRunning();
-        this.CanJumpping();
-        this.CanJumpDown();
-        this.CanDash();
-        Debug.Log(PlayerManager.Instance.current_animation);*/
+        this.CanMove();
         
     }
     private void FixedUpdate()
@@ -46,12 +44,46 @@ public class PlayerMovement : OnionBehaviour
         //if (!isDash) return;
         
     }
-
-    public void Moving(float value)
+    public void PointerDownRight()
     {
-        transform.position += new Vector3(value * this.player_speed*100 * Time.deltaTime, 0, 0);
+        this.move_direct = 1;
+        PlayerManager.Instance.player_direction = this.move_direct;
+        PlayerManager.Instance.RotatePlayer();
+    }
+    public void PointerDownLeft()
+    {
+        this.move_direct = -1;
+        PlayerManager.Instance.player_direction = this.move_direct;
+        PlayerManager.Instance.RotatePlayer();
+    }
+    public void PointerUpRight()
+    {
+        this.move_direct = 0;
+    }
+    public void PointerUpLeft()
+    {
+        this.move_direct = 0;
+    }
+    public void CanMove()
+    {
+        if(this.move_direct == -1 || this.move_direct == 1)
+        {
+            // Animations
+            Moving();
+        }
+        else
+        {
+
+            // Animations
+            return;
+        }
+
+    }
+    public void Moving()
+    {
+        transform.position += new Vector3(move_direct  * this.player_speed*20 * Time.deltaTime, 0, 0);
         animations.SetWalking(true);
-        PlayerManager.Instance.player_direction = value;
+        //PlayerManager.Instance.player_direction = value;
     }
 
     

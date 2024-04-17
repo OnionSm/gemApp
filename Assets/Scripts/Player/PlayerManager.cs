@@ -45,15 +45,15 @@ public class PlayerManager: OnionBehaviour
         this.LoadMana();
     }
 
-    protected void RotatePlayer(float value)
+    public void RotatePlayer()
     {
-        Vector3 new_scale = new Vector3(value * model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        Vector3 new_scale = new Vector3(player_direction * model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
         gameObject.transform.localScale = new_scale;
     }
     protected void LoadModelScale()
     {
-        this.model_scale_x = 1f;
-        this.model_scale_y = 1f;
+        this.model_scale_x = 1.5f;
+        this.model_scale_y = 1.5f;
     }
     protected void LoadDirection()
     {
