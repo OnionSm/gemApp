@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Ceil
-  - 
+  - Character
   - 
   - 
   - 
@@ -51,4 +51,7 @@ TagManager:
     locked: 0
   - name: Light
     uniqueID: 677250423
+    locked: 0
+  - name: Player
+    uniqueID: 2629869297
     locked: 0

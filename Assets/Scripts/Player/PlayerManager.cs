@@ -19,6 +19,7 @@ public class PlayerManager: OnionBehaviour
     [SerializeField] public List<GameObject> game_object;
     [SerializeField] public string current_animation;
     [SerializeField] public bool is_using_skill = false;
+    public Vector2 slope_normal_perp;
     private void Awake()
     {
         if (PlayerManager.Instance == null)
@@ -35,7 +36,7 @@ public class PlayerManager: OnionBehaviour
 
     void Update()
     {
-        
+        this.ConstraintRotation();
     }
     protected override void LoadComponent()
     {
@@ -47,7 +48,7 @@ public class PlayerManager: OnionBehaviour
 
     public void RotatePlayer()
     {
-        Vector3 new_scale = new Vector3(player_direction * model_scale_x, gameObject.transform.localScale.y, gameObject.transform.localScale.z);
+        Vector3 new_scale = new Vector3(player_direction * model_scale_x,this.model_scale_y, 1f);
         gameObject.transform.localScale = new_scale;
     }
     protected void LoadModelScale()
@@ -68,6 +69,10 @@ public class PlayerManager: OnionBehaviour
     {
         this.max_mana = 100f;
         this.current_mana = this.max_mana;
+    }
+    protected void ConstraintRotation()
+    {
+        transform.localRotation = Quaternion.identity;
     }
 }
 
