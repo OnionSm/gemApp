@@ -37,7 +37,7 @@ public class PlayerMovement : OnionBehaviour
 
     void Update()
     {
-        this.CanMove();
+        //this.CanMove();
 
     }
     private void FixedUpdate()
@@ -65,7 +65,7 @@ public class PlayerMovement : OnionBehaviour
     {
         this.move_direct = 0;
     }
-    public void CanMove()
+    /*public void CanMove()
     {
         if (this.move_direct == -1 || this.move_direct == 1)
         {
@@ -80,7 +80,7 @@ public class PlayerMovement : OnionBehaviour
             return;
         }
 
-    }
+    }*/
     public void Moving()
     {
         /*new_velocity.Set(move_direct * this.player_speed * PlayerManager.Instance.slope_normal_perp.x, move_direct * this.player_speed * PlayerManager.Instance.slope_normal_perp.y);

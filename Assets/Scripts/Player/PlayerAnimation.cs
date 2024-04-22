@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAnimation : OnionBehaviour
 {
-    [SerializeField] private Animator animator;
+   /* [SerializeField] private Animator animator;
     private readonly int is_walking = Animator.StringToHash("IsWalking");
     private readonly int ground = Animator.StringToHash("Ground");
     private readonly int attack_speed = Animator.StringToHash("AttackSpeed");
@@ -110,5 +110,5 @@ public class PlayerAnimation : OnionBehaviour
     public void SetTriggerAngleShot()
     {
         animator.SetTrigger(angle_shot);
-    }
+    }*/
 }
