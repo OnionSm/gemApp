@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerAnimation : OnionBehaviour
 {
-   /* [SerializeField] private Animator animator;
+    [SerializeField] private Animator animator;
     private readonly int is_walking = Animator.StringToHash("IsWalking");
     private readonly int ground = Animator.StringToHash("Ground");
     private readonly int attack_speed = Animator.StringToHash("AttackSpeed");
-    private readonly int move_speed  = Animator.StringToHash("MoveSpeed");
+    private readonly int move_speed = Animator.StringToHash("MoveSpeed");
     private readonly int idle_speed = Animator.StringToHash("IdleSpeed");
     private readonly int base_strike_0 = Animator.StringToHash("BaseStrike0");
     private readonly int death = Animator.StringToHash("Death");
@@ -28,15 +28,15 @@ public class PlayerAnimation : OnionBehaviour
         this.LoadComponent();
     }
     void Start()
-    {   
-       
+    {
+
     }
 
     void Update()
     {
-        
+
     }
-    
+
     protected override void LoadComponent()
     {
         this.LoadAnimator();
@@ -46,7 +46,7 @@ public class PlayerAnimation : OnionBehaviour
         if (animator != null) return;
         this.animator = GetComponent<Animator>();
     }
-    
+
     public void SetWalking(bool value)
     {
         animator.SetBool(is_walking, value);
@@ -110,5 +110,5 @@ public class PlayerAnimation : OnionBehaviour
     public void SetTriggerAngleShot()
     {
         animator.SetTrigger(angle_shot);
-    }*/
+    }
 }
