@@ -15,6 +15,9 @@ public class PlayerManager: OnionBehaviour
     public float max_mana;
     public float current_mana;
 
+
+   
+
     [SerializeField] public static PlayerManager Instance;
     [SerializeField] public List<GameObject> game_object;
     [SerializeField] public string current_animation;

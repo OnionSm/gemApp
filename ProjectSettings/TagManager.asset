@@ -40,18 +40,33 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 4196316923
+    locked: 0
+  - name: Decoration
+    uniqueID: 3206861401
     locked: 0
   - name: Ground
     uniqueID: 3347011255
     locked: 0
-  - name: UI
-    uniqueID: 2627038553
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Interactable
+    uniqueID: 497163587
+    locked: 0
+  - name: Enemy
+    uniqueID: 3395989899
+    locked: 0
+  - name: Player
+    uniqueID: 2629869297
+    locked: 0
+  - name: Cloud
+    uniqueID: 1125366819
     locked: 0
   - name: Light
     uniqueID: 677250423
     locked: 0
-  - name: Player
-    uniqueID: 2629869297
+  - name: UI
+    uniqueID: 2627038553
     locked: 0
