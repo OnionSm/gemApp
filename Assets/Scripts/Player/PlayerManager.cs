@@ -15,6 +15,8 @@ public class PlayerManager: OnionBehaviour
     public float max_mana;
     public float current_mana;
 
+    public bool is_dashing = false;
+
 
    
 
@@ -77,5 +79,14 @@ public class PlayerManager: OnionBehaviour
     {
         transform.localRotation = Quaternion.identity;
     }
+    public Animator GetAnimator()
+    {
+        return GetComponent<Animator>();
+    }
+    public Rigidbody2D GetRigidbody()
+    {
+        return GetComponent<Rigidbody2D>();
+    }
+
 }
 
