@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseShot : ISkill
+public class Barrage : ISkill
 {
-    [SerializeField] private Vector2 shot_direct;
-
     public float skill_time { get; set; }
     public float cold_down { get; set; }
     public Vector3 enemy_position { get; set; }
@@ -15,8 +13,5 @@ public class BaseShot : ISkill
     {
 
     }
-    protected void LoadComponent()
-    {
-        this.shot_direct = new Vector2(PlayerManager.Instance.player_direction, 0);
-    }
+
 }

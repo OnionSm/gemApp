@@ -22,37 +22,14 @@ public class Spawner : OnionBehaviour
     protected void LoadPrefabs()
     {
         if (this.prefabs.Count > 0) return;
-
-        GameObject prefabParent = GameObject.Find("BulletManager/Prefabs");
-        if (prefabParent != null)
-        {
-            Transform[] prefabsArray = prefabParent.GetComponentsInChildren<Transform>();
-
-            foreach (Transform prefab in prefabsArray)
-            {
-               
-                if (prefab != prefabParent.transform)
-                {
-                    this.prefabs.Add(prefab);
-                }
-            }
-
-            foreach (Transform prefab in prefabs)
-            {
-                Debug.Log(prefab.name);
-            }
-        }
-        else
-        {
-            Debug.Log("BulletManager/Prefabs is not found");
-        }
+        this.prefabs = GetArrowPrefabs.Instance.GetPrefabs();
         this.HidePrefabs();
     }
 
     protected void LoadHolder()
     {
         if (this.holder != null) return;
-        this.holder = GameObject.Find("Holder").transform;
+        this.holder = GetHolder.Instance.getHoder();
     }
 
 
@@ -65,7 +42,7 @@ public class Spawner : OnionBehaviour
         }
     }
 
-    public virtual Transform Spawn(string prefab_name, Vector3 spawn_pos, Vector3 scale)
+    public virtual Transform Spawn(string prefab_name, Vector2 spawn_pos, Vector2 scale)
     {
         Transform prefab = this.GetPrefabByName(prefab_name);
         if (prefab == null)
@@ -79,7 +56,7 @@ public class Spawner : OnionBehaviour
     }
     protected virtual Transform GetObjectFromPool(Transform prefab)
     {
-        foreach (Transform poolObj in this.poolObject)
+        foreach (Transform poolObj in this.poolObject)  
         {
             // bug bug bug bug bug bug bug, not bug if if (poolObj.name == prefab.name)
             if (poolObj.name == prefab.name)
@@ -94,11 +71,13 @@ public class Spawner : OnionBehaviour
         new_prefab.gameObject.SetActive(true);
         return new_prefab;
     }
+
     public virtual void Despawn(Transform obj)
     {
         this.poolObject.Add(obj);
         obj.gameObject.SetActive(false);
     }
+
 
     public virtual Transform GetPrefabByName(string prefab_name)
     {
@@ -108,7 +87,7 @@ public class Spawner : OnionBehaviour
         }
         return null;
     }
-    protected virtual void SetPositionAndScale(Transform new_prefab, Vector3 position, Vector3 scale)
+    protected virtual void SetPositionAndScale(Transform new_prefab, Vector2 position, Vector2 scale)
     {
         new_prefab.position = position;
 
