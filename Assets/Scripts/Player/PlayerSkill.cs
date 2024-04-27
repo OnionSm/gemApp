@@ -28,6 +28,31 @@ public class PlayerSkill : PlayerManager
     {
         
     }
-
+    protected void ActivateSkill(int skill_number)
+    {
+        string skill_name = this.GetSkillName(skill_number);
+        SkillManager.Instance.GetSKill(skill_name);
+    }
+    protected string GetSkillName(int skill_number)
+    {
+        if (skill_number == 1)
+        {
+            return skill_1;
+        }
+        else if (skill_number == 2)
+        {
+            return skill_2;
+        }
+        else if (skill_number == 3)
+        {
+            return skill_3;
+        }
+        else if (skill_number == 4)
+        {
+            return skill_4;
+        }
+        else
+            return null;
+    }
 
 }

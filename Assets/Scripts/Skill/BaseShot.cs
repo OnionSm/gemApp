@@ -2,21 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseShot : ISkill
+public class BaseShot : Skill
 {
-    [SerializeField] private Vector2 shot_direct;
+    [SerializeField] public static BaseShot Instance;
 
-    public float skill_time { get; set; }
-    public float cold_down { get; set; }
-    public Vector3 enemy_position { get; set; }
+    
 
-
-    public void ActiveSkill()
+    private void Awake()
     {
-
+        BaseShot.Instance = this;
     }
-    protected void LoadComponent()
+
+
+    public override void ActiveSkill()
     {
-        this.shot_direct = new Vector2(PlayerManager.Instance.player_direction, 0);
+        
+    }
+    protected override void LoadComponent()
+    {
+        this.arrow_prefab_name = "BaseArrow";
+    }
+
+    protected Vector2 GetEnemyPosition()
+    {
+        if (EnemyCheckPos.Instance.have_enemy)
+        {
+            return EnemyCheckPos.Instance.enemy_pos;
+        }
+        else
+        {
+            return Vector2.right;
+        }
+
     }
 }

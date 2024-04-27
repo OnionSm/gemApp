@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HailOfArrows : ISkill
+public class HailOfArrows : Skill
 {
+    [SerializeField] public static HailOfArrows Instance;
 
-    public float skill_time { get; set; }
-    public float cold_down { get; set; }
-    public Vector3 enemy_position { get; set; }
+    private void Awake()
+    {
+        HailOfArrows.Instance = this;
+    }
 
 
-    public void ActiveSkill()
+    public override void ActiveSkill()
+    {
+
+    }
+    
+    protected override void LoadComponent()
     {
 
     }

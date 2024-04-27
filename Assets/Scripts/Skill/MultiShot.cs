@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiShot : ISkill
+public class MultiShot : Skill
 {
-    public float skill_time { get; set; }
-    public float cold_down { get; set; }
-    public Vector3 enemy_position { get; set; }
+    [SerializeField] public static MultiShot Instance;
 
+    private void Awake()
+    {
+        MultiShot.Instance = this;
+    }
+    public override void ActiveSkill()
+    {
 
-    public void ActiveSkill()
+    }
+
+    protected override void LoadComponent()
     {
 
     }

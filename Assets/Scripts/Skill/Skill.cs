@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Skill : OnionBehaviour
 {
-    [SerializeField] public static Skill Instance;
+    public string arrow_prefab_name;
+    public float skill_time;
+    public float cold_down;
+    public Vector3 enemy_position;
 
-    private void Awake()
+    [SerializeField] protected Transform spawn_point;
+    
+    public virtual void ActiveSkill()
     {
-        Skill.Instance = this;
+        
     }
-
 }

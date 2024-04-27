@@ -2,14 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrage : ISkill
+public class Barrage : Skill
+
 {
-    public float skill_time { get; set; }
-    public float cold_down { get; set; }
-    public Vector3 enemy_position { get; set; }
+    [SerializeField] public static Barrage Instance;
+
+    private void Awake()
+    {
+        Barrage.Instance = this;
+    }
 
 
-    public void ActiveSkill()
+
+    public override void ActiveSkill()
     {
 
     }

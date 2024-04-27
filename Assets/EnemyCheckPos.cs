@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class EnemyCheckPos : OnionBehaviour
 {
-    [SerializeField] public static EnemyCheckPos Instance;
-    [SerializeField] private Vector2 enemy_pos;
-    private bool have_enemy;
+    public static EnemyCheckPos Instance;
+    public Vector2 enemy_pos;
+    public bool have_enemy;
+
+
     private void Awake()
     {
         EnemyCheckPos.Instance = this;
