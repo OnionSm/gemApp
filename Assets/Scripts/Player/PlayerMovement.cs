@@ -17,7 +17,6 @@ public class PlayerMovement : OnionBehaviour
 
     private bool is_walking = false;
 
-    private bool set_velocity_idle = false;
 
     [SerializeField] private float gravity_mult = 3f;
     [SerializeField] private Vector2 gravity_direct;

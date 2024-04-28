@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyCheckPos : OnionBehaviour
 {
     public static EnemyCheckPos Instance;
-    public Vector2 enemy_pos;
+    public Vector3 enemy_pos;
     public bool have_enemy;
 
 

@@ -8,7 +8,7 @@ public class Spawner : OnionBehaviour
     [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> prefabs;
     [SerializeField] protected List<Transform> poolObject = new List<Transform>();
-    public virtual void Awake()
+    public virtual void Start()
     {
         this.LoadComponent();
     }
@@ -23,6 +23,10 @@ public class Spawner : OnionBehaviour
     {
         if (this.prefabs.Count > 0) return;
         this.prefabs = GetArrowPrefabs.Instance.GetPrefabs();
+        foreach(Transform pre in this.prefabs)
+        {
+            Debug.Log(pre);
+        }
         this.HidePrefabs();
     }
 
@@ -42,7 +46,7 @@ public class Spawner : OnionBehaviour
         }
     }
 
-    public virtual Transform Spawn(string prefab_name, Vector2 spawn_pos, Vector2 scale)
+    public virtual Transform Spawn(string prefab_name, Vector3 spawn_pos, Vector3 scale)
     {
         Transform prefab = this.GetPrefabByName(prefab_name);
         if (prefab == null)
@@ -66,7 +70,7 @@ public class Spawner : OnionBehaviour
             }
         }
         Transform new_prefab = Instantiate(prefab);
-        new_prefab.name = prefab.name + "(Clone)";
+        new_prefab.name = prefab.name;
         Debug.Log(transform.name + ": Clone new Obj", transform.gameObject);
         new_prefab.gameObject.SetActive(true);
         return new_prefab;
@@ -87,7 +91,7 @@ public class Spawner : OnionBehaviour
         }
         return null;
     }
-    protected virtual void SetPositionAndScale(Transform new_prefab, Vector2 position, Vector2 scale)
+    protected virtual void SetPositionAndScale(Transform new_prefab, Vector3 position, Vector3 scale)
     {
         new_prefab.position = position;
 

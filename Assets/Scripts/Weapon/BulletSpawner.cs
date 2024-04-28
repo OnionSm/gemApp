@@ -6,11 +6,12 @@ public class BulletSpawner : Spawner
 {
     [SerializeField] public static BulletSpawner Instance;
 
-    public override void Awake()
+    public void Awake()
     {
-        base.Awake();
+        
         if (BulletSpawner.Instance != null) return;
         BulletSpawner.Instance = this;
     }
+
 
 }

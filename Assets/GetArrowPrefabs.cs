@@ -11,7 +11,7 @@ public class GetArrowPrefabs : MonoBehaviour
     }
     void Start()
     {
-        
+        this.GetPrefabs();
     }
 
     

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSkill : PlayerManager
+public class PlayerSkill :OnionBehaviour
 {
     
     [SerializeField] private PlayerAnimation animations;
@@ -26,12 +26,14 @@ public class PlayerSkill : PlayerManager
 
     void Start()
     {
-        
+        this.LoadComponent();
     }
-    protected void ActivateSkill(int skill_number)
+    public void ActivateSkill(int skill_number)
     {
         string skill_name = this.GetSkillName(skill_number);
+        animations.SetTriggerBaseShot();
         SkillManager.Instance.GetSKill(skill_name);
+
     }
     protected string GetSkillName(int skill_number)
     {
@@ -53,6 +55,15 @@ public class PlayerSkill : PlayerManager
         }
         else
             return null;
+    }
+
+    protected override void LoadComponent()
+    {
+        this.skill_1 = "BaseShot";
+        this.skill_2 = "Barrage";
+        this.skill_3 = "MultiShot";
+        this.skill_4 = "HailOfArrows";
+
     }
 
 }

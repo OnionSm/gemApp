@@ -6,6 +6,7 @@ public class SkillManager : MonoBehaviour
 
 {
     [SerializeField] public static SkillManager Instance;
+    [SerializeField] 
     private void Awake()
     {
         SkillManager.Instance = this;
