@@ -31,7 +31,6 @@ public class PlayerSkill :OnionBehaviour
     public void ActivateSkill(int skill_number)
     {
         string skill_name = this.GetSkillName(skill_number);
-        animations.SetTriggerBaseShot();
         SkillManager.Instance.GetSKill(skill_name);
 
     }

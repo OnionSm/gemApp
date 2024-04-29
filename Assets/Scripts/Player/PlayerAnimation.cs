@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerAnimation : OnionBehaviour
 {
     [SerializeField] private Animator animator;
+
+    public static PlayerAnimation Instance;
+
     private readonly int is_walking = Animator.StringToHash("IsWalking");
     private readonly int ground = Animator.StringToHash("Ground");
     private readonly int attack_speed = Animator.StringToHash("AttackSpeed");
@@ -25,11 +28,11 @@ public class PlayerAnimation : OnionBehaviour
 
     private void Awake()
     {
-        this.LoadComponent();
+        PlayerAnimation.Instance = this;
     }
     void Start()
     {
-
+        this.LoadComponent();
     }
 
     void Update()

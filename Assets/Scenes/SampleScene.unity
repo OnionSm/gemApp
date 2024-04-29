@@ -627,6 +627,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &88669786 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 505308276722232346, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
+  m_PrefabInstance: {fileID: 1159685982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &88669791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88669786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 290712574}
+          m_TargetAssemblyTypeName: MultiShot, Assembly-CSharp
+          m_MethodName: ActiveSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &107488032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,6 +1596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 290712573}
+  - component: {fileID: 290712574}
   m_Layer: 7
   m_Name: MultiShot
   m_TagString: Untagged
@@ -1585,6 +1620,25 @@ Transform:
   - {fileID: 118512608}
   m_Father: {fileID: 107488033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290712574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290712572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97eb8e25a086d994e8e53f904ee3cc1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow_prefab_name: 
+  skill_time: 0
+  cool_down: 0
+  spawn_point: {fileID: 118512608}
+  skill_time_count: 0
+  cool_down_time_count: 0
+  arrow_speed: 0
 --- !u!1 &297936061
 GameObject:
   m_ObjectHideFlags: 0
@@ -83835,7 +83889,6 @@ MonoBehaviour:
   current_mana: 0
   is_dashing: 0
   game_object: []
-  current_animation: 
   is_using_skill: 0
   slope_normal_perp: {x: 0, y: 0}
 --- !u!61 &881558727
@@ -84146,8 +84199,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrow_prefab_name: 
   skill_time: 0
-  cold_down: 0
+  cool_down: 0
   spawn_point: {fileID: 998595624}
+  skill_time_count: 0
+  cool_down_time_count: 0
   arrow_speed: 0
 --- !u!1 &900951546
 GameObject:
@@ -114825,6 +114880,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1045313171}
+  - component: {fileID: 1045313172}
   m_Layer: 7
   m_Name: Barrage
   m_TagString: Untagged
@@ -114848,6 +114904,25 @@ Transform:
   - {fileID: 1564354675}
   m_Father: {fileID: 107488033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1045313172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1045313170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e0dfe79eaead8c4594fb630aff4108a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow_prefab_name: 
+  skill_time: 0
+  cool_down: 0
+  spawn_point: {fileID: 1564354675}
+  skill_time_count: 0
+  cool_down_time_count: 0
+  arrow_speed: 0
 --- !u!1 &1079704411
 GameObject:
   m_ObjectHideFlags: 0
@@ -115837,6 +115912,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1172492172089564872, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 394557989}
+    - targetCorrespondingSourceObject: {fileID: 2164457713431054776, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1938897156}
+    - targetCorrespondingSourceObject: {fileID: 505308276722232346, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 88669791}
   m_SourcePrefab: {fileID: 100100000, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
 --- !u!1 &1203002656
 GameObject:
@@ -119863,6 +119944,40 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
   m_UseDelaunayMesh: 0
+--- !u!1 &1938897151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2164457713431054776, guid: d4f95dd5bb1d7be4282a9e7dda710ed7, type: 3}
+  m_PrefabInstance: {fileID: 1159685982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1938897156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938897151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1045313172}
+          m_TargetAssemblyTypeName: Barrage, Assembly-CSharp
+          m_MethodName: ActiveSkill
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1949959463
 GameObject:
   m_ObjectHideFlags: 0

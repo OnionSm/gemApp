@@ -33,4 +33,35 @@ public class Skill : OnionBehaviour
     {
         skill_time_count -= Time.deltaTime;
     }
+    protected bool IsHaveEnemy()
+    {
+        if (EnemyCheckPos.Instance.have_enemy)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    protected Vector3 GetEnemyPosition()
+    {
+        return EnemyCheckPos.Instance.enemy_pos;
+    }
+    protected Vector2 CalculateDirection()
+    {
+        if (this.IsHaveEnemy())
+        {
+            Vector3 enemy_pos = GetEnemyPosition();
+            Vector3 arrow_direct = (enemy_pos - this.spawn_point.position).normalized;
+
+            Vector2 arrow_direct_2d = new Vector2(arrow_direct.x, arrow_direct.y);
+            return arrow_direct_2d;
+        }
+        else
+        {
+            return new Vector2(PlayerManager.Instance.player_direction, 0);
+        }
+    }
 }

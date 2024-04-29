@@ -22,7 +22,7 @@ public class BaseShot : Skill
     private void Update()
     {
         this.DecreaseSkillTimeCount();
-        this.DecreaseSkillTimeCount();
+        this.DecreaseCoolDownTimeCount();
     }
 
 
@@ -30,6 +30,7 @@ public class BaseShot : Skill
     {
         if (!this.SkillAvailable())
             return;
+        PlayerAnimation.Instance.SetTriggerBaseShot();
         Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name,  this.spawn_point.position, new Vector3(1,1,1));
         arrow.gameObject.SetActive(true);
         arrow.GetComponent<Rigidbody2D>().velocity = this.CalculateDirection() * this.arrow_speed;
@@ -45,38 +46,5 @@ public class BaseShot : Skill
         this.skill_time_count = 0f;
         this.cool_down_time_count = 0f;
 
-    }
-
-    protected bool IsHaveEnemy()
-    {
-        if (EnemyCheckPos.Instance.have_enemy)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
-    }
-
-    protected Vector3 GetEnemyPosition()
-    {
-        return EnemyCheckPos.Instance.enemy_pos;
-    }
-    protected Vector2 CalculateDirection()
-    {
-       if(this.IsHaveEnemy())
-       {
-            Vector3 enemy_pos = GetEnemyPosition();
-            Vector3 arrow_direct = (enemy_pos - this.spawn_point.position).normalized;
-
-            Vector2 arrow_direct_2d = new Vector2(arrow_direct.x, arrow_direct.y);
-            return arrow_direct_2d;
-        }
-       else
-       {
-            return new Vector2(PlayerManager.Instance.player_direction, 0);
-       }
     }
 }

@@ -15,14 +15,14 @@ public class PlayerManager: OnionBehaviour
     public float max_mana;
     public float current_mana;
 
-    public bool is_dashing = false;
+    public bool is_dashing = false; 
 
 
    
 
-    [SerializeField] public static PlayerManager Instance;
+    public static PlayerManager Instance;
     [SerializeField] public List<GameObject> game_object;
-    [SerializeField] public string current_animation;
+
     [SerializeField] public bool is_using_skill = false;
     public Vector2 slope_normal_perp;
     private void Awake()
