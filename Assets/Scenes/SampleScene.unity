@@ -389,6 +389,7 @@ GameObject:
   - component: {fileID: 53437336}
   - component: {fileID: 53437335}
   - component: {fileID: 53437338}
+  - component: {fileID: 53437339}
   m_Layer: 0
   m_Name: DropArrow
   m_TagString: Untagged
@@ -521,7 +522,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 22, y: 3}
+  m_Size: {x: 12, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &53437337
 Rigidbody2D:
@@ -538,7 +539,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 9.81
+  m_GravityScale: 50
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -563,6 +564,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_despawn: 10
+--- !u!114 &53437339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53437332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c734ee2d1d32444438e1880ea74e316a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 0}
+  DestroyOnDisable: 0
 --- !u!1 &59459807
 GameObject:
   m_ObjectHideFlags: 0
@@ -82038,7 +82053,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323.7, y: 99.8, z: -10}
+  m_LocalPosition: {x: 483, y: 99, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -83845,7 +83860,7 @@ GameObject:
   - component: {fileID: 881558728}
   m_Layer: 7
   m_Name: Ranger
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83859,7 +83874,7 @@ Transform:
   m_GameObject: {fileID: 881558718}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323.7, y: 100.8, z: 0}
+  m_LocalPosition: {x: 483, y: 100, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
