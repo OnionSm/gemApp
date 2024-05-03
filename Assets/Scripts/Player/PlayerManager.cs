@@ -67,7 +67,7 @@ public class PlayerManager: OnionBehaviour
     }
     protected void LoadHP()
     {
-        this.max_hp = 100f;
+        this.max_hp = 1000f;
         this.current_hp = this.max_hp;
     }
     protected void LoadMana()
