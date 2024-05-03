@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class DespawnByTime : Despawn
+public class EffectDespawnByTime : Despawn
 {
-    public float time_despawn = 10f;
+    public float time_despawn = 2f;
 
     protected override bool CanDespawn()
     {
         if (this.time_despawn <= 0)
         {
-            this.time_despawn = 10f;
+            this.time_despawn = 2f;
             return true;
         }
         else
@@ -19,9 +18,9 @@ public class DespawnByTime : Despawn
             time_despawn -= Time.fixedDeltaTime;
             return false;
         }
-    }   
+    }
     protected override void DespawnObject()
     {
-        BulletSpawner.Instance.Despawn(gameObject.transform);
+        //BulletSpawner.Instance.Despawn(gameObject.transform);
     }
 }

@@ -15,4 +15,8 @@ public class DespawnByDistance : Despawn
             return true;
         return false;
     }
+    protected override void DespawnObject()
+    { 
+        BulletSpawner.Instance.Despawn(gameObject.transform);
+    }
 }

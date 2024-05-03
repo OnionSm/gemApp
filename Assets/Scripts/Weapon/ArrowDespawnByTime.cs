@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class DespawnByTime : Despawn
+public class ArrowDespawnByTime : Despawn
 {
     public float time_despawn = 10f;
 
@@ -19,9 +18,10 @@ public class DespawnByTime : Despawn
             time_despawn -= Time.fixedDeltaTime;
             return false;
         }
-    }   
+    }
     protected override void DespawnObject()
     {
         BulletSpawner.Instance.Despawn(gameObject.transform);
     }
 }
+   

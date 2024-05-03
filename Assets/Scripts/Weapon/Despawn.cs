@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,8 +14,6 @@ public abstract class Despawn : OnionBehaviour
         if (!this.CanDespawn()) return;
         this.DespawnObject();
     }
-    protected virtual void DespawnObject()
-    {
-        BulletSpawner.Instance.Despawn(gameObject.transform);
-    }
+    protected abstract void DespawnObject();
+   
 }

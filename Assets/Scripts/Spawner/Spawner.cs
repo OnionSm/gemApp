@@ -19,23 +19,13 @@ public class Spawner : OnionBehaviour
         this.LoadHolder();
     }
 
-    protected void LoadPrefabs()
+    protected virtual void LoadPrefabs()
     {
-        if (this.prefabs.Count > 0) return;
-        this.prefabs = GetArrowPrefabs.Instance.GetPrefabs();
-        foreach(Transform pre in this.prefabs)
-        {
-            Debug.Log(pre);
-        }
-        this.HidePrefabs();
     }
 
-    protected void LoadHolder()
+    protected virtual void LoadHolder()
     {
-        if (this.holder != null) return;
-        this.holder = GetHolder.Instance.getHoder();
     }
-
 
 
     protected void HidePrefabs()
@@ -94,7 +84,6 @@ public class Spawner : OnionBehaviour
     protected virtual void SetPositionAndScale(Transform new_prefab, Vector3 position, Vector3 scale)
     {
         new_prefab.position = position;
-
         new_prefab.localScale = scale;
     }
 }
