@@ -613,6 +613,195 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: knight_1_landing_0
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 429
+        width: 29
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69a70bcbb758a684293360d56a23fec8
+      internalID: 273982513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_landing_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 453
+        width: 28
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855086a37bb457a4a896bdda77af9ee6
+      internalID: -216161278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_landing_2
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 370
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.45, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76db424fe84a5c246894385808af366b
+      internalID: -1329079221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_0
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 1
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7f35d033d30bb42be8884be8d04462
+      internalID: 1187409422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_1
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 256
+        width: 24
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaef82ef3aff6af4190956f116d38c59
+      internalID: 438211841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_3
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 426
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5293f68c662a240a9d4629725bda1f
+      internalID: -1320223591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_4
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 309
+        width: 25
+        height: 34
+      alignment: 9
+      pivot: {x: 0.46, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f30069fe6345a14408d085032c24ed49
+      internalID: 1742747535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_5
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 402
+        width: 23
+        height: 34
+      alignment: 9
+      pivot: {x: 0.46, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda7b1f3b8eb3174cb93c21349fa4a41
+      internalID: -2063754353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: knight_1_walk_2
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 249
+        width: 26
+        height: 34
+      alignment: 9
+      pivot: {x: 0.48, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27238658d0d51546b7dcba3cf7b35e5
+      internalID: 1444837659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -648,6 +837,15 @@ TextureImporter:
       knight_1_jump_1: -1275091880
       knight_1_jump_2: -1890139723
       knight_1_jump_3: 1223784901
+      knight_1_landing_0: 273982513
+      knight_1_landing_1: -216161278
+      knight_1_landing_2: -1329079221
+      knight_1_walk_0: 1187409422
+      knight_1_walk_1: 438211841
+      knight_1_walk_2: -1320223591
+      knight_1_walk_3: 1742747535
+      knight_1_walk_4: -2063754353
+      knight_1_walk_5: 1444837659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

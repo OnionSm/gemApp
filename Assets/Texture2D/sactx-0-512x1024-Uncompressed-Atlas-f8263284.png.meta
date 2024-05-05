@@ -592,6 +592,510 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_0
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 246
+        width: 35
+        height: 19
+      alignment: 9
+      pivot: {x: 0.53, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a081e70bc6d8b48a9848adfb1114e6
+      internalID: -678045539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 555
+        width: 27
+        height: 20
+      alignment: 9
+      pivot: {x: 0.61, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ba64cce5d8e39408ca7f201cbe1888
+      internalID: -2019336133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_2
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 160
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.54, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ce905e6848f76b498264b42cf4b735b
+      internalID: 2043894523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 392
+        width: 26
+        height: 27
+      alignment: 9
+      pivot: {x: 0.63, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5918c074ad7fb3498c6095171c352a4
+      internalID: -2131451097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_4
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 1
+        width: 30
+        height: 25
+      alignment: 9
+      pivot: {x: 0.64, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cba6d6c9bda4fb43aaa6bcd78fe7efa
+      internalID: 1168334644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_5
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 243
+        width: 37
+        height: 37
+      alignment: 9
+      pivot: {x: 0.71, y: 0.45}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f152030f4b706094cb50b5f9c31da4a5
+      internalID: 652320295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_6
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 354
+        width: 36
+        height: 33
+      alignment: 9
+      pivot: {x: 0.68, y: 0.38}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49cf9844e0fe9d94e9bc0fd16675d8fa
+      internalID: 1990429578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 359
+        width: 35
+        height: 32
+      alignment: 9
+      pivot: {x: 0.61, y: 0.39}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5058da6b2d210246b99f4b4cbd5b293
+      internalID: 770677264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 78
+        width: 30
+        height: 29
+      alignment: 9
+      pivot: {x: 0.58, y: 0.4}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d38975d40c941545a03bd3737964e31
+      internalID: 1989576798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_9
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 513
+        width: 27
+        height: 20
+      alignment: 9
+      pivot: {x: 0.39, y: 0.62}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b7425b08013dd419e4e30fb9d16a90
+      internalID: -998574460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_10
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 440
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.23, y: 0.64}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132be498d1c687f4bb3fbe500c989d38
+      internalID: 2040652639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_attack_11
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 349
+        width: 26
+        height: 27
+      alignment: 9
+      pivot: {x: 0.41, y: 0.64}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 777998422c1af634aae91b02005a2d2c
+      internalID: -17997165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_landing_0
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 332
+        width: 30
+        height: 28
+      alignment: 9
+      pivot: {x: 0.39, y: 0.24}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55dd818c9da9f2f469ddba750928878f
+      internalID: 209585782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_landing_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 511
+        width: 36
+        height: 16
+      alignment: 9
+      pivot: {x: 0.49, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51da8496ed736614ea6f5af082efa3a2
+      internalID: 1969585633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_landing_2
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 518
+        width: 36
+        height: 11
+      alignment: 9
+      pivot: {x: 0.49, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e0f7b90ce3c59348a04ee6453dd037d
+      internalID: -652887611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_3
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 207
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.39, y: 0.24}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fed4a3ff8e705e48a0c4396a2904bb9
+      internalID: -188216691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_0
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 227
+        width: 28
+        height: 28
+      alignment: 9
+      pivot: {x: 0.52, y: 0.14}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9cd159acbd4a54ca8d7599823d1709
+      internalID: 1253553187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 260
+        width: 22
+        height: 32
+      alignment: 9
+      pivot: {x: 0.52, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6174e78a9ee6e146a068c873ef78584
+      internalID: -1140771448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 514
+        width: 17
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.18}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e63bd6f5e103e4391b72e14cba23eb
+      internalID: 1054176890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_death_4
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 233
+        width: 26
+        height: 33
+      alignment: 9
+      pivot: {x: 0.41, y: 0.23}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1fc571d89c7e34f91470ac41c0dd01
+      internalID: -1175844306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_fly_0
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 437
+        width: 35
+        height: 19
+      alignment: 9
+      pivot: {x: 0.53, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bf800ee6894c6441b99a14ee093be50
+      internalID: -1998454911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_fly_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 195
+        width: 35
+        height: 24
+      alignment: 9
+      pivot: {x: 0.56, y: 0.32}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b0f4eb79415f534abad1d767c20993c
+      internalID: 1534641533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_fly_2
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 118
+        width: 41
+        height: 21
+      alignment: 9
+      pivot: {x: 0.52, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dce8f3118b42e54cb7a685157aabc02
+      internalID: -1909034317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brown_bat_fly_3
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 461
+        width: 40
+        height: 15
+      alignment: 9
+      pivot: {x: 0.54, y: 0.37}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137dcceddf61be844abd1b87c776fc73
+      internalID: 1614961192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -626,6 +1130,30 @@ TextureImporter:
       bat_fly_1: -300097488
       bat_fly_2: 1279962058
       bat_fly_3: -477103530
+      brown_bat_attack_0: -678045539
+      brown_bat_attack_1: -2019336133
+      brown_bat_attack_10: 2040652639
+      brown_bat_attack_11: -17997165
+      brown_bat_attack_2: 2043894523
+      brown_bat_attack_3: -2131451097
+      brown_bat_attack_4: 1168334644
+      brown_bat_attack_5: 652320295
+      brown_bat_attack_6: 1990429578
+      brown_bat_attack_7: 770677264
+      brown_bat_attack_8: 1989576798
+      brown_bat_attack_9: -998574460
+      brown_bat_death_0: 1253553187
+      brown_bat_death_1: -1140771448
+      brown_bat_death_2: 1054176890
+      brown_bat_death_3: -188216691
+      brown_bat_death_4: -1175844306
+      brown_bat_death_landing_0: 209585782
+      brown_bat_death_landing_1: 1969585633
+      brown_bat_death_landing_2: -652887611
+      brown_bat_fly_0: -1998454911
+      brown_bat_fly_1: 1534641533
+      brown_bat_fly_2: -1909034317
+      brown_bat_fly_3: 1614961192
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
