@@ -16,10 +16,6 @@ public class BulletSpawner : Spawner
     {
         if (this.prefabs.Count > 0) return;
         this.prefabs = GetArrowPrefabs.Instance.GetPrefabs();
-        foreach (Transform pre in this.prefabs)
-        {
-            Debug.Log(pre);
-        }
         this.HidePrefabs();
     }
 

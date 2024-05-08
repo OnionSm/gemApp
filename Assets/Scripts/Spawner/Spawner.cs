@@ -14,7 +14,6 @@ public class Spawner : OnionBehaviour
     }
     protected override void LoadComponent()
     {
-        Debug.Log("LoadComponentSpawner");
         this.LoadPrefabs();
         this.LoadHolder();
     }

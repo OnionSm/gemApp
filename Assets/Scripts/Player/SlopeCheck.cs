@@ -32,7 +32,6 @@ public class SlopeCheck : MonoBehaviour
     protected void CheckSlope()
     {
         Vector2 check_pos = transform.parent.position - new Vector3(0f, collider_size.y / 2);
-        //Debug.Log(check_pos);
         SlopeCheckVertical(check_pos);
     }
     protected void SlopeCheckVertical(Vector2 check_pos)

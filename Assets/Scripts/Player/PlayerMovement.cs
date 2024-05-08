@@ -55,7 +55,6 @@ public class PlayerMovement : OnionBehaviour
         this.CanMove();
         this.CheckGround();
         this.CheckFalling();
-        Debug.Log(rigid_body.velocity);
     }
 
 

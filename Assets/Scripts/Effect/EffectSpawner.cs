@@ -19,10 +19,6 @@ public class EffectSpawner : Spawner
     {
         if (this.prefabs.Count > 0) return;
         this.prefabs = GetArrowEffectPrefabs.Instance.GetPrefabs();
-        foreach (Transform pre in this.prefabs)
-        {
-            Debug.Log(pre);
-        }
         this.HidePrefabs();
     }
     protected override void LoadHolder()
