@@ -5,10 +5,6 @@ using UnityEngine;
 public class FSMWitchChase : FSMWitchBase
 {
     public float witch_speed = 45f;
-    private void Awake()
-    {
-        
-    }
     public override void EnterState()
     {
         Debug.Log("Enter Chase State");
@@ -18,6 +14,7 @@ public class FSMWitchChase : FSMWitchBase
     {
         this.ChangeOtherState();
         this.ChasePlayer();
+        Debug.Log("Update chase");
     }
     public override void OnCollisionEnter()
     {
@@ -30,7 +27,7 @@ public class FSMWitchChase : FSMWitchBase
             WitchAnimationManager.Instance.SetBoolWalking(false);
             FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_idle);
         }
-        if (WitchManager.Instance.in_attack_zone_ball_lighting == true)
+        if (WitchManager.Instance.in_attack_zone_ball_lighting == true && WitchManager.Instance.in_attack_zone_water_push == false)
         {
             FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_attack);
         }

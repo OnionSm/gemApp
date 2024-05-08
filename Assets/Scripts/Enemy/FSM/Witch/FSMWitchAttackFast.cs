@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class FSMWitchAttackFast : FSMWitchBase
 {
-    // Start is called before the first frame update
+    [SerializeField] private float animation_time;
+    [SerializeField] private float delay;
+
     void Start()
     {
         
@@ -17,14 +19,50 @@ public class FSMWitchAttackFast : FSMWitchBase
     }
     public override void EnterState()
     {
-
+        WitchAnimationManager.Instance.SetTriggerAttackFast();
+        this.LoadComponent();
+        WitchManager.Instance.cool_down_count = WitchManager.Instance.cool_down_time_skill;
     }
     public override void UpdateState()
     {
-
+        this.ChangeOtherState();
     }
     public override void OnCollisionEnter()
     {
 
+    }
+    private void ChangeOtherState()
+    {
+        if (WitchManager.Instance.chasing == false)
+        {
+            WitchAnimationManager.Instance.SetBoolWalking(false);
+            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_idle);
+        }
+        if (WitchManager.Instance.chasing == true && (WitchManager.Instance.in_attack_zone_ball_lighting == false && WitchManager.Instance.in_attack_zone_water_push == false))
+        {
+            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_chase);
+        }
+        if (WitchManager.Instance.in_attack_zone_ball_lighting == true)
+        {
+            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_attack);
+        }
+        
+
+    }
+    private void CanChangeState()
+    {
+        if (delay >= animation_time)
+        {
+            this.ChangeOtherState();
+        }
+        else
+        {
+            delay += Time.deltaTime;
+        }
+    }
+    public void LoadComponent()
+    {
+        this.animation_time = 1.8f;
+        this.delay = 0f;
     }
 }

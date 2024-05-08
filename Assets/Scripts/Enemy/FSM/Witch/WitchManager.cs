@@ -11,6 +11,9 @@ public class WitchManager : OnionBehaviour
     [SerializeField] private float witch_scale_x;
     [SerializeField] private float witch_scale_y;
 
+    [SerializeField] public float cool_down_time_skill;
+    [SerializeField] public float cool_down_count;
+
     public bool in_attack_zone_water_push;
     public bool in_attack_zone_ball_lighting;
     public bool chasing;
@@ -26,7 +29,8 @@ public class WitchManager : OnionBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookAtPlayer();
+        this.LookAtPlayer();
+        this.CountCoolDown();
     }
     protected void LookAtPlayer()
     {
@@ -51,5 +55,12 @@ public class WitchManager : OnionBehaviour
         this.in_attack_zone_water_push = false;
         this.in_attack_zone_ball_lighting = false;
         this.chasing = false;
+        this.cool_down_time_skill = 5f;
+        this.cool_down_count = 0f;
+    }
+    protected void CountCoolDown()
+    {
+        if (this.cool_down_count <= 0) return;
+        this.cool_down_count -= Time.deltaTime;
     }
 }

@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 53437339}
   - component: {fileID: 53437340}
   - component: {fileID: 53437341}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DropArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1342076011, guid: 28619d2861292714f80d9eb0d6ccb290, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -920,6 +920,8 @@ GameObject:
   - component: {fileID: 67896965}
   - component: {fileID: 67896967}
   - component: {fileID: 67896966}
+  - component: {fileID: 67896969}
+  - component: {fileID: 67896968}
   m_Layer: 0
   m_Name: BallLighting
   m_TagString: Untagged
@@ -936,7 +938,7 @@ Transform:
   m_GameObject: {fileID: 67896964}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 42.8, y: 79.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1015,6 +1017,68 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!50 &67896968
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67896964}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &67896969
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67896964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 100, y: 100}
+  m_Direction: 1
 --- !u!1 &73712539
 GameObject:
   m_ObjectHideFlags: 0
@@ -85467,7 +85531,7 @@ GameObject:
   - component: {fileID: 818131944}
   - component: {fileID: 818131943}
   - component: {fileID: 818131945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122998,7 +123062,7 @@ GameObject:
   - component: {fileID: 1637940723}
   m_Layer: 7
   m_Name: Witch
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123057,8 +123121,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -898977397
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 826522631, guid: 883de4b640b59f447990b0284c055caf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -123144,6 +123208,8 @@ MonoBehaviour:
   witch_hp_max: 0
   witch_scale_x: 0
   witch_scale_y: 0
+  cool_down_time: 0
+  cool_down_count: 0
   in_attack_zone_water_push: 0
   in_attack_zone_ball_lighting: 0
   chasing: 0
@@ -123203,9 +123269,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_Interpolate: 2
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1637940719
 MonoBehaviour:
@@ -123257,6 +123323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b22d66b9936dfa8499285756bac3e6c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lightning_ball: {fileID: 67896965}
+  spawn_point: {fileID: 1685965629}
+  speed: 0
 --- !u!114 &1637940723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123702,7 +123771,7 @@ Transform:
   m_GameObject: {fileID: 1685965628}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 17.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

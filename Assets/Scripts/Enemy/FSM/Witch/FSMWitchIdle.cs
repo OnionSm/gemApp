@@ -6,20 +6,17 @@ public class FSMWitchIdle : FSMWitchBase
 {
     [SerializeField] private float idle_time;
     [SerializeField] private float heal_cool_down;
-    private void Start()
-    {
-        this.LoadComponent();
-    }
     public override void EnterState()
     {
         Debug.Log("Enter Idle State");
+        this.LoadComponent();
     }
     public override void UpdateState()
     {
         CountIdleTime();
         CanHeal();
         ResetHealCoolDownTime();
-        CanChangeChasingState();
+        CanChangeState();
     }
     public override void OnCollisionEnter()
     {
@@ -51,6 +48,7 @@ public class FSMWitchIdle : FSMWitchBase
     {
         this.idle_time = 0f;
         this.heal_cool_down = 5f;
+        WitchManager.Instance.cool_down_count = WitchManager.Instance.cool_down_time_skill;
     }
     protected void ResetHealCoolDownTime()
     {
@@ -59,13 +57,31 @@ public class FSMWitchIdle : FSMWitchBase
             this.idle_time = 0f;
         }
     }
-    private void CanChangeChasingState()
+    
+    private void ChangeOtherState()
     {
-        bool test = WitchManager.Instance.chasing == true && WitchManager.Instance.in_attack_zone_ball_lighting == false && WitchManager.Instance.in_attack_zone_water_push == false;
-        Debug.Log(test);
-        if(WitchManager.Instance.chasing == true && (WitchManager.Instance.in_attack_zone_ball_lighting == false && WitchManager.Instance.in_attack_zone_water_push == false))
+        if (WitchManager.Instance.chasing == true && (WitchManager.Instance.in_attack_zone_ball_lighting == false && WitchManager.Instance.in_attack_zone_water_push == false))
         {
             FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_chase);
+        }
+        if (WitchManager.Instance.in_attack_zone_ball_lighting == true && WitchManager.Instance.in_attack_zone_water_push == false)
+        {
+            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_attack);
+        }
+        if (WitchManager.Instance.in_attack_zone_water_push == true)
+        {
+            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_attack_fast);
+        }
+    }
+    private void CanChangeState()
+    {
+        if(WitchManager.Instance.cool_down_count > 0)
+        {
+            return;
+        }
+        else
+        {
+            ChangeOtherState();
         }
     }
 }

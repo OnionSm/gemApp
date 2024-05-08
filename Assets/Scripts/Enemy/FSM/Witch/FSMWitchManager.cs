@@ -34,6 +34,7 @@ public class FSMWitchManager : MonoBehaviour
     void Update()
     {
         current_state.UpdateState();
+        Debug.Log(current_state.ToString());
     }
     public void SwitchState(FSMWitchBase state)
     {
