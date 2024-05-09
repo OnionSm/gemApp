@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FSMWitchAttack : FSMWitchBase
 {
-    [SerializeField] private Transform lightning_ball;
-    [SerializeField] private Transform spawn_point;
-    [SerializeField] private float speed;
-    [SerializeField] private float animation_time;
-    [SerializeField] private float delay;
+    public float speed;
+    public float animation_time;
+    public float delay;
+    public bool ball_available;
     public override void EnterState()
     {
         WitchAnimationManager.Instance.SetTriggerAttack();
@@ -16,8 +15,10 @@ public class FSMWitchAttack : FSMWitchBase
     }
     public override void UpdateState()
     {
-        this.CanChangeState();
-           
+        CanChangeState();
+        CanCreateLightningBall();
+
+
     }
     public override void OnCollisionEnter()
     {
@@ -28,11 +29,13 @@ public class FSMWitchAttack : FSMWitchBase
         this.speed = 100f;
         this.animation_time = 1.8f;
         this.delay = 0f;
+        this.ball_available = true;
     }
     public void CreateLightningBall()
     {
-        Transform obj = Instantiate(lightning_ball);
-        obj.position = spawn_point.position;
+        Transform obj = Instantiate(FSMWitchManager.Instance.ball_lightning_prefabs);
+        obj.gameObject.SetActive(true);
+        obj.position = FSMWitchManager.Instance.spawn_point.position;
         obj.GetComponent<Rigidbody>().velocity = new Vector2(WitchManager.Instance.direct * speed, 0f);
     }
     private void ChangeOtherState()
@@ -47,11 +50,19 @@ public class FSMWitchAttack : FSMWitchBase
     {
         if (delay >= animation_time)
         {
-            this.ChangeOtherState();
+            ChangeOtherState();
         }
         else
         {
             delay += Time.deltaTime;
+        }
+    }
+    private void CanCreateLightningBall()
+    {
+        if(delay>=1.2f && ball_available == true)
+        {
+            this.ball_available = false;
+            CreateLightningBall();
         }
     }
 

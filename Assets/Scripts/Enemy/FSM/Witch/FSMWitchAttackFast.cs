@@ -25,7 +25,7 @@ public class FSMWitchAttackFast : FSMWitchBase
     }
     public override void UpdateState()
     {
-        this.ChangeOtherState();
+        ChangeOtherState();
     }
     public override void OnCollisionEnter()
     {
@@ -53,7 +53,7 @@ public class FSMWitchAttackFast : FSMWitchBase
     {
         if (delay >= animation_time)
         {
-            this.ChangeOtherState();
+            ChangeOtherState();
         }
         else
         {
@@ -62,7 +62,7 @@ public class FSMWitchAttackFast : FSMWitchBase
     }
     public void LoadComponent()
     {
-        this.animation_time = 1.8f;
-        this.delay = 0f;
+        animation_time = 1.8f;
+        delay = 0f;
     }
 }

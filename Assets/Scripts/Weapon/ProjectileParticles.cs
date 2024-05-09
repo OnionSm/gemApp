@@ -7,9 +7,6 @@ public class ProjectileParticles : MonoBehaviour
     [SerializeField] private Rigidbody2D particles;
     private bool ground_trigger = false;
 
-    public bool DestroyOnDisable;
-    private Vector2 LocalPositions;
-
 
     private void Awake()
     {
@@ -22,21 +19,14 @@ public class ProjectileParticles : MonoBehaviour
             this.RotateArrow();
     }
 
-    private void OnEnable()
-    {
-    }
-
-    private void Disable()
-    {
-    }
     protected void RotateArrow()
     {
         float angle = Mathf.Atan2(particles.velocity.y, particles.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject.layer != 3)
+        if (collider.gameObject.layer != 3)
             return;
         particles.velocity = Vector2.zero;
         ground_trigger = true;

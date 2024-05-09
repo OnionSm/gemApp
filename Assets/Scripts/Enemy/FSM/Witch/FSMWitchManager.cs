@@ -10,6 +10,8 @@ public class FSMWitchManager : MonoBehaviour
     public FSMWitchHeal witch_heal;
     public FSMWitchAttack witch_attack;
     public FSMWitchAttackFast witch_attack_fast;
+    public Transform ball_lightning_prefabs;
+    public Transform spawn_point;
 
 
     public Rigidbody2D rigidbody;

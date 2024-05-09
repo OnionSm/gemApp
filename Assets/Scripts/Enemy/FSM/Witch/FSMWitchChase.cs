@@ -12,8 +12,8 @@ public class FSMWitchChase : FSMWitchBase
     }
     public override void UpdateState()
     {
-        this.ChangeOtherState();
-        this.ChasePlayer();
+        ChangeOtherState();
+        ChasePlayer();
         Debug.Log("Update chase");
     }
     public override void OnCollisionEnter()

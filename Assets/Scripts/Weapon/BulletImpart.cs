@@ -31,6 +31,17 @@ public class BulletImpart : OnionBehaviour
         }
 
     }
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+
+        if (collider.gameObject.layer == 3)
+        {
+            Transform arrow = EffectSpawner.Instance.Spawn(effect_prefab_name, transform.position, new Vector3(1, 1, 1));
+            arrow.gameObject.SetActive(true);
+            //this.damage_sender.Send(collision.transform);
+        }
+
+    }
 
 
 }

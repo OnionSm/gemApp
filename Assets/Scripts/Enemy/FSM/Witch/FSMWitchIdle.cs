@@ -9,7 +9,7 @@ public class FSMWitchIdle : FSMWitchBase
     public override void EnterState()
     {
         Debug.Log("Enter Idle State");
-        this.LoadComponent();
+        LoadComponent();
     }
     public override void UpdateState()
     {
@@ -24,13 +24,13 @@ public class FSMWitchIdle : FSMWitchBase
     }
     private void CountIdleTime()
     {
-        this.idle_time += Time.deltaTime;
+        idle_time += Time.deltaTime;
     }
 
     // Check Witch can heal when idle_state > heal_cool_down
     private void CanHeal()
     {
-        if (this.idle_time >= heal_cool_down && this.CheckWitchHP())
+        if (idle_time >= heal_cool_down && this.CheckWitchHP())
         {
             FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_heal);
         }
@@ -41,20 +41,20 @@ public class FSMWitchIdle : FSMWitchBase
     {
         if (WitchManager.Instance.witch_hp_current <= WitchManager.Instance.witch_hp_max * 0.4f)
             return true;
-        return true;
+        return false;
     }
 
     protected void LoadComponent()
     {
-        this.idle_time = 0f;
-        this.heal_cool_down = 5f;
+        idle_time = 0f;
+        heal_cool_down = 5f;
         WitchManager.Instance.cool_down_count = WitchManager.Instance.cool_down_time_skill;
     }
     protected void ResetHealCoolDownTime()
     {
         if(WitchManager.Instance.in_attack_zone_ball_lighting)
         {
-            this.idle_time = 0f;
+            idle_time = 0f;
         }
     }
     
