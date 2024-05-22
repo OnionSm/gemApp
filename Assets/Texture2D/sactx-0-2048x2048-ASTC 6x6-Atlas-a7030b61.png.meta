@@ -396,7 +396,7 @@ TextureImporter:
         width: 705
         height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 1, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -417,7 +417,7 @@ TextureImporter:
         width: 692
         height: 54
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -438,7 +438,7 @@ TextureImporter:
         width: 692
         height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -459,7 +459,7 @@ TextureImporter:
         width: 692
         height: 60
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -480,7 +480,7 @@ TextureImporter:
         width: 692
         height: 59
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -488,6 +488,258 @@ TextureImporter:
       bones: []
       spriteID: 63f626e273ace7f4ebe4627c22b8799d
       internalID: -1783817235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ease_health_bar
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 975
+        width: 692
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aec89ca0376c7a4eaf8cfd8920f00dc
+      internalID: -602316088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ease_mana_bar
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 860
+        width: 692
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6209d32dadd1c3b49997bc84f75f6073
+      internalID: 873631206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_health_fill
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 1360
+        width: 222
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad345c3b68ab9894293ce85c5711b9db
+      internalID: -329173909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_health_bar
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 1867
+        width: 229
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a92a906d52d6cb4596d12cdac33118d
+      internalID: -408131248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_health_erase
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 1858
+        width: 222
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12c67edccdc41e4d91e6a10aa137296
+      internalID: 1951485177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: base_shot
+      rect:
+        serializedVersion: 2
+        x: 1710
+        y: 212
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67983073d862ab1468b73ca242deb883
+      internalID: -143816391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barrage
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1561
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6450dcc018af0404ba99d04dff83ad61
+      internalID: 1176272439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: multi_shot
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 1303
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789e7bed02c47a146b115352e86561f2
+      internalID: -1658299269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hail_of_arrow
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1131
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57445d749478e504c95acab5f4791875
+      internalID: -2038806213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_mana_bar
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 1920
+        width: 229
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fe2be4e7fdf0af4aac5f9766e20e587
+      internalID: -1851911836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_mana_fill
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1981
+        width: 222
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 786065cf8e11a4a4baab6e0ed6218c40
+      internalID: 799377505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: witch_mana_erase
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1940
+        width: 222
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb8fa851c0904d44b8c2d322011d4af
+      internalID: -2069143829
       vertices: []
       indices: 
       edges: []
@@ -503,6 +755,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      barrage: 1176272439
+      base_shot: -143816391
+      ease_health_bar: -602316088
+      ease_mana_bar: 873631206
+      hail_of_arrow: -2038806213
+      multi_shot: -1658299269
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_0: 1983088873
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_1: -1486971533
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_10: -248369167
@@ -520,6 +778,12 @@ TextureImporter:
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_7: -1039555189
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_8: 540363837
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_9: -816590459
+      witch_health_bar: -408131248
+      witch_health_erase: 1951485177
+      witch_health_fill: -329173909
+      witch_mana_bar: -1851911836
+      witch_mana_erase: -2069143829
+      witch_mana_fill: 799377505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

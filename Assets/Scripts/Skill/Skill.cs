@@ -11,7 +11,8 @@ public class Skill : OnionBehaviour
 
     public float skill_time_count;
     public float cool_down_time_count;
-    
+    public float skill_mana_cost;
+
     public virtual void ActiveSkill()
     {
         

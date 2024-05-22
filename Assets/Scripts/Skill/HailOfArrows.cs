@@ -29,12 +29,15 @@ public class HailOfArrows : Skill
 
     public override void ActiveSkill()
     {
-        if (!this.SkillAvailable())
-            return;
-        PlayerAnimation.Instance.SetTriggerAngleShot();
-        this.skill_time_count = this.skill_time;
-        this.cool_down_time_count = this.cool_down;
-        StartCoroutine(Skill());
+        if (this.SkillAvailable() && PlayerManager.Instance.current_mana >= skill_mana_cost)
+        {
+            PlayerAnimation.Instance.SetTriggerAngleShot();
+            this.skill_time_count = this.skill_time;
+            this.cool_down_time_count = this.cool_down;
+
+            PlayerManager.Instance.current_mana -= skill_mana_cost;
+            StartCoroutine(Skill());
+        }
     }
 
     protected override void LoadComponent()
@@ -50,6 +53,7 @@ public class HailOfArrows : Skill
         this.time_arrow_fly = new List<float>() { 1.55f, 1.5f, 1.45f, 1.4f, 1.35f };
         this.x_velo = new List<float>() { 80, 140, 187, 220, 240 };
         this.y_velo = new List<float>() { 370, 350, 330, 310,290};
+        this.skill_mana_cost = 25f;
     }
     IEnumerator Skill()
     {

@@ -10,7 +10,7 @@ public class BallLightningDespawnByDistance : Despawn
 
     protected override bool CanDespawn()
     {
-        this.distance = Vector3.Distance(WitchManager.Instance.transform.position, main_cam.position);
+        this.distance = Vector3.Distance(WitchManager.Instance.transform.position, main_cam.position);   
         if (distance >= max_distance)
             return true;
         return false;

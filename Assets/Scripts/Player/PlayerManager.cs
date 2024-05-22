@@ -42,6 +42,8 @@ public class PlayerManager: OnionBehaviour
     void Update()
     {
         this.ConstraintRotation();
+        CheckMaxHp();
+        CheckMaxMana();
     }
     protected override void LoadComponent()
     {
@@ -87,6 +89,19 @@ public class PlayerManager: OnionBehaviour
     {
         return GetComponent<Rigidbody2D>();
     }
-
+    private void CheckMaxHp()
+    {
+        if (current_hp > max_hp)
+        {
+            max_hp = current_hp;
+        }
+    }
+    private void CheckMaxMana()
+    {
+        if (current_mana > max_mana)
+        {
+            current_mana = max_mana;
+        }
+    }
 }
 

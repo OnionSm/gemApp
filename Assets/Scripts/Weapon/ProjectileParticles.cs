@@ -26,7 +26,7 @@ public class ProjectileParticles : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.layer != 3)
+        if (collider.gameObject.layer == 10)
             return;
         particles.velocity = Vector2.zero;
         ground_trigger = true;

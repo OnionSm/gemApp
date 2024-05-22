@@ -11,6 +11,7 @@ public class FSMWitchManager : MonoBehaviour
     public FSMWitchAttack witch_attack;
     public FSMWitchAttackFast witch_attack_fast;
     public Transform ball_lightning_prefabs;
+    public Transform heal_wave_prefabs;
     public Transform spawn_point;
 
 
@@ -36,7 +37,6 @@ public class FSMWitchManager : MonoBehaviour
     void Update()
     {
         current_state.UpdateState();
-        Debug.Log(current_state.ToString());
     }
     public void SwitchState(FSMWitchBase state)
     {

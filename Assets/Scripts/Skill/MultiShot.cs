@@ -24,18 +24,20 @@ public class MultiShot : Skill
 
     public override void ActiveSkill()
     {
-        if (!this.SkillAvailable())
-            return;
-        Vector3 spawn_pos = new Vector3(spawn_point.position.x, spawn_point.position.y + 5f, 0);
-        PlayerAnimation.Instance.SetTriggerSpecialShot();
-        this.skill_time_count = this.skill_time;
-        this.cool_down_time_count = this.cool_down;
-        for (int i = 0; i < 3; i++)
+        if (this.SkillAvailable() && PlayerManager.Instance.current_mana >= skill_mana_cost)
         {
-            Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, spawn_pos, new Vector3(1, 1, 1));
-            arrow.gameObject.SetActive(true);
-            arrow.GetComponent<Rigidbody2D>().velocity = this.CalculateDirection() * this.arrow_speed;
-            spawn_pos = new Vector3(spawn_point.position.x, spawn_pos.y - 5f, 0);
+            Vector3 spawn_pos = new Vector3(spawn_point.position.x, spawn_point.position.y + 5f, 0);
+            PlayerAnimation.Instance.SetTriggerSpecialShot();
+            this.skill_time_count = this.skill_time;
+            this.cool_down_time_count = this.cool_down;
+            PlayerManager.Instance.current_mana -= skill_mana_cost;
+            for (int i = 0; i < 3; i++)
+            {
+                Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, spawn_pos, new Vector3(1, 1, 1));
+                arrow.gameObject.SetActive(true);
+                arrow.GetComponent<Rigidbody2D>().velocity = this.CalculateDirection() * this.arrow_speed;
+                spawn_pos = new Vector3(spawn_point.position.x, spawn_pos.y - 5f, 0);
+            }
         }
     }
 
@@ -47,6 +49,7 @@ public class MultiShot : Skill
         this.skill_time = 1.35f;
         this.skill_time_count = 0f;
         this.cool_down_time_count = 0f;
+        this.skill_mana_cost = 15f;
 
     }
 }

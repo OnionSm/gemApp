@@ -32,14 +32,14 @@ public class FSMWitchIdle : FSMWitchBase
     {
         if (idle_time >= heal_cool_down && this.CheckWitchHP())
         {
-            FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_heal);
+            Healing();
         }
     }
 
     // Check Witch current hp is higher than max hp
     private bool CheckWitchHP()
     {
-        if (WitchManager.Instance.witch_hp_current <= WitchManager.Instance.witch_hp_max * 0.4f)
+        if (WitchManager.Instance.hp_current <= WitchManager.Instance.hp_max * 0.4f)
             return true;
         return false;
     }
@@ -83,5 +83,10 @@ public class FSMWitchIdle : FSMWitchBase
         {
             ChangeOtherState();
         }
+    }
+
+    private void Healing()
+    {
+        FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_heal);
     }
 }

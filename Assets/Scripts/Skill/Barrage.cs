@@ -25,12 +25,14 @@ public class Barrage : Skill
 
     public override void ActiveSkill()
     {
-        if (!this.SkillAvailable())
-            return;
-        PlayerAnimation.Instance.SetTriggerBarrage();
-        this.skill_time_count = this.skill_time;
-        this.cool_down_time_count = this.cool_down;
-        StartCoroutine(IEBarrageSkill());
+        if (this.SkillAvailable() && PlayerManager.Instance.current_mana >= skill_mana_cost)
+        {
+            PlayerAnimation.Instance.SetTriggerBarrage();
+            this.skill_time_count = this.skill_time;
+            this.cool_down_time_count = this.cool_down;
+            PlayerManager.Instance.current_mana -= skill_mana_cost;
+            StartCoroutine(IEBarrageSkill());
+        }
     }
 
     protected override void LoadComponent()
@@ -41,6 +43,7 @@ public class Barrage : Skill
         this.skill_time = 1.35f;
         this.skill_time_count = 0f;
         this.cool_down_time_count = 0f;
+        this.skill_mana_cost = 10f;
 
     }
     IEnumerator IEBarrageSkill()

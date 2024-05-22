@@ -3196,6 +3196,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ball_lightning_end
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1656
+        width: 126
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3a32be39ddd35469b1248a47028fb8
+      internalID: -214553104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -3354,6 +3375,7 @@ TextureImporter:
       ball_lightning_97: 483574979
       ball_lightning_98: 50672339
       ball_lightning_99: 246059496
+      ball_lightning_end: -214553104
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
