@@ -35,7 +35,7 @@ public class FSMWitchAttack : FSMWitchBase
     {
         Transform obj = Instantiate(FSMWitchManager.Instance.ball_lightning_prefabs);
         obj.gameObject.SetActive(true);
-        obj.gameObject.GetComponent<BallLightningMove>().SetDamage(WitchManager.Instance.my_config.damage);
+        //obj.gameObject.GetComponent<BallLightningMove>().SetDamage(WitchManager.Instance.my_config.damage);
         obj.position = FSMWitchManager.Instance.spawn_point.position; 
 
     }

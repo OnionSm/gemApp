@@ -29,13 +29,13 @@ public class HailOfArrows : Skill
 
     public override void ActiveSkill()
     {
-        if (this.SkillAvailable() && PlayerManager.Instance.current_mana >= skill_mana_cost)
+        if (this.SkillAvailable() && PlayerManager.Instance.CurrentMana >= skill_mana_cost)
         {
             PlayerAnimation.Instance.SetTriggerAngleShot();
             this.skill_time_count = this.skill_time;
             this.cool_down_time_count = this.cool_down;
 
-            PlayerManager.Instance.current_mana -= skill_mana_cost;
+            PlayerManager.Instance.CurrentMana -= skill_mana_cost;
             StartCoroutine(Skill());
         }
     }

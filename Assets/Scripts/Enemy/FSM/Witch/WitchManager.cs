@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class WitchManager : OnionBehaviour
 {
-    [SerializeField] public float direct = 1f;
+    private float direct = 1f;
     
     [SerializeField] public static WitchManager Instance;
-    [SerializeField] private float witch_scale_x;
-    [SerializeField] private float witch_scale_y;
 
     [SerializeField] public float cool_down_time_skill;
     [SerializeField] public float cool_down_count;
@@ -40,28 +38,12 @@ public class WitchManager : OnionBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.LookAtPlayer();
         this.CountCoolDown();  
 
     }
-    protected void LookAtPlayer()
-    {
-        Vector3 player_pos = PlayerManager.Instance.transform.position;
-        if(player_pos.x >= transform.position.x)
-        {
-            this.direct = 1f;
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else
-        {
-            this.direct = -1f;
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-    }
+    
     protected override void LoadComponent()
     {
-        this.witch_scale_x = 1.5f;
-        this.witch_scale_y = 1.5f;
         this.in_attack_zone_water_push = false;
         this.in_attack_zone_ball_lighting = false;
         this.chasing = false;
@@ -92,5 +74,13 @@ public class WitchManager : OnionBehaviour
                 }
             }
         }
+    }
+    public float GetDirect()
+    {
+        return direct;
+    }
+    public void SetDirect(float value)
+    {
+        this.direct = value;
     }
 }

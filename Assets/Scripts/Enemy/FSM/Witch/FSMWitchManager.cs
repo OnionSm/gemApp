@@ -15,7 +15,7 @@ public class FSMWitchManager : MonoBehaviour
     public Transform spawn_point;
 
 
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D myrigidbody;
     [SerializeField] public static FSMWitchManager Instance;
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class FSMWitchManager : MonoBehaviour
         this.witch_heal = gameObject.AddComponent<FSMWitchHeal>();
         this.witch_attack = gameObject.AddComponent<FSMWitchAttack>();
         this.witch_attack_fast = gameObject.AddComponent<FSMWitchAttackFast>();
-        this.rigidbody = GetComponent<Rigidbody2D>();
+        this.myrigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()
     {

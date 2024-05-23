@@ -25,12 +25,11 @@ public class PlayerMana : MonoBehaviour
     }
     public void GainMana(float value)
     {
-        PlayerManager.Instance.current_mana += value * Time.deltaTime;
-
+        PlayerManager.Instance.AddMana(value * Time.deltaTime);
     }
     public void DecreaseMana(float value)
     {
-        PlayerManager.Instance.current_mana -= value;
+        PlayerManager.Instance.MinusMana(value);
 
     }
     private void LoadComponent()
@@ -39,7 +38,7 @@ public class PlayerMana : MonoBehaviour
     }
     private void SetManaBar()
     {
-        float mana_fill = PlayerManager.Instance.current_mana / PlayerManager.Instance.max_mana;
+        float mana_fill = PlayerManager.Instance.CurrentMana / PlayerManager.Instance.Mana;
         if (mana_fill != mana_bar.fillAmount)
         {
             mana_bar.fillAmount = mana_fill;

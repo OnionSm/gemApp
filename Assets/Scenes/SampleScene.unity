@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConfigs: {fileID: 11400000, guid: d3c0dbeb5c4dd3b498268c9d41efa020, type: 2}
+  all_level_configs: {fileID: 11400000, guid: 4391d76ba4356df44b0382c5602a67d6, type: 2}
 --- !u!1 &32451596
 GameObject:
   m_ObjectHideFlags: 0
@@ -84379,7 +84380,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575140904}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -84726,6 +84727,265 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &652986643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 652986644}
+  - component: {fileID: 652986654}
+  - component: {fileID: 652986653}
+  - component: {fileID: 652986652}
+  - component: {fileID: 652986651}
+  - component: {fileID: 652986650}
+  - component: {fileID: 652986649}
+  - component: {fileID: 652986648}
+  - component: {fileID: 652986646}
+  - component: {fileID: 652986645}
+  - component: {fileID: 652986656}
+  - component: {fileID: 652986655}
+  m_Layer: 0
+  m_Name: Witch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &652986644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 695.9, y: 103.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1637940711}
+  - {fileID: 1899892205}
+  m_Father: {fileID: 857229371}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &652986645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66584899d3f419f4d9936e208044ccb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mana_bar: {fileID: 1561858450}
+  erase_mana_bar: {fileID: 1563541828}
+  lerp_speed: 0
+--- !u!114 &652986646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a0c304e3ede1240b7878446385ff07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health_bar: {fileID: 785183997}
+  erase_health_bar: {fileID: 226984506}
+  lerp_speed: 0
+--- !u!114 &652986648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 239d8a530e6c36644a6b54ff9ffae482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animation_time: 0
+  delay: 0
+--- !u!114 &652986649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22d66b9936dfa8499285756bac3e6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  animation_time: 0
+  delay: 0
+  ball_available: 0
+--- !u!114 &652986650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 975ef65f6f36e2147874b3775078ddb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  witch_speed: 45
+--- !u!114 &652986651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8636735633bbb347ad08a1b08ae28cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healwave_available: 0
+  animation_time: 0
+  delay: 0
+  heal_hp_mult: 0
+--- !u!114 &652986652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7429bd571aff4564ea1bb380d89ff450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cool_down_time_skill: 0
+  cool_down_count: 0
+  in_attack_zone_water_push: 0
+  in_attack_zone_ball_lighting: 0
+  chasing: 0
+  my_config:
+    enemy_id: 0
+    hp: 0
+    mana: 0
+    damage_mult: 0
+    base_dame: 0
+  enemy_id: 0
+  hp_current: 0
+  hp_max: 0
+  curent_mana: 0
+  max_mana: 0
+--- !u!114 &652986653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1efa9b6fcc73146817d69ecc98168f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle_time: 0
+  heal_cool_down: 0
+--- !u!114 &652986654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685633298feac164597b0efa04d845b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current_state: {fileID: 0}
+  witch_chase: {fileID: 0}
+  witch_idle: {fileID: 0}
+  witch_heal: {fileID: 0}
+  witch_attack: {fileID: 0}
+  witch_attack_fast: {fileID: 0}
+  ball_lightning_prefabs: {fileID: 67896965}
+  heal_wave_prefabs: {fileID: 1710706023}
+  spawn_point: {fileID: 1685965629}
+  myrigidbody: {fileID: 0}
+--- !u!50 &652986655
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 20
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 9.81
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 2
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
+  m_Constraints: 4
+--- !u!70 &652986656
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 12, y: 45}
+  m_Direction: 0
 --- !u!1 &674283409
 GameObject:
   m_ObjectHideFlags: 0
@@ -87189,7 +87449,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1907241375}
-  - {fileID: 1637940711}
   - {fileID: 1426912017}
   - {fileID: 895174012}
   - {fileID: 1495900211}
@@ -87199,6 +87458,7 @@ Transform:
   - {fileID: 1335639345}
   - {fileID: 366236510}
   - {fileID: 1239561709}
+  - {fileID: 652986644}
   m_Father: {fileID: 1291434342}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &859898171
@@ -87567,10 +87827,6 @@ MonoBehaviour:
   model_scale_x: 0
   model_scale_y: 0
   player_direction: 0
-  max_hp: 0
-  current_hp: 0
-  max_mana: 0
-  current_mana: 0
   is_dashing: 0
   game_object: []
   is_using_skill: 0
@@ -124147,20 +124403,10 @@ GameObject:
   - component: {fileID: 1637940711}
   - component: {fileID: 1637940713}
   - component: {fileID: 1637940712}
-  - component: {fileID: 1637940714}
-  - component: {fileID: 1637940717}
-  - component: {fileID: 1637940716}
-  - component: {fileID: 1637940715}
-  - component: {fileID: 1637940718}
-  - component: {fileID: 1637940720}
   - component: {fileID: 1637940719}
-  - component: {fileID: 1637940722}
-  - component: {fileID: 1637940721}
-  - component: {fileID: 1637940723}
-  - component: {fileID: 1637940727}
-  - component: {fileID: 1637940726}
+  - component: {fileID: 1637940720}
   m_Layer: 7
-  m_Name: Witch
+  m_Name: Model
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124174,14 +124420,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1637940710}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 657.6, y: 102.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 575140905}
-  - {fileID: 1899892205}
-  m_Father: {fileID: 857229371}
+  m_Father: {fileID: 652986644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1637940712
 SpriteRenderer:
@@ -124256,135 +124501,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &1637940714
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 8, y: 30}
-  m_Direction: 0
---- !u!114 &1637940715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7429bd571aff4564ea1bb380d89ff450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direct: 1
-  witch_scale_x: 0
-  witch_scale_y: 0
-  cool_down_time_skill: 0
-  cool_down_count: 0
-  in_attack_zone_water_push: 0
-  in_attack_zone_ball_lighting: 0
-  chasing: 0
-  my_config:
-    enemy_id: 0
-    hp: 0
-    mana: 0
-    damage: 0
-    speed: 0
-  enemy_id: 0
-  hp_current: 0
-  hp_max: 0
-  curent_mana: 0
-  max_mana: 0
---- !u!114 &1637940716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685633298feac164597b0efa04d845b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  current_state: {fileID: 0}
-  witch_chase: {fileID: 0}
-  witch_idle: {fileID: 0}
-  witch_heal: {fileID: 0}
-  witch_attack: {fileID: 0}
-  witch_attack_fast: {fileID: 0}
-  ball_lightning_prefabs: {fileID: 67896965}
-  heal_wave_prefabs: {fileID: 1710706023}
-  spawn_point: {fileID: 1685965629}
-  rigidbody: {fileID: 0}
---- !u!114 &1637940717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f1efa9b6fcc73146817d69ecc98168f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  idle_time: 0
-  heal_cool_down: 0
---- !u!50 &1637940718
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 20
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 9.81
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 2
-  m_SleepingMode: 0
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!114 &1637940719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124394,57 +124510,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1637940710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 975ef65f6f36e2147874b3775078ddb0, type: 3}
+  m_Script: {fileID: 11500000, guid: 24e972efb4a61cb44bb15eeffa477d8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  witch_speed: 45
 --- !u!114 &1637940720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8636735633bbb347ad08a1b08ae28cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healwave_available: 0
-  animation_time: 0
-  delay: 0
-  heal_hp_mult: 0
---- !u!114 &1637940721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 239d8a530e6c36644a6b54ff9ffae482, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animation_time: 0
-  delay: 0
---- !u!114 &1637940722
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22d66b9936dfa8499285756bac3e6c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  animation_time: 0
-  delay: 0
-  ball_available: 0
---- !u!114 &1637940723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124456,37 +124525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ed45b81ed983647a98c4708fe7ecbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
---- !u!114 &1637940726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66584899d3f419f4d9936e208044ccb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mana_bar: {fileID: 1561858450}
-  erase_mana_bar: {fileID: 1563541828}
-  lerp_speed: 0
---- !u!114 &1637940727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1637940710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a0c304e3ede1240b7878446385ff07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health_bar: {fileID: 785183997}
-  erase_health_bar: {fileID: 226984506}
-  lerp_speed: 0
+  animator: {fileID: 1637940713}
 --- !u!1 &1639651531
 GameObject:
   m_ObjectHideFlags: 0
@@ -126038,17 +126077,17 @@ RectTransform:
   m_GameObject: {fileID: 1899892204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 115670628}
   - {fileID: 284353011}
   - {fileID: 767169686}
-  m_Father: {fileID: 1637940711}
+  m_Father: {fileID: 652986644}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 2.91, y: 22.94}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 60, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1899892206
@@ -133420,7 +133459,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c346b40636f52f346b9378325916c3d7, type: 2}
   m_sharedMaterial: {fileID: -7329374712710721788, guid: c346b40636f52f346b9378325916c3d7, type: 2}
@@ -133453,7 +133492,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

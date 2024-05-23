@@ -7,6 +7,6 @@ public class PlayerDamageReceiver : MonoBehaviour, IDamageReceiver
     
     public void ReceiveDamage(float value)
     {
-        PlayerManager.Instance.current_hp -= value;
+        PlayerManager.Instance.MinusHp(value);
     }
 }

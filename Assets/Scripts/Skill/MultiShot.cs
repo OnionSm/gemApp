@@ -24,13 +24,13 @@ public class MultiShot : Skill
 
     public override void ActiveSkill()
     {
-        if (this.SkillAvailable() && PlayerManager.Instance.current_mana >= skill_mana_cost)
+        if (this.SkillAvailable() && PlayerManager.Instance.CurrentMana >= skill_mana_cost)
         {
             Vector3 spawn_pos = new Vector3(spawn_point.position.x, spawn_point.position.y + 5f, 0);
             PlayerAnimation.Instance.SetTriggerSpecialShot();
             this.skill_time_count = this.skill_time;
             this.cool_down_time_count = this.cool_down;
-            PlayerManager.Instance.current_mana -= skill_mana_cost;
+            PlayerManager.Instance.CurrentMana -= skill_mana_cost;
             for (int i = 0; i < 3; i++)
             {
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, spawn_pos, new Vector3(1, 1, 1));

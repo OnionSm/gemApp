@@ -39,6 +39,6 @@ public class FSMWitchChase : FSMWitchBase
     private void ChasePlayer()
     {
 
-        FSMWitchManager.Instance.rigidbody.velocity = new Vector2(WitchManager.Instance.direct * witch_speed, FSMWitchManager.Instance.rigidbody.velocity.y);
+        FSMWitchManager.Instance.myrigidbody.velocity = new Vector2(WitchManager.Instance.GetDirect() * witch_speed, FSMWitchManager.Instance.myrigidbody.velocity.y);  
     }
 }

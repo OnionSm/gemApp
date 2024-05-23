@@ -13,7 +13,9 @@ public class EnemyConfig
     public int enemy_id;
     public float hp;
     public float mana;
-    public float damage;
-    public float speed;
+    public float damage_mult;
+    public float base_dame;
+    
+
 }
 

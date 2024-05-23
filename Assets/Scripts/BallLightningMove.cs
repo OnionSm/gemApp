@@ -16,7 +16,7 @@ public class BallLightningMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(100f*Time.deltaTime*WitchManager.Instance.direct,0f,0f));
+        transform.Translate(new Vector3(100f*Time.deltaTime*WitchManager.Instance.GetDirect(),0f,0f));
         Despawning();
     }
     private float CalculateDistance()

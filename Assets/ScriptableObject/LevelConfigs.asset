@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6530ffe2a249bc143ab116ea0d16fbb1, type: 3}
+  m_Name: LevelConfigs
+  m_EditorClassIdentifier: 
+  lv_config:
+  - level: 1
+    exp: 10
+    health: 400
+    mana: 100
+    mana_recover: 10
+    strength: 10
+    dodge_rate: 0
+    health_recover: 10
+    crit_rate: 5
+    crit_mult: 2
+    base_dame: 40
+    damage_redution: 0
+  - level: 2
+    exp: 20
+    health: 420
+    mana: 100
+    mana_recover: 10
+    strength: 11
+    dodge_rate: 0.1
+    health_recover: 11
+    crit_rate: 5.1
+    crit_mult: 2
+    base_dame: 42
+    damage_redution: 0
+  - level: 3
+    exp: 45
+    health: 450
+    mana: 100
+    mana_recover: 10
+    strength: 12
+    dodge_rate: 0.2
+    health_recover: 12
+    crit_rate: 5.2
+    crit_mult: 2
+    base_dame: 45
+    damage_redution: 0
+  - level: 4
+    exp: 64
+    health: 490
+    mana: 100
+    mana_recover: 10
+    strength: 13
+    dodge_rate: 0.3
+    health_recover: 12
+    crit_rate: 5.3
+    crit_mult: 2
+    base_dame: 49
+    damage_redution: 0
+  - level: 5
+    exp: 125
+    health: 540
+    mana: 100
+    mana_recover: 10
+    strength: 14
+    dodge_rate: 0.4
+    health_recover: 14
+    crit_rate: 5.4
+    crit_mult: 2
+    base_dame: 54
+    damage_redution: 0
+  - level: 6
+    exp: 216
+    health: 590
+    mana: 100
+    mana_recover: 10
+    strength: 17
+    dodge_rate: 0.5
+    health_recover: 15
+    crit_rate: 5.5
+    crit_mult: 2
+    base_dame: 59
+    damage_redution: 0.1
+  - level: 7
+    exp: 343
+    health: 660
+    mana: 100
+    mana_recover: 10
+    strength: 19
+    dodge_rate: 0.6
+    health_recover: 17
+    crit_rate: 5.6
+    crit_mult: 2
+    base_dame: 66
+    damage_redution: 0.2
+  - level: 8
+    exp: 512
+    health: 730
+    mana: 100
+    mana_recover: 10
+    strength: 21
+    dodge_rate: 0.7
+    health_recover: 18
+    crit_rate: 5.7
+    crit_mult: 2
+    base_dame: 73
+    damage_redution: 0.3
+  - level: 9
+    exp: 729
+    health: 800
+    mana: 100
+    mana_recover: 10
+    strength: 23
+    dodge_rate: 0.8
+    health_recover: 20
+    crit_rate: 5.8
+    crit_mult: 2
+    base_dame: 80
+    damage_redution: 0.4
+  - level: 10
+    exp: 1000
+    health: 880
+    mana: 100
+    mana_recover: 10
+    strength: 26
+    dodge_rate: 0.9
+    health_recover: 22
+    crit_rate: 5.9
+    crit_mult: 2
+    base_dame: 88
+    damage_redution: 0.5
+  - level: 11
+    exp: 1331
+    health: 970
+    mana: 100
+    mana_recover: 10
+    strength: 28
+    dodge_rate: 1.1
+    health_recover: 97
+    crit_rate: 6.1
+    crit_mult: 2
+    base_dame: 97
+    damage_redution: 0.7
+  - level: 12
+    exp: 1728
+    health: 1060
+    mana: 100
+    mana_recover: 10
+    strength: 30
+    dodge_rate: 1.3
+    health_recover: 106
+    crit_rate: 6.3
+    crit_mult: 2
+    base_dame: 106
+    damage_redution: 0.9
