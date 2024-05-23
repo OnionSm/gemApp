@@ -46,7 +46,7 @@ public class BallLightningMove : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<PlayerDamageReceiver>().ReceiveDamage(125f);
+            collision.gameObject.GetComponent<IDamageable>()?.TakeDamage(125f);
         }
     }
     public void SetDamage(float value)

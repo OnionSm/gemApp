@@ -39,7 +39,7 @@ public class FSMWitchIdle : FSMWitchBase
     // Check Witch current hp is higher than max hp
     private bool CheckWitchHP()
     {
-        if (WitchManager.Instance.hp_current <= WitchManager.Instance.hp_max * 0.4f)
+        if (WitchManager.Instance.CurrentHp <= WitchManager.Instance.MaxHP * 0.4f)
             return true;
         return false;
     }

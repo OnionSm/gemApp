@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50203bd5b3015364dbcdc8cedca42758, type: 3}
+  m_Name: SkillConfigs
+  m_EditorClassIdentifier: 
+  configs:
+  - id_skill: 1
+    skill_name: Base Shot
+    skill_mult: 1.1478
+    skill_cast: 0.44
+    cool_down: 0
+    mana_cost: 0
+  - id_skill: 2
+    skill_name: Barrage
+    skill_mult: 0.8434
+    skill_cast: 1.35
+    cool_down: 3
+    mana_cost: 10
+  - id_skill: 3
+    skill_name: Multi Shot
+    skill_mult: 1.4956
+    skill_cast: 0.47
+    cool_down: 1
+    mana_cost: 20
+  - id_skill: 4
+    skill_name: Hail of Arrows
+    skill_mult: 1
+    skill_cast: 0.47
+    cool_down: 1
+    mana_cost: 15

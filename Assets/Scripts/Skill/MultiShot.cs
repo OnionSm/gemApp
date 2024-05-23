@@ -35,6 +35,7 @@ public class MultiShot : Skill
             {
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, spawn_pos, new Vector3(1, 1, 1));
                 arrow.gameObject.SetActive(true);
+                arrow.GetComponent<BulletImpart>().Damage = 100f;
                 arrow.GetComponent<Rigidbody2D>().velocity = this.CalculateDirection() * this.arrow_speed;
                 spawn_pos = new Vector3(spawn_point.position.x, spawn_pos.y - 5f, 0);
             }

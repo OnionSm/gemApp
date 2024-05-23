@@ -21,28 +21,22 @@ public class EnemyMana : MonoBehaviour
     {
         SetManaBar();
         SetEaseManaBar();
-        CheckMaxMana();
     }
-    public void GainMana()
+    public virtual void GainMana(float value)
     {
-        WitchManager.Instance.curent_mana += 5f;
+        
     }
-    public void DecreaseMana(float value)
+    public virtual void DecreaseMana(float value)
     {
-        WitchManager.Instance.max_mana -= value;
-
+        
     }
     public void LoadComponent()
     {
         this.lerp_speed = 1f;
     }
-    public void SetManaBar()
+    public virtual void SetManaBar()
     {
-        float mana_fill = WitchManager.Instance.curent_mana / WitchManager.Instance.max_mana;
-        if (mana_fill != mana_bar.fillAmount)
-        {
-            mana_bar.fillAmount = mana_fill;
-        }
+        
     }
     public void SetEaseManaBar()
     {
@@ -51,12 +45,5 @@ public class EnemyMana : MonoBehaviour
             erase_mana_bar.fillAmount = Mathf.MoveTowards(erase_mana_bar.fillAmount, mana_bar.fillAmount, lerp_speed * Time.deltaTime);
         }
     }
-    public void CheckMaxMana()
-    {
-        if (WitchManager.Instance.curent_mana > WitchManager.Instance.max_mana)
-        {
-            WitchManager.Instance.curent_mana = WitchManager.Instance.max_mana;
-        }
-    }
-
+    
 }

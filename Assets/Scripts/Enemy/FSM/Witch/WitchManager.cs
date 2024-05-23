@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WitchManager : OnionBehaviour
-{
+public class WitchManager : MonoBehaviour
+{ 
     private float direct = 1f;
     
     [SerializeField] public static WitchManager Instance;
@@ -18,11 +18,21 @@ public class WitchManager : OnionBehaviour
 
     public int enemy_id;
 
-    public float hp_current;
-    public float hp_max;
+    [SerializeField] private float hp_current;
+    public float CurrentHp
+    {
+        get { return hp_current; }
+        set { hp_current = value; }
+    }
 
-    public float curent_mana;
-    public float max_mana;
+    private float hp_max;
+    public float MaxHP => hp_max;
+
+
+    private float current_mana;
+    public float CurrentMana => current_mana;
+    private float max_mana;
+    public float MaxMana => max_mana;
 
 
     private void Awake()
@@ -42,18 +52,18 @@ public class WitchManager : OnionBehaviour
 
     }
     
-    protected override void LoadComponent()
+    protected void LoadComponent()
     {
         this.in_attack_zone_water_push = false;
         this.in_attack_zone_ball_lighting = false;
         this.chasing = false;
-        this.cool_down_time_skill = 5f;
+        this.cool_down_time_skill = 3f;
         this.cool_down_count = 0f;
         this.enemy_id = 0;
         this.hp_max = my_config.hp;
         this.hp_current = hp_max;
         this.max_mana = my_config.mana;
-        this.curent_mana = max_mana;
+        this.current_mana = max_mana;
         
     }
     protected void CountCoolDown()
@@ -82,5 +92,50 @@ public class WitchManager : OnionBehaviour
     public void SetDirect(float value)
     {
         this.direct = value;
+    }
+
+    public void AddHp(float value)
+    {
+        if ((hp_current + value) > hp_max)
+        {
+            hp_current = hp_max;
+        }
+        else
+        {
+            hp_current += value;
+        }
+    }
+    public void AddMana(float value)
+    {
+        if ((current_mana + value) > max_mana)
+        {
+            current_mana = max_mana;
+        }
+        else
+        {
+            current_mana += value;
+        }
+    }
+    public void MinusHp(float value)
+    {
+        if ((hp_current - value) < 0)
+        {
+            hp_current = 0;
+        }
+        else
+        {
+            hp_current -= value;
+        }
+    }
+    public void MinusMana(float value)
+    {
+        if ((current_mana - value) < 0)
+        {
+            return;
+        }
+        else
+        {
+            current_mana -= value;
+        }
     }
 }

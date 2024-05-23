@@ -67,6 +67,7 @@ public class HailOfArrows : Skill
                 float y_velocity = y_velo[i] + Random.Range(0, 20);
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, this.spawn_point.position, new Vector3(1, 1, 1));
                 arrow.gameObject.SetActive(true);
+                arrow.GetComponent<BulletImpart>().Damage = 100f;
                 arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(x_velocity * PlayerManager.Instance.player_direction, y_velocity);
                 arrow.GetComponent<ProjectileParticles>().Reload();
                 

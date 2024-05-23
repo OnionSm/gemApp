@@ -60,7 +60,6 @@ public class Spawner : OnionBehaviour
         }
         Transform new_prefab = Instantiate(prefab);
         new_prefab.name = prefab.name;
-        Debug.Log(transform.name + ": Clone new Obj", transform.gameObject);
         new_prefab.gameObject.SetActive(true);
         return new_prefab;
     }

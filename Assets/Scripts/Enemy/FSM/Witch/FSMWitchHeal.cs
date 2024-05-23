@@ -30,7 +30,7 @@ public class FSMWitchHeal : FSMWitchBase
     private void LoadComponent()
     {
         heal_hp_mult = 0.2f;
-        recover_amoount = heal_hp_mult * WitchManager.Instance.hp_max;
+        recover_amoount = heal_hp_mult * WitchManager.Instance.MaxHP;
         animation_time = 1.8f;
         delay = 0f;
         healwave_available = true;
@@ -60,7 +60,7 @@ public class FSMWitchHeal : FSMWitchBase
         if (delay >= 1.2f && healwave_available == true)
         {
             healwave_available = false;
-            WitchManager.Instance.hp_current += recover_amoount;
+            WitchManager.Instance.AddHp(recover_amoount);
             CreateHealWave();
         }
     }

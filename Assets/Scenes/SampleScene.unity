@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyConfigs: {fileID: 11400000, guid: d3c0dbeb5c4dd3b498268c9d41efa020, type: 2}
   all_level_configs: {fileID: 11400000, guid: 4391d76ba4356df44b0382c5602a67d6, type: 2}
+  all_skill_configs: {fileID: 0}
 --- !u!1 &32451596
 GameObject:
   m_ObjectHideFlags: 0
@@ -930,8 +931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd0a7dcdc86fcb4e9e6869eaf4a71d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage_sender: {fileID: 0}
   effect_prefab_name: 
+  damage: 0
 --- !u!114 &53437341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,7 +1487,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 14686911}
   - {fileID: 785183996}
@@ -2509,8 +2510,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd0a7dcdc86fcb4e9e6869eaf4a71d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage_sender: {fileID: 0}
   effect_prefab_name: 
+  damage: 0
 --- !u!114 &244453153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2719,7 +2720,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 733273030}
   m_Father: {fileID: 1899892205}
@@ -84743,10 +84744,10 @@ GameObject:
   - component: {fileID: 652986650}
   - component: {fileID: 652986649}
   - component: {fileID: 652986648}
-  - component: {fileID: 652986646}
-  - component: {fileID: 652986645}
   - component: {fileID: 652986656}
   - component: {fileID: 652986655}
+  - component: {fileID: 652986658}
+  - component: {fileID: 652986657}
   m_Layer: 0
   m_Name: Witch
   m_TagString: Untagged
@@ -84771,36 +84772,6 @@ Transform:
   - {fileID: 1899892205}
   m_Father: {fileID: 857229371}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &652986645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652986643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66584899d3f419f4d9936e208044ccb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mana_bar: {fileID: 1561858450}
-  erase_mana_bar: {fileID: 1563541828}
-  lerp_speed: 0
---- !u!114 &652986646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 652986643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a0c304e3ede1240b7878446385ff07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health_bar: {fileID: 785183997}
-  erase_health_bar: {fileID: 226984506}
-  lerp_speed: 0
 --- !u!114 &652986648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84885,9 +84856,6 @@ MonoBehaviour:
     base_dame: 0
   enemy_id: 0
   hp_current: 0
-  hp_max: 0
-  curent_mana: 0
-  max_mana: 0
 --- !u!114 &652986653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84986,6 +84954,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 12, y: 45}
   m_Direction: 0
+--- !u!114 &652986657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45a9e76cc1db064398c14bc4cb31066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mana_bar: {fileID: 1561858450}
+  erase_mana_bar: {fileID: 1563541828}
+  lerp_speed: 0
+--- !u!114 &652986658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652986643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d62db508e575a44a690a8c6d748625, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health_bar: {fileID: 785183997}
+  erase_health_bar: {fileID: 226984506}
+  lerp_speed: 0
 --- !u!1 &674283409
 GameObject:
   m_ObjectHideFlags: 0
@@ -85753,7 +85751,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1148136821}
   - {fileID: 1561858449}
@@ -86514,6 +86512,7 @@ GameObject:
   - component: {fileID: 818131945}
   - component: {fileID: 818131946}
   - component: {fileID: 818131947}
+  - component: {fileID: 818131948}
   m_Layer: 8
   m_Name: BaseArrow
   m_TagString: Untagged
@@ -86701,6 +86700,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time_despawn: 10
+--- !u!114 &818131948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818131940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd0a7dcdc86fcb4e9e6869eaf4a71d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect_prefab_name: 
+  damage: 0
 --- !u!1 &819264520
 GameObject:
   m_ObjectHideFlags: 0
@@ -87898,6 +87911,7 @@ MonoBehaviour:
   health_bar: {fileID: 3612465160512920746}
   erase_health_bar: {fileID: 1514807718}
   lerp_speed: 0
+  alive: 0
 --- !u!114 &881558731
 MonoBehaviour:
   m_ObjectHideFlags: 0

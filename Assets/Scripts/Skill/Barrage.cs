@@ -53,6 +53,7 @@ public class Barrage : Skill
         {
             Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, this.spawn_point.position, new Vector3(1, 1, 1));
             arrow.gameObject.SetActive(true);
+            arrow.GetComponent<BulletImpart>().Damage = 38f;
             arrow.GetComponent<Rigidbody2D>().velocity = this.CalculateDirection() * this.arrow_speed;
             yield return new WaitForSeconds(0.116f);
         }

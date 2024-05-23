@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageSender : MonoBehaviour
+public interface IDamageable
 {
-   
+    void TakeDamage(float amount);
+    
 }

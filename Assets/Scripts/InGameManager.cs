@@ -6,6 +6,7 @@ public class InGameManager : MonoBehaviour
 {
     [SerializeField] private EnemyConfigs enemyConfigs;
     [SerializeField] private LevelConfigs all_level_configs;
+    [SerializeField] private SkillConfigs all_skill_configs;
     public static InGameManager Instance;
     // Start is called before the first frame update
     private void Awake()
@@ -29,6 +30,10 @@ public class InGameManager : MonoBehaviour
     public LevelConfigs GetAllLevelConfigs()
     {
         return all_level_configs;
+    }
+    public SkillConfigs GetAllSkillConfigs() 
+    {
+        return all_skill_configs;
     }
 
 }

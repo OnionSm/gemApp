@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHp : MonoBehaviour
+public class PlayerHp : MonoBehaviour, IDamageable
 {
 
     public Image health_bar;
@@ -64,5 +64,10 @@ public class PlayerHp : MonoBehaviour
             PlayerAnimation.Instance.SetTriggerDeath();
             alive = false;
         }
+    }
+
+    public void TakeDamage(float amount)
+    {
+        PlayerManager.Instance.MinusHp(amount);
     }
 }
