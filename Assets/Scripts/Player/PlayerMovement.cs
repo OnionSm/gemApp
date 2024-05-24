@@ -11,7 +11,7 @@ public class PlayerMovement : OnionBehaviour
 
     [SerializeField] private bool is_ground = true;
 
-    [SerializeField] private float jump_force = 100f;
+    [SerializeField] private float jump_force = 150f;
 
     private bool is_jumping = false;
 

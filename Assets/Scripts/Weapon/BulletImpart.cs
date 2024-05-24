@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
-public class BulletImpart : OnionBehaviour
+public class BulletImpart : MonoBehaviour
 {
     [SerializeField] private string effect_prefab_name;
     [SerializeField] private float damage;
@@ -20,20 +23,21 @@ public class BulletImpart : OnionBehaviour
         this.LoadComponent();
     }
 
-    protected override void LoadComponent()
+    protected void LoadComponent()
     {
-        base.LoadComponent();
         this.effect_prefab_name = "HitEffect";
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        SendDamage(collider);
-        Debug.Log(collider.gameObject.name);
-        if (collider.gameObject.layer == 10)
+        
+        if (collider.gameObject.layer == 10 && damage != 0)
             return;
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         Transform arrow = EffectSpawner.Instance.Spawn(effect_prefab_name, transform.position, new Vector3(1, 1, 1));
         arrow.gameObject.SetActive(true);
         SendDamage(collider);
+        damage = 0;
 
     }
     private void SendDamage(Collider2D collider)

@@ -35,4 +35,15 @@ public class InGameManager : MonoBehaviour
     {
         return all_skill_configs;
     }
+    public SkillConfig GetAnyConfigs(int id)
+    {
+        for (int i = 0; i < all_skill_configs.configs.Count; i++)
+        {
+            if (all_skill_configs.configs[i].id_skill == id)
+            {
+                return all_skill_configs.configs[i];
+            }
+        }
+        return null;
+    }
 }

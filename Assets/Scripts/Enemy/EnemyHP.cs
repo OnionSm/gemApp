@@ -9,23 +9,27 @@ public abstract class EnemyHP : MonoBehaviour
     public Image health_bar;
     public Image erase_health_bar;
     public float lerp_speed;
+    public bool is_alive;
 
     
     protected void Start()
     {
         LoadComponent();
 
+
     }
     protected void Update()
     {
         SetHealthBar();
         SetEaseHealthBar();
+        CheckDead();
     }
     public abstract void GainHP(float value);
     public abstract void DecreaseHP(float value);
     public void LoadComponent()
     {
         this.lerp_speed = 0.8f;
+        this.is_alive = true;
     }
     public abstract void SetHealthBar();
   
@@ -37,4 +41,6 @@ public abstract class EnemyHP : MonoBehaviour
         }
     }
     public abstract void CheckDead();
+    public abstract void Death();
+    
 }

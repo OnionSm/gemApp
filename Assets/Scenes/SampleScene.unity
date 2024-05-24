@@ -245,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyConfigs: {fileID: 11400000, guid: d3c0dbeb5c4dd3b498268c9d41efa020, type: 2}
   all_level_configs: {fileID: 11400000, guid: 4391d76ba4356df44b0382c5602a67d6, type: 2}
-  all_skill_configs: {fileID: 0}
+  all_skill_configs: {fileID: 11400000, guid: 1223719d6f5dc6447b982e676119cce7, type: 2}
 --- !u!1 &32451596
 GameObject:
   m_ObjectHideFlags: 0
@@ -2817,10 +2817,20 @@ MonoBehaviour:
   skill_time: 0
   cool_down: 0
   spawn_point: {fileID: 118512608}
+  arrow_speed: 0
   skill_time_count: 0
   cool_down_time_count: 0
   skill_mana_cost: 0
-  arrow_speed: 0
+  skill_mult: 0
+  skill_id: 0
+  skill_name: 
+  my_config:
+    id_skill: 0
+    skill_name: 
+    skill_mult: 0
+    skill_cast: 0
+    cool_down: 0
+    mana_cost: 0
 --- !u!1 &297936061
 GameObject:
   m_ObjectHideFlags: 0
@@ -84764,7 +84774,7 @@ Transform:
   m_GameObject: {fileID: 652986643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 695.9, y: 103.4, z: 0}
+  m_LocalPosition: {x: 5158.8, y: 295.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84856,6 +84866,7 @@ MonoBehaviour:
     base_dame: 0
   enemy_id: 0
   hp_current: 0
+  witch_canvas: {fileID: 1899892208}
 --- !u!114 &652986653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84888,6 +84899,7 @@ MonoBehaviour:
   witch_heal: {fileID: 0}
   witch_attack: {fileID: 0}
   witch_attack_fast: {fileID: 0}
+  witch_dead: {fileID: 0}
   ball_lightning_prefabs: {fileID: 67896965}
   heal_wave_prefabs: {fileID: 1710706023}
   spawn_point: {fileID: 1685965629}
@@ -84984,6 +84996,7 @@ MonoBehaviour:
   health_bar: {fileID: 785183997}
   erase_health_bar: {fileID: 226984506}
   lerp_speed: 0
+  is_alive: 0
 --- !u!1 &674283409
 GameObject:
   m_ObjectHideFlags: 0
@@ -87662,6 +87675,7 @@ GameObject:
   - component: {fileID: 881558730}
   - component: {fileID: 881558731}
   - component: {fileID: 881558732}
+  - component: {fileID: 881558733}
   m_Layer: 7
   m_Name: Ranger
   m_TagString: Player
@@ -87803,10 +87817,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player_speed: 85
   is_ground: 1
-  jump_force: 100
+  jump_force: 150
   gravity_mult: 3
   gravity_direct: {x: 0, y: 0}
-  animations: {fileID: 0}
+  animations: {fileID: 881558725}
   circle_jump_checking: {fileID: 343070152}
   ground:
     serializedVersion: 2
@@ -87939,6 +87953,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7870669fd0a95f64583577f6060836d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &881558733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881558718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7adeb9711bc6df34a921e0379b037b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lv_text: {fileID: 7430831697718833680}
+  exp_fill: {fileID: 4036267028993805000}
+  lerp_speed: 0
 --- !u!1 &881985113
 GameObject:
   m_ObjectHideFlags: 0
@@ -88187,10 +88216,20 @@ MonoBehaviour:
   skill_time: 0
   cool_down: 0
   spawn_point: {fileID: 998595624}
+  arrow_speed: 0
   skill_time_count: 0
   cool_down_time_count: 0
   skill_mana_cost: 0
-  arrow_speed: 0
+  skill_mult: 0
+  skill_id: 0
+  skill_name: 
+  my_config:
+    id_skill: 0
+    skill_name: 
+    skill_mult: 0
+    skill_cast: 0
+    cool_down: 0
+    mana_cost: 0
 --- !u!1 &895174011
 GameObject:
   m_ObjectHideFlags: 0
@@ -119349,10 +119388,20 @@ MonoBehaviour:
   skill_time: 0
   cool_down: 0
   spawn_point: {fileID: 1564354675}
+  arrow_speed: 0
   skill_time_count: 0
   cool_down_time_count: 0
   skill_mana_cost: 0
-  arrow_speed: 0
+  skill_mult: 0
+  skill_id: 0
+  skill_name: 
+  my_config:
+    id_skill: 0
+    skill_name: 
+    skill_mult: 0
+    skill_cast: 0
+    cool_down: 0
+    mana_cost: 0
 --- !u!1 &1068598551
 GameObject:
   m_ObjectHideFlags: 0
@@ -125743,10 +125792,20 @@ MonoBehaviour:
   skill_time: 0
   cool_down: 0
   spawn_point: {fileID: 1378074693}
+  arrow_speed: 0
   skill_time_count: 0
   cool_down_time_count: 0
   skill_mana_cost: 0
-  arrow_speed: 0
+  skill_mult: 0
+  skill_id: 0
+  skill_name: 
+  my_config:
+    id_skill: 0
+    skill_name: 
+    skill_mult: 0
+    skill_cast: 0
+    cool_down: 0
+    mana_cost: 0
 --- !u!1 &1836059923
 GameObject:
   m_ObjectHideFlags: 0
@@ -126081,7 +126140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1899892205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -131643,7 +131702,7 @@ MonoBehaviour:
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &4043790283775231661

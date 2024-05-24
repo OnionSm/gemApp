@@ -5,7 +5,6 @@ using UnityEngine;
 public class HailOfArrows : Skill
 {
     [SerializeField] public static HailOfArrows Instance;
-    [SerializeField] private float arrow_speed;
     private List<float> angle_shot;
     private List<float> distances;
     private List<float> time_arrow_fly;
@@ -44,19 +43,19 @@ public class HailOfArrows : Skill
     {
         this.arrow_prefab_name = "DropArrow";
         this.skill_id = 4;
-        GetAnyConfigs(skill_id);
-        if (my_cofig == null)
+        my_config = InGameManager.Instance.GetAnyConfigs(skill_id);
+        if (my_config == null)
         {
             Debug.Log("Do not find any config for Hail of Arrows");
             return;
         }
         this.arrow_speed = 500f;
-        this.cool_down = my_cofig.cool_down;
-        this.skill_time = my_cofig.skill_cast;
+        this.cool_down = my_config.cool_down;
+        this.skill_time = my_config.skill_cast;
         this.skill_time_count = 0;
         this.cool_down_time_count = 0f;
-        this.skill_mult = my_cofig.skill_mult;
-        this.skill_mana_cost = my_cofig.mana_cost;
+        this.skill_mult = my_config.skill_mult;
+        this.skill_mana_cost = my_config.mana_cost;
         this.angle_shot = new List<float>() {80, 75, 70, 65, 60};
         this.distances = new List<float>() {120, 210, 280, 330, 360};
         this.time_arrow_fly = new List<float>() { 1.55f, 1.5f, 1.45f, 1.4f, 1.35f };

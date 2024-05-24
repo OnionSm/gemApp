@@ -19,6 +19,8 @@ public class WitchManager : MonoBehaviour
     public int enemy_id;
 
     [SerializeField] private float hp_current;
+    [SerializeField] public Canvas witch_canvas;
+    public Canvas WitchCanvas => witch_canvas;
     public float CurrentHp
     {
         get { return hp_current; }
@@ -118,6 +120,7 @@ public class WitchManager : MonoBehaviour
     }
     public void MinusHp(float value)
     {
+        witch_canvas.gameObject.SetActive(true);
         if ((hp_current - value) < 0)
         {
             hp_current = 0;

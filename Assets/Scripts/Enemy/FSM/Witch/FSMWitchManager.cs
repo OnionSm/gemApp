@@ -10,6 +10,7 @@ public class FSMWitchManager : MonoBehaviour
     public FSMWitchHeal witch_heal;
     public FSMWitchAttack witch_attack;
     public FSMWitchAttackFast witch_attack_fast;
+    public FSMWitchDead witch_dead;
     public Transform ball_lightning_prefabs;
     public Transform heal_wave_prefabs;
     public Transform spawn_point;
@@ -25,6 +26,7 @@ public class FSMWitchManager : MonoBehaviour
         this.witch_heal = gameObject.AddComponent<FSMWitchHeal>();
         this.witch_attack = gameObject.AddComponent<FSMWitchAttack>();
         this.witch_attack_fast = gameObject.AddComponent<FSMWitchAttackFast>();
+        this.witch_dead = gameObject.AddComponent<FSMWitchDead>();
         this.myrigidbody = GetComponent<Rigidbody2D>();
     }
     void Start()

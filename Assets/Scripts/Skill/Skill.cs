@@ -8,6 +8,7 @@ public class Skill : MonoBehaviour
     public float skill_time;
     public float cool_down;
     public Transform spawn_point;
+    public float arrow_speed;   
 
     public float skill_time_count;
     public float cool_down_time_count;
@@ -16,29 +17,29 @@ public class Skill : MonoBehaviour
     public int skill_id;
     public string skill_name;
 
-    public SkillConfig my_cofig;
+    public SkillConfig my_config;
     public virtual void ActiveSkill()
     {
         
     }
-    protected bool SkillAvailable()
+    public bool SkillAvailable()
     {
         if (!(skill_time_count <= 0 && cool_down_time_count <= 0))
             return false;
         return true;
     }
-    protected void DecreaseCoolDownTimeCount()
+    public void DecreaseCoolDownTimeCount()
     {
         if (skill_time_count <= 0)
         {
             cool_down_time_count -= Time.deltaTime;
         }
     }
-    protected void DecreaseSkillTimeCount()
+    public void DecreaseSkillTimeCount()
     {
         skill_time_count -= Time.deltaTime;
     }
-    protected bool IsHaveEnemy()
+    public bool IsHaveEnemy()
     {
         if (EnemyCheckPos.Instance.have_enemy)
         {
@@ -50,7 +51,7 @@ public class Skill : MonoBehaviour
         }
 
     }
-    protected Vector3 GetEnemyPosition()
+    public Vector3 GetEnemyPosition()
     {
         return EnemyCheckPos.Instance.enemy_pos;
     }
@@ -67,19 +68,6 @@ public class Skill : MonoBehaviour
         else
         {
             return new Vector2(PlayerManager.Instance.player_direction, 0);
-        }
-    }
-    public void GetAnyConfigs(int id)
-    {
-        SkillConfigs all_skill_configs =  InGameManager.Instance.GetAllSkillConfigs();
-        if(all_skill_configs == null) { return; }
-        for (int i = 0; i < all_skill_configs.configs.Count; i++)
-        {
-            if (all_skill_configs.configs[i].id_skill == id)
-            {
-                my_cofig =  all_skill_configs.configs[i];
-                return;
-            }
         }
     }
 }

@@ -24,17 +24,8 @@ public class ProjectileParticles : MonoBehaviour
         float angle = Mathf.Atan2(particles.velocity.y, particles.velocity.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
-    public void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.gameObject.layer == 10)
-            return;
-        particles.velocity = Vector2.zero;
-        ground_trigger = true;
-        particles.isKinematic = true;
-    }
     public void Reload()
     {
-        this.ground_trigger = false;
         particles.isKinematic = false;
     }
 }

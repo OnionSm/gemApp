@@ -29,9 +29,20 @@ public class WitchHp : EnemyHP, IDamageable
 
     public override void CheckDead()
     {
-        if(WitchManager.Instance.CurrentHp <= 0)
+        if (is_alive)
         {
-            
+            if (WitchManager.Instance.CurrentHp <= 0)
+            {
+                Death();
+            }
         }
+    }
+
+    public override void Death()
+    {
+        PlayerManager.Instance.AddExp(50f);
+        FSMWitchManager.Instance.SwitchState(FSMWitchManager.Instance.witch_dead);
+        WitchManager.Instance.WitchCanvas.gameObject.SetActive(false);
+        is_alive = false;
     }
 }

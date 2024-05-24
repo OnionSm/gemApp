@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSMWitchDead : MonoBehaviour
+public class FSMWitchDead : FSMWitchBase
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void EnterState()
+    {
+        WitchAnimationManager.Instance.SetTriggerDeath();
+    }
+
+    public override void OnCollisionEnter()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void UpdateState()
     {
-        
+       
     }
 }

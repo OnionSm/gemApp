@@ -33,11 +33,11 @@ public class PlayerManager: OnionBehaviour
         set { level = value; }
     }
 
-    private float exp;
-    public float Exp
+    private float exp_max;
+    public float ExpMax
     {
-        get { return exp; }
-        set { exp = value; }
+        get { return exp_max; }
+        set { exp_max = value; }
     }
     private float current_exp;
     public float CurrentExp => current_exp;
@@ -138,6 +138,8 @@ public class PlayerManager: OnionBehaviour
     void Update()
     {
         this.ConstraintRotation();
+        this.AddExp(exp_left);
+        this.AddHp(health_recover * Time.deltaTime);
     }
     protected override void LoadComponent()
     {
@@ -148,6 +150,7 @@ public class PlayerManager: OnionBehaviour
         this.LoadDirection();
         this.LoadHP();
         this.LoadMana();
+        this.LoadExP();
     }
 
     public void RotatePlayer()
@@ -171,6 +174,11 @@ public class PlayerManager: OnionBehaviour
     protected void LoadMana()
     {
         this.current_mana = this.mana;
+    }
+    private void LoadExP()
+    {
+        this.current_exp = 0f;
+        this.exp_left = 0f;
     }
     protected void ConstraintRotation()
     {
@@ -239,7 +247,7 @@ public class PlayerManager: OnionBehaviour
         {
             if (all_level_configs.lv_config[i].level == id)
             {
-                exp = all_level_configs.lv_config[i].exp;
+                exp_max = all_level_configs.lv_config[i].exp;
                 health = all_level_configs.lv_config[i].health;
                 mana = all_level_configs.lv_config[i].mana;
                 mana_recover = all_level_configs.lv_config[i].mana_recover;
@@ -250,6 +258,32 @@ public class PlayerManager: OnionBehaviour
                 crit_mult = all_level_configs.lv_config[i].crit_mult;
                 base_dame = all_level_configs.lv_config[i].base_dame;
                 damage_redution = all_level_configs.lv_config[i].damage_redution;
+            }
+        }
+    }
+    public void AddExp(float value)
+    {
+        if(current_exp + value > exp_max)
+        {
+            exp_left = value - (exp_max - current_exp);
+        }
+        else 
+        {
+            current_exp += value;
+            exp_left = 0;
+        }
+        if(exp_left != 0)
+        {
+            if(all_level_configs.lv_config.Count == level)
+            {
+                return;
+            }
+            else
+            {
+                this.level = level + 1;
+                GetComponent<PlayerExp>().SetTextLevel(level);
+                GetLevelConfig(level);
+                Debug.Log("level " + level);
             }
         }
     }
