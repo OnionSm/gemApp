@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skill : OnionBehaviour
+public class Skill : MonoBehaviour
 {
     public string arrow_prefab_name;
     public float skill_time;
@@ -12,7 +12,11 @@ public class Skill : OnionBehaviour
     public float skill_time_count;
     public float cool_down_time_count;
     public float skill_mana_cost;
+    public float skill_mult;
+    public int skill_id;
+    public string skill_name;
 
+    public SkillConfig my_cofig;
     public virtual void ActiveSkill()
     {
         
@@ -63,6 +67,19 @@ public class Skill : OnionBehaviour
         else
         {
             return new Vector2(PlayerManager.Instance.player_direction, 0);
+        }
+    }
+    public void GetAnyConfigs(int id)
+    {
+        SkillConfigs all_skill_configs =  InGameManager.Instance.GetAllSkillConfigs();
+        if(all_skill_configs == null) { return; }
+        for (int i = 0; i < all_skill_configs.configs.Count; i++)
+        {
+            if (all_skill_configs.configs[i].id_skill == id)
+            {
+                my_cofig =  all_skill_configs.configs[i];
+                return;
+            }
         }
     }
 }

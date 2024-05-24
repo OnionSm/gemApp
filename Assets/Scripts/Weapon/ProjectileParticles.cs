@@ -28,7 +28,6 @@ public class ProjectileParticles : MonoBehaviour
     {
         if (collider.gameObject.layer == 10)
             return;
-
         particles.velocity = Vector2.zero;
         ground_trigger = true;
         particles.isKinematic = true;

@@ -35,5 +35,4 @@ public class InGameManager : MonoBehaviour
     {
         return all_skill_configs;
     }
-
 }

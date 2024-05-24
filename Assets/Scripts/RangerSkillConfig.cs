@@ -10,22 +10,12 @@ public class RangerSkillConfig : MonoBehaviour
     {
         this.GetConfigs();
     }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Get all ranger skill config from ingamemanager
     private void GetConfigs()
     {
         all_skill_configs = InGameManager.Instance.GetAllSkillConfigs();
     }
+    // Get config for any skill 
     public SkillConfig GetAnyConfigs(int id)
     {
         for(int i = 0; i< all_skill_configs.configs.Count;i++)
@@ -33,6 +23,7 @@ public class RangerSkillConfig : MonoBehaviour
             if (all_skill_configs.configs[i].id_skill == id)
             {
                 return all_skill_configs.configs[i];
+
             }
         }
         return null;

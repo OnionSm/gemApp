@@ -40,20 +40,28 @@ public class HailOfArrows : Skill
         }
     }
 
-    protected override void LoadComponent()
+    protected void LoadComponent()
     {
         this.arrow_prefab_name = "DropArrow";
-        this.angle_shot = new List<float>() {80, 75, 70, 65, 60};
+        this.skill_id = 4;
+        GetAnyConfigs(skill_id);
+        if (my_cofig == null)
+        {
+            Debug.Log("Do not find any config for Hail of Arrows");
+            return;
+        }
         this.arrow_speed = 500f;
-        this.cool_down = 1f;
-        this.skill_time = 1.35f;
-        this.skill_time_count = 0f;
+        this.cool_down = my_cofig.cool_down;
+        this.skill_time = my_cofig.skill_cast;
+        this.skill_time_count = 0;
         this.cool_down_time_count = 0f;
+        this.skill_mult = my_cofig.skill_mult;
+        this.skill_mana_cost = my_cofig.mana_cost;
+        this.angle_shot = new List<float>() {80, 75, 70, 65, 60};
         this.distances = new List<float>() {120, 210, 280, 330, 360};
         this.time_arrow_fly = new List<float>() { 1.55f, 1.5f, 1.45f, 1.4f, 1.35f };
         this.x_velo = new List<float>() { 80, 140, 187, 220, 240 };
         this.y_velo = new List<float>() { 370, 350, 330, 310,290};
-        this.skill_mana_cost = 25f;
     }
     IEnumerator Skill()
     {
@@ -67,7 +75,7 @@ public class HailOfArrows : Skill
                 float y_velocity = y_velo[i] + Random.Range(0, 20);
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, this.spawn_point.position, new Vector3(1, 1, 1));
                 arrow.gameObject.SetActive(true);
-                arrow.GetComponent<BulletImpart>().Damage = 100f;
+                arrow.GetComponent<BulletImpart>().Damage = PlayerManager.Instance.BaseDame * skill_mult;
                 arrow.GetComponent<Rigidbody2D>().velocity = new Vector2(x_velocity * PlayerManager.Instance.player_direction, y_velocity);
                 arrow.GetComponent<ProjectileParticles>().Reload();
                 

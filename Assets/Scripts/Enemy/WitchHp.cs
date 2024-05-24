@@ -14,7 +14,6 @@ public class WitchHp : EnemyHP, IDamageable
     }
     public override void SetHealthBar()
     {
-        Debug.Log(WitchManager.Instance.CurrentHp / WitchManager.Instance.MaxHP);
         float hp_fill = WitchManager.Instance.CurrentHp / WitchManager.Instance.MaxHP;
         if (hp_fill != health_bar.fillAmount)
         {
