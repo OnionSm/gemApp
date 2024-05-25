@@ -24,8 +24,9 @@ public class PlayerExp : MonoBehaviour
     }
     private void UpdateExpBar()
     {
+        float current_fill = exp_fill.fillAmount;
         float fill = PlayerManager.Instance.CurrentExp / PlayerManager.Instance.ExpMax;
-        exp_fill.fillAmount = Mathf.MoveTowards(exp_fill.fillAmount, fill, lerp_speed * Time.deltaTime);
+        exp_fill.fillAmount = fill;
     }
     public void LoadComponent()
     {

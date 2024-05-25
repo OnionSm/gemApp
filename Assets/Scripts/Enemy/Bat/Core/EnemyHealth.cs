@@ -1,0 +1,83 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyHealth : MonoBehaviour, IDamageable
+{
+    [SerializeField] private float max_health;
+    [SerializeField] private float current_health;
+    [SerializeField] private Rigidbody2D rigid_body;
+    public float CurrentHealth
+    {
+        get { return current_health; }
+    }
+    private EnemyAnimationManager animationManager;
+    private SpriteRenderer model;
+    private bool is_alive;
+    private float time_to_disappear;
+    private float count_to_disappear;
+    private void Awake()
+    {
+        this.animationManager = GetComponentInChildren<EnemyAnimationManager>();
+        this.model = GetComponentInChildren<SpriteRenderer>();
+        this.rigid_body = GetComponent<Rigidbody2D>();
+    }
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        this.LoadComponent();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        this.DismissModel();
+    }
+    public void TakeDamage(float amount)
+    {
+        if (current_health - amount <= 0)
+        {
+            current_health = 0;
+            if (is_alive)
+            {
+                animationManager.SetDeathTrigger();
+                StartCoroutine(DestroyBat());
+                rigid_body.isKinematic = true;
+                this.is_alive = false;
+            }
+        }
+        else
+        {
+            current_health -= amount;
+        }
+    }
+    private void LoadComponent()
+    {
+        this.is_alive = true;
+        this.max_health = 100f;
+        this.current_health = 100f;
+        this.time_to_disappear = 10f;
+        this.count_to_disappear = time_to_disappear;
+    }
+    private void DismissModel()
+    {
+        if(current_health <= 0)
+        {
+            count_to_disappear -= Time.deltaTime;
+            if (model != null)
+            {
+                Color color = model.color;
+                color.a = Mathf.Clamp01(count_to_disappear / 5f);
+                model.color = color;
+            }
+        }
+    }
+    IEnumerator DestroyBat()
+    {
+        yield return new WaitForSeconds(time_to_disappear);
+        Destroy(gameObject);
+        yield return null;
+    }
+}

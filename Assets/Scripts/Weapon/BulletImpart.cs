@@ -30,7 +30,7 @@ public class BulletImpart : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         
-        if (collider.gameObject.layer == 10 && damage != 0)
+        if (collider.gameObject.layer == 10 || damage == 0 || collider.gameObject.layer == 8)
             return;
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         GetComponent<Rigidbody2D>().isKinematic = true;

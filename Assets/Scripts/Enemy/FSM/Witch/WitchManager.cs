@@ -120,7 +120,10 @@ public class WitchManager : MonoBehaviour
     }
     public void MinusHp(float value)
     {
-        witch_canvas.gameObject.SetActive(true);
+        if (hp_current == hp_max)
+        { 
+            witch_canvas.gameObject.SetActive(true);
+        }
         if ((hp_current - value) < 0)
         {
             hp_current = 0;

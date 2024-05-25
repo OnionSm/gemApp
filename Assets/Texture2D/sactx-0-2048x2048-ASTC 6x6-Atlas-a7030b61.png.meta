@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -732,7 +732,7 @@ TextureImporter:
         width: 222
         height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -740,6 +740,69 @@ TextureImporter:
       bones: []
       spriteID: ccb8fa851c0904d44b8c2d322011d4af
       internalID: -2069143829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_health_bar
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1679
+        width: 141
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f74883e229d1044a4a9e4d7b77b6aa
+      internalID: -1970737779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_health_bar_erase
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1662
+        width: 132
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ce8fd2edb24164cb778577841f3a4a
+      internalID: 570117602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_health_bar_fill
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1323
+        width: 132
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e914fbf9cd3de394ab5cf2a69ffd4be4
+      internalID: 1638381937
       vertices: []
       indices: 
       edges: []
@@ -759,6 +822,9 @@ TextureImporter:
       base_shot: -143816391
       ease_health_bar: -602316088
       ease_mana_bar: 873631206
+      enemy_health_bar: -1970737779
+      enemy_health_bar_erase: 570117602
+      enemy_health_bar_fill: 1638381937
       hail_of_arrow: -2038806213
       multi_shot: -1658299269
       sactx-0-2048x2048-ASTC 6x6-Atlas-a7030b61_0: 1983088873

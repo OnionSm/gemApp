@@ -24,7 +24,6 @@ public class WitchHp : EnemyHP, IDamageable
     public void TakeDamage(float amount)
     {
         WitchManager.Instance.MinusHp(amount);
-        Debug.Log(amount);
     }
 
     public override void CheckDead()
