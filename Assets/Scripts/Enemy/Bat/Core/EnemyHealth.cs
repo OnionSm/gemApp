@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
@@ -16,6 +17,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     private bool is_alive;
     private float time_to_disappear;
     private float count_to_disappear;
+
+    [SerializeField] private Image health_bar;
+    [SerializeField] private Image health_bar_erase;
+    [SerializeField] private float lerp_speed;
     private void Awake()
     {
         this.animationManager = GetComponentInChildren<EnemyAnimationManager>();
@@ -34,6 +39,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     void Update()
     {
         this.DismissModel();
+        this.UpdateHealthBar();
+        this.SetEaseHealthBar();
     }
     public void TakeDamage(float amount)
     {
@@ -60,6 +67,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         this.current_health = 100f;
         this.time_to_disappear = 10f;
         this.count_to_disappear = time_to_disappear;
+        this.lerp_speed = 0.8f;
     }
     private void DismissModel()
     {
@@ -79,5 +87,20 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(time_to_disappear);
         Destroy(gameObject);
         yield return null;
+    }
+    private void UpdateHealthBar()
+    {
+        float fill = current_health / max_health;
+        if (fill != health_bar.fillAmount)
+        {
+            health_bar.fillAmount = fill;
+        }
+    }
+    public void SetEaseHealthBar()
+    {
+        if (health_bar_erase.fillAmount != health_bar.fillAmount)
+        {
+            health_bar_erase.fillAmount = Mathf.MoveTowards(health_bar_erase.fillAmount, health_bar.fillAmount, lerp_speed * Time.deltaTime);
+        }
     }
 }
