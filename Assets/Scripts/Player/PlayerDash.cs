@@ -14,11 +14,12 @@ public class PlayerDash : OnionBehaviour
 
     private void Awake()
     {
-        this.rigid_body = PlayerManager.Instance.GetRigidbody();
-        this.animations = PlayerManager.Instance.GetAnimator();
+
     }
     void Start()
     {
+        this.rigid_body = PlayerManager.Instance.GetRigidbody();
+        this.animations = PlayerManager.Instance.GetAnimator();
         this.LoadComponent();
     }
 

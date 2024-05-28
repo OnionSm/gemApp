@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7ca5191b26ca2a54682c2a18ac4e03af
+guid: ff9170a887b90954ca1a1b41cfeec123
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,11 +44,11 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,76 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lv_enemy
-      rect:
-        serializedVersion: 2
-        x: 1725
-        y: 1
-        width: 86
-        height: 86
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1cc94454029ef345814ab3564aac67c
-      internalID: 702260496
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: character_select_box
-      rect:
-        serializedVersion: 2
-        x: 724
-        y: 472
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 128, y: 128, z: 128, w: 128}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6df3843bf44a14f46a8241b1517fa018
-      internalID: -1652185174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: new_character_box
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 32
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 34, y: 34, z: 34, w: 34}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1019f7bc1e19db9479e5f3afe00cfae7
-      internalID: 816091233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: x_button
+      name: main_background_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 1188
-        width: 193
-        height: 193
+        y: 550
+        width: 480
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,41 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e066494f7ef388c4fba878d9bcc3ed51
-      internalID: 660023153
+      spriteID: c37c91caa8e1f9642a7fa16bd8e7f140
+      internalID: -1756047375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: button_background_1
-      rect:
-        serializedVersion: 2
-        x: 1014
-        y: 322
-        width: 595
-        height: 164
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1fc52c5312971e04e8a4049bb2d3752b
-      internalID: 1912202193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: panel_padding_top
+      name: main_background_2
       rect:
         serializedVersion: 2
         x: 0
-        y: 1382
-        width: 509
-        height: 40
+        y: 0
+        width: 480
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,41 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b481f556100fe048ac15502e4b98e4f
-      internalID: -1155710471
+      spriteID: 0320efdac126e43409bb024dd0f46d11
+      internalID: -845665039
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: panel_invalid_name
+      name: main_background_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
-        width: 745
-        height: 241
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 340, y: 110, z: 340, w: 110}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e78e62258e70eb4fa2caf0fb6d4226c
-      internalID: -1108466581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: panel_padding_bottom
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1382
-        width: 509
-        height: 40
+        y: 182
+        width: 480
+        height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +166,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f1c00fdfb72d424eaa79f0f5c8d1076
-      internalID: -1414932424
+      spriteID: e5eb9ca6187c8a547a07d4890256e86a
+      internalID: 1418550444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: main_background_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 365
+        width: 480
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcd9d092c82c6d4c9bbeed37d0d9476
+      internalID: 954356289
       vertices: []
       indices: 
       edges: []
@@ -288,14 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      button_background_1: 1912202193
-      character_select_box: -1652185174
-      lv_enemy: 702260496
-      new_character_box: 816091233
-      panel_invalid_name: -1108466581
-      panel_padding_bottom: -1414932424
-      panel_padding_top: -1155710471
-      x_button: 660023153
+      main_background_1: -1756047375
+      main_background_2: -845665039
+      main_background_3: 1418550444
+      main_background_4: 954356289
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
