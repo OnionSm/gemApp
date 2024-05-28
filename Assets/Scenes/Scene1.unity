@@ -9994,8 +9994,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1626.9401, y: 0}
-  m_SizeDelta: {x: 3253.879, y: 0}
+  m_AnchoredPosition: {x: 293.29895, y: 0}
+  m_SizeDelta: {x: 586.596, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752133045
 MonoBehaviour:
@@ -10549,7 +10549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809181188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
@@ -12961,6 +12961,7 @@ MonoBehaviour:
   main_panel_lv_text: {fileID: 782358559}
   char_history_panel: {fileID: 1116385210}
   char_his_upper_text: {fileID: 1074636613}
+  history_add_char_panel: {fileID: 1674314976}
   choose_char_panel: {fileID: 1312483051}
   char_detail: {fileID: 829825992}
   input_name_panel: {fileID: 903464773}
@@ -21087,6 +21088,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2326f9e9928864e95ee7177138baee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slot_choosen:
+    character_name: 
+    level: 1
+    map_id: 1
+    position: {x: 480, y: 100, z: 0}
+    hp: 0
+    exp: 0
+    mana: 0
 --- !u!4 &1815981899
 Transform:
   m_ObjectHideFlags: 0

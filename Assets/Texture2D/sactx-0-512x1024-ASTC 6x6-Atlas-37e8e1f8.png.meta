@@ -228,7 +228,7 @@ TextureImporter:
         width: 135
         height: 117
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,6 +236,153 @@ TextureImporter:
       bones: []
       spriteID: 35a5ab046a09a334bb9fc002c7c4480a
       internalID: 1567719890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: properties_background
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 252
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d874468b2a6f8428ca7047206687ce
+      internalID: 1724276499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: promo_code
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 2
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf72eb4ac98a65744a93bd0fef823f8b
+      internalID: -1188579366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: email_icon
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 641
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43dfe32ce200ff743be7f6727a633395
+      internalID: -1619585574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: email_icon_2
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 876
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57b886739029d3479ff9bbe88816f26
+      internalID: -1672237127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: discord_icon
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 608
+        width: 84
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792da959889956c4c80933c8d82070ea
+      internalID: 1809131458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: setting_icon
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 513
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caaa74a2611427148995fa0921be99b2
+      internalID: -1528044064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: exit_icon
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 512
+        width: 79
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14b0304e9f164ac46a72c951a2878416
+      internalID: -1334279120
       vertices: []
       indices: 
       edges: []
@@ -251,11 +398,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      discord_icon: 1809131458
+      email_icon: -1619585574
+      email_icon_2: -1672237127
+      exit_icon: -1334279120
+      promo_code: -1188579366
+      properties_background: 1724276499
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_0: -169004636
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_1: -2101455038
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_2: -333295482
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_3: 1669614544
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_4: 1567719890
+      setting_icon: -1528044064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

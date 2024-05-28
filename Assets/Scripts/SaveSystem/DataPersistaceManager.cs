@@ -9,7 +9,7 @@ public class DataPersistaceManager : MonoBehaviour
 {
     public static DataPersistaceManager instance { get; private set; }
     public  List<SaveSlot> gameData {  get; private set; }
-    private List<IDataPersistance> listDataPersistances = new List<IDataPersistance>();
+    [SerializeField]  private List<IDataPersistance> listDataPersistances = new List<IDataPersistance>();
     private FileHandlerData fileHandlerData;
     private string persistent_path;
     [SerializeField] private SaveSlot slot_choosen;
@@ -80,10 +80,11 @@ public class DataPersistaceManager : MonoBehaviour
             return new string[0];
         }
     }
-    public void LoadGame()
+    public void LoadSaveSlot()
     {
         if (slot_choosen != null)
         {
+            listDataPersistances = FindAllDataInObject();
             foreach (IDataPersistance persistance in listDataPersistances)
             {
                 persistance.LoadGame(slot_choosen);
@@ -97,6 +98,7 @@ public class DataPersistaceManager : MonoBehaviour
     }
     public void SaveGame()
     {
+        listDataPersistances = FindAllDataInObject();
         foreach (IDataPersistance persistance in listDataPersistances)
         {
             persistance.SaveGame(ref slot_choosen);
@@ -107,10 +109,7 @@ public class DataPersistaceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        if (slot_choosen != null)
-        {
-            SaveGame();
-        }
+        
     }
 
 
@@ -123,6 +122,7 @@ public class DataPersistaceManager : MonoBehaviour
     private void GetLastSlotAccess()
     {
         string latestAccessedFile = GetLatestAccessedTextFile(persistent_path);
+        Debug.Log("Truy cập lần cuối " +  latestAccessedFile);
         if(latestAccessedFile != null) 
         {
 

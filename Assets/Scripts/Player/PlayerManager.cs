@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -132,6 +132,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     void Start()
     {
         this.LoadComponent();
+        DataPersistaceManager.instance.LoadSaveSlot();
     }
 
     void Update()
@@ -150,7 +151,6 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         this.LoadHP();
         this.LoadMana();
         this.LoadExP();
-        DataPersistaceManager.instance.LoadGame();
     }
 
     public void RotatePlayer()
@@ -293,8 +293,10 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         current_hp = save_slot.hp;
         current_mana = save_slot.mana;
         level = save_slot.level;
+        current_exp = save_slot.exp;
         GetComponent<PlayerExp>().SetTextLevel(level);
         GetLevelConfig(level);
+        Debug.Log("Đã load game");
     }
 
     public void SaveGame(ref SaveSlot save_slot)
@@ -302,6 +304,11 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         save_slot.hp = this.current_hp;
         save_slot.mana = this.current_mana;
         save_slot.level = this.level;
+        save_slot.exp = this.current_exp;
+    }
+    private void OnApplicationQuit()
+    {
+        DataPersistaceManager.instance.SaveGame();
     }
 }
 

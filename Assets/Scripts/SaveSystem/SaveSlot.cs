@@ -18,6 +18,9 @@ public class SaveSlot
         level = 1;
         map_id = 1;
         position = new Vector3(480, 100, 0);
-    }
+        hp = 400f;
+        exp = 0f;
+        mana = 100f;
+}
 
 }

@@ -15,6 +15,7 @@ public class MainScreenUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI main_panel_lv_text;
     [SerializeField] private Image char_history_panel;
     [SerializeField] private TextMeshProUGUI char_his_upper_text;
+    [SerializeField] private Image history_add_char_panel;
     [SerializeField] private Image choose_char_panel;
     [SerializeField] private Image char_detail;
     [SerializeField] private Image input_name_panel;
@@ -25,18 +26,27 @@ public class MainScreenUIManager : MonoBehaviour
     void Start()
     {
         Debug.Log(Application.persistentDataPath);
+        if (DataPersistaceManager.instance.SlotChoosen != null)
+        {
+            main_panel_username_text.text = DataPersistaceManager.instance.SlotChoosen.character_name;
+            main_panel_lv_text.text = $"Lv {DataPersistaceManager.instance.SlotChoosen.level}";
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     public void ClickSwitchHero()
     {
         main_panel.gameObject.SetActive(false);
         char_history_panel.gameObject.SetActive(true);
         char_his_upper_text.text = $" Your Character ({DataPersistaceManager.instance.gameData.Count}/5)";
+        if(DataPersistaceManager.instance.gameData.Count>=5)
+        {
+            history_add_char_panel.gameObject.SetActive(false);
+        }
         for(int i = 0; i< DataPersistaceManager.instance.gameData.Count; i++) 
         {
             SaveSlot temp = DataPersistaceManager.instance.gameData[i];
@@ -94,7 +104,7 @@ public class MainScreenUIManager : MonoBehaviour
     }
     public void ApplyButton()
     {
-        string pattern = @"^[a-zA-Z0-9]{3,16}";
+        string pattern = "^[a-zA-Z0-9]{3,16}";
         string input = input_field.text;
         Debug.Log(input); 
         if(Regex.IsMatch(input, pattern))
