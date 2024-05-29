@@ -21,7 +21,9 @@ public class MainScreenUIManager : MonoBehaviour
     [SerializeField] private Image input_name_panel;
     [SerializeField] private TextMeshProUGUI input_field;
     [SerializeField] private Image invalid_input_panel;
+    [SerializeField] private Image nickname_used_panel;
     [SerializeField] private List<CharHistoryUI> list_char_history;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -106,11 +108,18 @@ public class MainScreenUIManager : MonoBehaviour
     {
         string pattern = "^[a-zA-Z0-9]{3,16}";
         string input = input_field.text;
-        Debug.Log(input); 
+
         if(Regex.IsMatch(input, pattern))
         {
-            DataPersistaceManager.instance.CreateNewUser(input);
-            LoadScene();
+            if (!DataPersistaceManager.instance.CheckNameFileExist(input))
+            {
+                DataPersistaceManager.instance.CreateNewUser(input);
+                LoadScene();
+            }
+            else
+            {
+                OpenNicknameUsedPanel();
+            }
         }
         else
         {
@@ -120,6 +129,14 @@ public class MainScreenUIManager : MonoBehaviour
     public void CloseInvalidPanel()
     {
         invalid_input_panel.gameObject.SetActive(false);    
+    }
+    public void OpenNicknameUsedPanel()
+    {
+        nickname_used_panel.gameObject.SetActive(true);
+    }
+    public void CloseNicknameUsedPanel()
+    {
+        nickname_used_panel.gameObject.SetActive(false);
     }
 
     public void LoadScene()

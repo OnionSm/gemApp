@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +10,7 @@ public class PlayerMana : MonoBehaviour
     public Image mana_bar;
     public Image erase_mana_bar;
     public float lerp_speed;
-
+    [SerializeField] private TextMeshProUGUI mana_text;
     private void Awake()
     {
 
@@ -38,6 +40,7 @@ public class PlayerMana : MonoBehaviour
     }
     private void SetManaBar()
     {
+        mana_text.text = $"{Math.Round(PlayerManager.Instance.CurrentMana)} / {Math.Round(PlayerManager.Instance.Mana)}";
         float mana_fill = PlayerManager.Instance.CurrentMana / PlayerManager.Instance.Mana;
         if (mana_fill != mana_bar.fillAmount)
         {

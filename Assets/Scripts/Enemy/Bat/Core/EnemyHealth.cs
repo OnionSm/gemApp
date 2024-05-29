@@ -51,6 +51,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             {
                 animationManager.SetDeathTrigger();
                 StartCoroutine(DestroyBat());
+                Death();
                 rigid_body.isKinematic = true;
                 this.is_alive = false;
             }
@@ -102,5 +103,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             health_bar_erase.fillAmount = Mathf.MoveTowards(health_bar_erase.fillAmount, health_bar.fillAmount, lerp_speed * Time.deltaTime);
         }
+    }
+    public void Death()
+    {
+        PlayerManager.Instance.AddExp(Random.Range(3,8));
     }
 }

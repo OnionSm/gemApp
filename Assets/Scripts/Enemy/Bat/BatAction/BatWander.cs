@@ -22,7 +22,6 @@ public class BatWander : FSMAction
     }
     private void Wandering()
     {
-        Debug.Log("Wandering");
-
+        
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,7 @@ public class PlayerHp : MonoBehaviour, IDamageable
     public Image erase_health_bar;
     public float lerp_speed;
     public bool alive;
+    [SerializeField] private TextMeshProUGUI health_text;
 
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class PlayerHp : MonoBehaviour, IDamageable
     }
     private void SetHealthBar()
     {
+        health_text.text = $"{Math.Round(PlayerManager.Instance.CurrentHP)} / {Math.Round(PlayerManager.Instance.Health)}";
         float hp_fill = PlayerManager.Instance.CurrentHP / PlayerManager.Instance.Health;
         if(hp_fill != health_bar.fillAmount)
         {

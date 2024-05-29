@@ -157,7 +157,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_1
+      name: auto_collect_icon
       rect:
         serializedVersion: 2
         x: 130
@@ -178,7 +178,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_2
+      name: store_icon
       rect:
         serializedVersion: 2
         x: 262
@@ -199,7 +199,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_3
+      name: inventory_icon
       rect:
         serializedVersion: 2
         x: 141
@@ -220,7 +220,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_4
+      name: quest_icon
       rect:
         serializedVersion: 2
         x: 256
@@ -375,7 +375,7 @@ TextureImporter:
         width: 79
         height: 73
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -383,6 +383,153 @@ TextureImporter:
       bones: []
       spriteID: 14b0304e9f164ac46a72c951a2878416
       internalID: -1334279120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: repair_icon
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 514
+        width: 126
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f344b86f13dd0458d501f676cba1fb
+      internalID: -599927730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melt_icon
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 261
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89f96c9add489754dbdf02ce6364a311
+      internalID: -478182310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: storage_icon
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 642
+        width: 119
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ddf4c264f71de49b19dcc13a0b09d7
+      internalID: -486689759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: town_icon
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 514
+        width: 120
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80cde3e57b0fdfe4f8683f22bb37da89
+      internalID: -1457251817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sell_icon
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 0
+        width: 126
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b48e51f3f5a8f64cb69fa27c5ec06a2
+      internalID: -1631165454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: map_icon
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 395
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe62d84f6fa0e499fd0bc4d2c51046
+      internalID: 1370519218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star_icon
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 395
+        width: 122
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 911646a2473f4e64e844462648d480b0
+      internalID: -1900610733
       vertices: []
       indices: 
       edges: []
@@ -398,18 +545,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      auto_collect_icon: -2101455038
       discord_icon: 1809131458
       email_icon: -1619585574
       email_icon_2: -1672237127
       exit_icon: -1334279120
+      inventory_icon: 1669614544
+      map_icon: 1370519218
+      melt_icon: -478182310
       promo_code: -1188579366
       properties_background: 1724276499
+      quest_icon: 1567719890
+      repair_icon: -599927730
       sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_0: -169004636
-      sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_1: -2101455038
-      sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_2: -333295482
-      sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_3: 1669614544
-      sactx-0-512x1024-ASTC 6x6-Atlas-37e8e1f8_4: 1567719890
+      sell_icon: -1631165454
       setting_icon: -1528044064
+      star_icon: -1900610733
+      storage_icon: -486689759
+      store_icon: -333295482
+      town_icon: -1457251817
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

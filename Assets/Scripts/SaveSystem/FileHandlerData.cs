@@ -27,6 +27,18 @@ public class FileHandlerData
             Debug.Log("File created at: " + fullPath);
         }
     }
+    public bool CheckFileExist(String dataDirPath, String dataFileName)
+    {
+        string fullPath = Path.Combine(dataDirPath, dataFileName);
+        if (File.Exists(fullPath))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public SaveSlot ReadData(String fullPath)
     {

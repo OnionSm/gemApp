@@ -39,7 +39,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         get { return exp_max; }
         set { exp_max = value; }
     }
-    private float current_exp;
+    [SerializeField] private float current_exp;
     public float CurrentExp => current_exp;
 
     private float health;
@@ -120,6 +120,8 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         set { damage_redution = value; }
     }
 
+    public float coin;
+    public float gem;
 
     private void Awake()
     {
@@ -127,12 +129,15 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         {
             PlayerManager.Instance = this;
         }
+        else
+        {
+            Debug.Log("Nhiều hơn 1 PlayerManger");
+        }
         
     }
     void Start()
     {
         this.LoadComponent();
-        DataPersistaceManager.instance.LoadSaveSlot();
     }
 
     void Update()
@@ -143,13 +148,11 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     }
     protected override void LoadComponent()
     {
-        this.level = 1;
         this.GetLevelConfigs();
+        DataPersistaceManager.instance.LoadSaveSlot();
         this.GetLevelConfig(level);
         this.LoadModelScale();
         this.LoadDirection();
-        this.LoadHP();
-        this.LoadMana();
         this.LoadExP();
     }
 
@@ -167,17 +170,8 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     {
         this.player_direction = 1f;
     }
-    protected void LoadHP()
-    {
-        this.current_hp = this.health;
-    }
-    protected void LoadMana()
-    {
-        this.current_mana = this.mana;
-    }
     private void LoadExP()
     {
-        this.current_exp = 0f;
         this.exp_left = 0f;
     }
     protected void ConstraintRotation()
@@ -199,13 +193,16 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     
     public void AddHp(float value )
     {
-        if((current_hp + value) > health)
+        if (current_hp > 0)
         {
-            current_hp = health;
-        }
-        else
-        {
-            current_hp += value;
+            if ((current_hp + value) > health)
+            {
+                current_hp = health;
+            }
+            else
+            {
+                current_hp += value;
+            }
         }
     }
     public void AddMana(float value)
@@ -272,7 +269,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
             current_exp += value;
             exp_left = 0;
         }
-        if(exp_left != 0)
+        if(exp_left != 0 && current_exp == exp_max)
         {
             if(all_level_configs.lv_config.Count == level)
             {
@@ -283,6 +280,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
                 this.level = level + 1;
                 GetComponent<PlayerExp>().SetTextLevel(level);
                 GetLevelConfig(level);
+                current_exp = 0f;
                 Debug.Log("level " + level);
             }
         }
@@ -294,6 +292,8 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         current_mana = save_slot.mana;
         level = save_slot.level;
         current_exp = save_slot.exp;
+        coin = save_slot.coin;
+        gem = save_slot.gem;
         GetComponent<PlayerExp>().SetTextLevel(level);
         GetLevelConfig(level);
         Debug.Log("Đã load game");
@@ -301,10 +301,12 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
 
     public void SaveGame(ref SaveSlot save_slot)
     {
-        save_slot.hp = this.current_hp;
-        save_slot.mana = this.current_mana;
+        save_slot.hp = this.health;
+        save_slot.mana = this.mana;
         save_slot.level = this.level;
         save_slot.exp = this.current_exp;
+        save_slot.coin = this.coin;
+        save_slot.gem = this.gem;
     }
     private void OnApplicationQuit()
     {

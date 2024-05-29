@@ -12,6 +12,8 @@ public class SaveSlot
     public float hp;
     public float exp;
     public float mana;
+    public float coin;
+    public float gem;
     public SaveSlot()
     {
         character_name = "";
@@ -21,6 +23,8 @@ public class SaveSlot
         hp = 400f;
         exp = 0f;
         mana = 100f;
+        coin = 0f;
+        gem = 0f;
 }
 
 }

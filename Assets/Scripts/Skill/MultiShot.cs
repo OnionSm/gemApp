@@ -30,6 +30,7 @@ public class MultiShot : Skill
             this.skill_time_count = this.skill_time;
             this.cool_down_time_count = this.cool_down;
             PlayerManager.Instance.CurrentMana -= skill_mana_cost;
+            AudioManager.Instance.PlayArrowSound();
             for (int i = 0; i < 3; i++)
             {
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, spawn_pos, new Vector3(1, 1, 1));

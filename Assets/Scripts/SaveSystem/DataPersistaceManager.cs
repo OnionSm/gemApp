@@ -161,4 +161,8 @@ public class DataPersistaceManager : MonoBehaviour
             return null;
         }
     }
+    public bool CheckNameFileExist(String name)
+    {
+        return fileHandlerData.CheckFileExist(persistent_path, $"{name}.txt");
+    }
 }

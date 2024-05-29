@@ -18,7 +18,7 @@ public abstract class EnemyHP : MonoBehaviour
 
 
     }
-    protected void Update()
+    public virtual void Update()
     {
         SetHealthBar();
         SetEaseHealthBar();
