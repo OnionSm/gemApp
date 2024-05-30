@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class HailOfArrows : Skill
 {
-    [SerializeField] public static HailOfArrows Instance;
     private List<float> angle_shot;
     private List<float> distances;
     private List<float> time_arrow_fly;
     private List<float> x_velo;
     private List<float> y_velo;
 
-    private void Awake()
-    {
-        HailOfArrows.Instance = this;
-    }
-
+    
     private void Start()
     {
         this.LoadComponent();
@@ -30,6 +25,7 @@ public class HailOfArrows : Skill
     {
         if (this.SkillAvailable() && PlayerManager.Instance.CurrentMana >= skill_mana_cost)
         {
+            Debug.Log("Hail of Arrows is activated");
             PlayerAnimation.Instance.SetTriggerAngleShot();
             this.skill_time_count = this.skill_time;
             this.cool_down_time_count = this.cool_down;

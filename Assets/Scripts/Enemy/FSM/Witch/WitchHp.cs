@@ -76,7 +76,7 @@ public class WitchHp : EnemyHP, IDamageable
     IEnumerator DestroyWitch()
     {
         yield return new WaitForSeconds(time_to_disappear);
+        Debug.Log("Ready to destroy");
         Destroy(gameObject);
-        yield return null;
     }
 }

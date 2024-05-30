@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Spawner : OnionBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] protected Transform holder;
     [SerializeField] protected List<Transform> prefabs;
@@ -12,22 +12,16 @@ public class Spawner : OnionBehaviour
     {
         this.LoadComponent();
     }
-    protected override void LoadComponent()
+    public void LoadComponent()
     {
         this.LoadPrefabs();
-        this.LoadHolder();
     }
 
-    protected virtual void LoadPrefabs()
+    public virtual void LoadPrefabs()
     {
     }
 
-    protected virtual void LoadHolder()
-    {
-    }
-
-
-    protected void HidePrefabs()
+    public void HidePrefabs()
     {
         foreach (Transform prefab in this.prefabs)
         {

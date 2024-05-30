@@ -7,7 +7,14 @@ public class GetArrowPrefabs : MonoBehaviour
     [SerializeField] public static GetArrowPrefabs Instance;
     private void Awake()
     {
-        GetArrowPrefabs.Instance = this;
+        if (Instance == null)
+        {
+            GetArrowPrefabs.Instance = this;
+        }
+        else
+        {
+            Debug.Log("More than one GetArrowPrefabs");
+        }
     }
     void Start()
     {

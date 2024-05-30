@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip button_click_1;
     [SerializeField] private AudioClip button_click_2;
     [SerializeField] private AudioClip arrow_shot;
+    [SerializeField] private AudioClip bat_attack;
     public static AudioManager Instance;
     private void Awake()
     {
@@ -57,6 +58,11 @@ public class AudioManager : MonoBehaviour
         audio_source_fx.clip = arrow_shot;
         audio_source_fx.Play();
     }
+    public void PlayBatAttack()
+    {
+        audio_source_enemy_fx.clip = bat_attack;
+        audio_source_enemy_fx.Play();
+    }
     public void MusicVolume(float volume)
     {
         audio_source_bgm.volume = volume;
@@ -66,5 +72,4 @@ public class AudioManager : MonoBehaviour
     {
         audio_source_fx.volume = volume;
     }
-
 }

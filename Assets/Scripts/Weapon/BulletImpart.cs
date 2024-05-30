@@ -38,6 +38,7 @@ public class BulletImpart : MonoBehaviour
         arrow.gameObject.SetActive(true);
         SendDamage(collider);
         damage = 0;
+        BulletSpawner.Instance.Despawn(gameObject.transform);
 
     }
     private void SendDamage(Collider2D collider)

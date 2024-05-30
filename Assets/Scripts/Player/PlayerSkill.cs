@@ -6,6 +6,7 @@ public class PlayerSkill :OnionBehaviour
 {
     
     [SerializeField] private PlayerAnimation animations;
+    [SerializeField] private SkillManager skillManager;
 
     [Header("Skill")]
     [SerializeField] private string skill_1;
@@ -21,6 +22,7 @@ public class PlayerSkill :OnionBehaviour
     private void Awake()
     {
         this.animations = GetComponent<PlayerAnimation>();
+        this.skillManager = GetComponent<SkillManager>();
        
     }
 
@@ -31,7 +33,7 @@ public class PlayerSkill :OnionBehaviour
     public void ActivateSkill(int skill_number)
     {
         string skill_name = this.GetSkillName(skill_number);
-        SkillManager.Instance.GetSKill(skill_name);
+        skillManager.GetSKill(skill_name);
 
     }
     protected string GetSkillName(int skill_number)

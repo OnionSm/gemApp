@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour
-
 {
-    [SerializeField] public static SkillManager Instance;
+    [SerializeField] private Barrage barrage;
+    [SerializeField] private BaseShot baseshot;
+    [SerializeField] private HailOfArrows hailOfArrows;
+    [SerializeField] private MultiShot multiShot;
     private void Awake()
     {
-        SkillManager.Instance = this;
+        barrage = GetComponentInChildren<Barrage>();  
+        baseshot = GetComponentInChildren<BaseShot>();
+        hailOfArrows = GetComponentInChildren<HailOfArrows>();
+        multiShot = GetComponentInChildren<MultiShot>();
     }
     void Start()
     {
@@ -25,19 +30,19 @@ public class SkillManager : MonoBehaviour
     {
         if(skill_name == "BaseShot")
         {
-            BaseShot.Instance.ActiveSkill();
+            baseshot.ActiveSkill();
         }
         if (skill_name == "Barrage")
         {
-            Barrage.Instance.ActiveSkill();
+            barrage.ActiveSkill();
         }
         if (skill_name == "HailOfArrows")
         {
-            HailOfArrows.Instance.ActiveSkill();
+            hailOfArrows.ActiveSkill();
         }
         if (skill_name == "MultiShot")
         {
-            MultiShot.Instance.ActiveSkill();
+            multiShot.ActiveSkill();
         }
 
     }

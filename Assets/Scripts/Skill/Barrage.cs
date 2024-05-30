@@ -1,17 +1,10 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Barrage : Skill
-
 {
-    [SerializeField] public static Barrage Instance;
-
-    private void Awake()
-    {
-        Barrage.Instance = this;
-    }
-
+   
     private void Start()
     {
         this.LoadComponent();
@@ -26,6 +19,7 @@ public class Barrage : Skill
     {
         if (this.SkillAvailable() && PlayerManager.Instance.CurrentMana >= skill_mana_cost)
         {
+            Debug.Log("Barrage is activated");
             PlayerAnimation.Instance.SetTriggerBarrage();
             this.skill_time_count = this.skill_time;
             this.cool_down_time_count = this.cool_down;

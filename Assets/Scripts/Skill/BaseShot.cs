@@ -5,15 +5,7 @@ using UnityEngine.UIElements;
 
 public class BaseShot : Skill
 {
-    [SerializeField] public static BaseShot Instance;
-
-
-    
-
-    private void Awake()
-    {
-        BaseShot.Instance = this;
-    }
+   
     private void Start()
     {
         this.LoadComponent();
@@ -29,6 +21,7 @@ public class BaseShot : Skill
     {
         if (!this.SkillAvailable())
             return;
+        Debug.Log("Base Shot is activated");
         AudioManager.Instance.PlayArrowSound();
         PlayerAnimation.Instance.SetTriggerBaseShot();
         Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name,  this.spawn_point.position, new Vector3(1,1,1));

@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class MultiShot : Skill
 {
-    [SerializeField] public static MultiShot Instance;
-
-    private void Awake()
-    {
-        MultiShot.Instance = this;
-    }
 
     private void Start()
     {
@@ -25,6 +19,7 @@ public class MultiShot : Skill
     {
         if (this.SkillAvailable() && PlayerManager.Instance.CurrentMana >= skill_mana_cost)
         {
+            Debug.Log("Multi Shot is activated");
             Vector3 spawn_pos = new Vector3(spawn_point.position.x, spawn_point.position.y + 5f, 0);
             PlayerAnimation.Instance.SetTriggerSpecialShot();
             this.skill_time_count = this.skill_time;

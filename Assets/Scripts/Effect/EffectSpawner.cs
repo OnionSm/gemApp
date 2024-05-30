@@ -15,15 +15,10 @@ public class EffectSpawner : Spawner
         EffectSpawner.Instance = this;
     }
 
-    protected override void LoadPrefabs()
+    public override void LoadPrefabs()
     {
         if (this.prefabs.Count > 0) return;
         this.prefabs = GetArrowEffectPrefabs.Instance.GetPrefabs();
         this.HidePrefabs();
-    }
-    protected override void LoadHolder()
-    {
-        if (this.holder != null) return;
-        this.holder = GetEffectHolder.Instance.getHoder();
     }
 }

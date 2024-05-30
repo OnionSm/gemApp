@@ -86,6 +86,8 @@ public class PlayerMovement : OnionBehaviour
 
     public void CanMove()
     {
+        if (PlayerManager.Instance.CurrentHP <= 0)
+            return;
         if (this.move_direct == -1 || this.move_direct == 1 )
         {
             PlayerManager.Instance.player_direction = move_direct;

@@ -30,12 +30,13 @@ public class BatAttack : FSMAction
     {
         this.MinusAttackCast();
         this.MinusCoolDown();
-        this.CheckTakeDamage();
+        this.CheckDealDamage();
         this.CheckEndSkill();
     }
     public override void Action()
     {
         this.AttackPlayer();
+        AudioManager.Instance.PlayBatAttack();
     }
     private void AttackPlayer()
     {
@@ -67,9 +68,9 @@ public class BatAttack : FSMAction
     {
         attack_cast_count -= Time.deltaTime;
     }
-    private void CheckTakeDamage()
+    private void CheckDealDamage()
     { 
-        if(attack_cast_count > 0.1 & attack_cast_count < 0.25 && decision.IsAttackPlayer() && can_make_dame == true)
+        if(attack_cast_count > 0.1 & attack_cast_count < 0.2 && decision.IsAttackPlayer() && can_make_dame == true)
         {
             PlayerManager.Instance.MinusHp(50f);
             this.can_make_dame = false;

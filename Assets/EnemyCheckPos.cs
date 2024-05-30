@@ -12,7 +12,14 @@ public class EnemyCheckPos : OnionBehaviour
 
     private void Awake()
     {
-        EnemyCheckPos.Instance = this;
+        if (Instance == null)
+        {
+            EnemyCheckPos.Instance = this;
+        }
+        else
+        {
+            Debug.Log("More than one EnemyCheckPos");
+        }
     }
     void Start()
     {
