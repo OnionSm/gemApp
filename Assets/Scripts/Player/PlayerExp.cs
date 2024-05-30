@@ -7,16 +7,6 @@ using UnityEngine.UI;
 
 public class PlayerExp : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI lv_text;
-    [SerializeField] private Image exp_fill;
-    [SerializeField] private float lerp_speed;
-        
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -24,13 +14,10 @@ public class PlayerExp : MonoBehaviour
     }
     private void UpdateExpBar()
     {
-        float current_fill = exp_fill.fillAmount;
+
         float fill = PlayerManager.Instance.CurrentExp / PlayerManager.Instance.ExpMax;
-        exp_fill.fillAmount = fill;
-    }
-    public void LoadComponent()
-    {
-        this.lerp_speed = 0.8f;
+        PlayerUIManager.Instance.exp_fill.fillAmount = fill;
+        /*Debug.Log($"EXP FILL {fill}");*/
     }
     public void AddExp(float value)
     {
@@ -38,6 +25,7 @@ public class PlayerExp : MonoBehaviour
     }
     public void SetTextLevel(float value)
     {
-        this.lv_text.text = value.ToString();
+        if(PlayerUIManager.Instance.lv_text.text != null)
+            PlayerUIManager.Instance.lv_text.text = $"{value}";
     }
 }

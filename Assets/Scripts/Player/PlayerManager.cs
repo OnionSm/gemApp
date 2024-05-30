@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager: OnionBehaviour, IDataPersistance
+public class PlayerManager: MonoBehaviour, IDataPersistance
 {
     public float model_scale_x;
     public float model_scale_y;
@@ -11,13 +11,12 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
 
     public bool is_dashing = false;
 
-    private LevelConfigs all_level_configs;
+    [SerializeField] private LevelConfigs all_level_configs;
 
-    private LevelConfig level_config;
+    [SerializeField] private LevelConfig level_config;
     public LevelConfig _Level_Config => level_config;
 
 
-    public static PlayerManager Instance;
     [SerializeField] public List<GameObject> game_object;
 
     [SerializeField] public bool is_using_skill = false;
@@ -26,7 +25,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     private float exp_left;
 
     [Header("Player Attributes")]
-    private int level;
+    private int level = 1;
     public int Level
     {
         get { return level; }
@@ -42,20 +41,20 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     [SerializeField] private float current_exp;
     public float CurrentExp => current_exp;
 
-    private float health;
+    [SerializeField] private float health;
     public float Health => health;
 
-    private float current_hp;
+    [SerializeField] private float current_hp;
     public float CurrentHP => current_hp;
 
-    private float mana;
+    [SerializeField] private float mana;
     public float Mana
     {
         get { return mana; }
         set { mana = value; }
     }
 
-    private float current_mana;
+    [SerializeField] private float current_mana;
     public float CurrentMana
     {
         get { return current_mana; }
@@ -123,7 +122,10 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
     public float coin;
     public float gem;
 
-    private void Awake()
+
+
+    public static PlayerManager Instance;
+    void Awake()
     {
         if (PlayerManager.Instance == null)
         {
@@ -131,6 +133,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         }
         else
         {
+            Destroy(gameObject);
             Debug.Log("Nhiều hơn 1 PlayerManger");
         }
         
@@ -146,7 +149,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         this.AddExp(exp_left);
         this.AddHp(health_recover * Time.deltaTime);
     }
-    protected override void LoadComponent()
+    protected void LoadComponent()
     {
         this.GetLevelConfigs();
         DataPersistaceManager.instance.LoadSaveSlot();
@@ -308,6 +311,7 @@ public class PlayerManager: OnionBehaviour, IDataPersistance
         save_slot.coin = this.coin;
         save_slot.gem = this.gem;
     }
+
     private void OnApplicationQuit()
     {
         DataPersistaceManager.instance.SaveGame();

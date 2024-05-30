@@ -66,7 +66,7 @@ public class HailOfArrows : Skill
             for (int j = 0; j < 3; j++)
             {
                 yield return new WaitForSeconds(0.005f);
-                AudioManager.Instance.PlayArrowSound();
+                AudioManager.Instance.PlaySFXSound("arrow");
                 float x_velocity = x_velo[i] + Random.Range(0,20);
                 float y_velocity = y_velo[i] + Random.Range(0, 20);
                 Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, this.spawn_point.position, new Vector3(1, 1, 1));

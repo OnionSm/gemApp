@@ -15,32 +15,22 @@ public class SkillManager : MonoBehaviour
         hailOfArrows = GetComponentInChildren<HailOfArrows>();
         multiShot = GetComponentInChildren<MultiShot>();
     }
-    void Start()
-    {
-        
-    }
-
-    
-    void Update()
-    {
-        
-    }
 
     public void GetSKill(string skill_name)
     {
-        if(skill_name == "BaseShot")
+        if(skill_name == "BaseShot" && baseshot != null)
         {
             baseshot.ActiveSkill();
         }
-        if (skill_name == "Barrage")
+        if (skill_name == "Barrage" && barrage != null)
         {
             barrage.ActiveSkill();
         }
-        if (skill_name == "HailOfArrows")
+        if (skill_name == "HailOfArrows" && hailOfArrows != null)
         {
             hailOfArrows.ActiveSkill();
         }
-        if (skill_name == "MultiShot")
+        if (skill_name == "MultiShot" && multiShot != null)
         {
             multiShot.ActiveSkill();
         }

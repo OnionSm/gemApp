@@ -7,11 +7,22 @@ public class InGameManager : MonoBehaviour
     [SerializeField] private EnemyConfigs enemyConfigs;
     [SerializeField] private LevelConfigs all_level_configs;
     [SerializeField] private SkillConfigs all_skill_configs;
+    [SerializeField] private Audios all_audio_configs;
+
+
     public static InGameManager Instance;
     // Start is called before the first frame update
     private void Awake()
     {
-        InGameManager.Instance = this;
+        if(Instance == null) 
+        {
+            InGameManager.Instance = this;
+        }
+        else
+        {
+            Debug.Log("More than one InGameManager");
+        }
+        
     }
     void Start()
     {
@@ -34,6 +45,10 @@ public class InGameManager : MonoBehaviour
     public SkillConfigs GetAllSkillConfigs() 
     {
         return all_skill_configs;
+    }
+    public Audios GetAllAudiosConfigs()
+    {
+        return all_audio_configs;
     }
     public SkillConfig GetAnyConfigs(int id)
     {

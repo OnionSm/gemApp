@@ -8,12 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerHp : MonoBehaviour, IDamageable
 {
-
-    public Image health_bar;
-    public Image erase_health_bar;
-    public float lerp_speed;
     public bool alive;
-    [SerializeField] private TextMeshProUGUI health_text;
 
     private void Awake()
     {
@@ -41,23 +36,22 @@ public class PlayerHp : MonoBehaviour, IDamageable
     }
     private void LoadComponent()
     {
-        this.lerp_speed = 0.8f;
         this.alive = true;
     }
     private void SetHealthBar()
     {
-        health_text.text = $"{Math.Round(PlayerManager.Instance.CurrentHP)} / {Math.Round(PlayerManager.Instance.Health)}";
+        PlayerUIManager.Instance.health_text.text = $"{Math.Round(PlayerManager.Instance.CurrentHP)} / {Math.Round(PlayerManager.Instance.Health)}";
         float hp_fill = PlayerManager.Instance.CurrentHP / PlayerManager.Instance.Health;
-        if(hp_fill != health_bar.fillAmount)
+        if(hp_fill != PlayerUIManager.Instance.health_bar.fillAmount)
         {
-            health_bar.fillAmount = hp_fill;
+            PlayerUIManager.Instance.health_bar.fillAmount = hp_fill;
         }
     }
     private void SetEaseHealthBar()
     {
-        if(erase_health_bar.fillAmount !=  health_bar.fillAmount)
+        if(PlayerUIManager.Instance.erase_health_bar.fillAmount != PlayerUIManager.Instance.health_bar.fillAmount)
         {
-            erase_health_bar.fillAmount = Mathf.MoveTowards(erase_health_bar.fillAmount, health_bar.fillAmount, lerp_speed* Time.deltaTime);
+            PlayerUIManager.Instance.erase_health_bar.fillAmount = Mathf.MoveTowards(PlayerUIManager.Instance.erase_health_bar.fillAmount, PlayerUIManager.Instance.health_bar.fillAmount, PlayerUIManager.Instance.LerpSpeed * Time.deltaTime);
         }
     }
     private void DeadCheck()

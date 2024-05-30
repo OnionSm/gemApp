@@ -9,14 +9,13 @@ public class SlopeCheck : MonoBehaviour
     private RaycastHit2D hit;
 
 
-
     [SerializeField] private Vector2 collider_size;
     [SerializeField] private float slope_check_distance = 25f;
         
     private float slope_down_angle;
     private float slope_down_angle_old;
 
-    private bool is_on_slope;
+    private bool is_on_slope = false;
 
     void Start()
     {
@@ -51,18 +50,6 @@ public class SlopeCheck : MonoBehaviour
             Debug.DrawRay(hit.point, PlayerManager.Instance.slope_normal_perp * 30f, Color.red);
             Debug.DrawRay(hit.point, hit.normal*30f, Color.green);
         }
-    }
-    protected void ApplyMovement()
-    {
-        /*if (is_ground && !is_on_slope)
-        {
-
-
-        }
-        else if(is_ground && is_on_slope)
-        {
-
-        }*/
     }
 
 

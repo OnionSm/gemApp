@@ -36,7 +36,7 @@ public class BatAttack : FSMAction
     public override void Action()
     {
         this.AttackPlayer();
-        AudioManager.Instance.PlayBatAttack();
+        AudioManager.Instance.PlaySFXSound("bat_attack");
     }
     private void AttackPlayer()
     {

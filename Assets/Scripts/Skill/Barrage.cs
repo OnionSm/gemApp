@@ -52,7 +52,7 @@ public class Barrage : Skill
         yield return new WaitForSeconds(0.083f);
         for (int i = 0; i < 10; i++)
         {
-            AudioManager.Instance.PlayArrowSound();
+            AudioManager.Instance.PlaySFXSound("arrow");
             Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name, this.spawn_point.position, new Vector3(1, 1, 1));
             arrow.gameObject.SetActive(true);
             arrow.GetComponent<BulletImpart>().Damage = PlayerManager.Instance.BaseDame * skill_mult;

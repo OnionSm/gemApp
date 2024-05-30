@@ -22,7 +22,7 @@ public class BaseShot : Skill
         if (!this.SkillAvailable())
             return;
         Debug.Log("Base Shot is activated");
-        AudioManager.Instance.PlayArrowSound();
+        AudioManager.Instance.PlaySFXSound("arrow");
         PlayerAnimation.Instance.SetTriggerBaseShot();
         Transform arrow = BulletSpawner.Instance.Spawn(arrow_prefab_name,  this.spawn_point.position, new Vector3(1,1,1));
         arrow.gameObject.SetActive(true);

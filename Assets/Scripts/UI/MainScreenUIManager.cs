@@ -27,6 +27,7 @@ public class MainScreenUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LoadInitialMainScene();
         Debug.Log(Application.persistentDataPath);
         if (DataPersistaceManager.instance.SlotChoosen != null)
         {
@@ -34,11 +35,17 @@ public class MainScreenUIManager : MonoBehaviour
             main_panel_lv_text.text = $"Lv {DataPersistaceManager.instance.SlotChoosen.level}";
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    private void LoadInitialMainScene()
     {
-        
+        main_panel.gameObject.SetActive(true);
+        char_history_panel.gameObject.SetActive(false);
+        history_add_char_panel.gameObject.SetActive(true);
+        choose_char_panel.gameObject.SetActive(false);
+        char_detail.gameObject.SetActive(false);
+        input_name_panel.gameObject.SetActive(false);
+        invalid_input_panel.gameObject.SetActive(false);
+        nickname_used_panel.gameObject.SetActive(false);
     }
     public void ClickSwitchHero()
     {
@@ -141,7 +148,7 @@ public class MainScreenUIManager : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        ScenesTrasitionManager.Instance.NextLevel("SampleScene");
     }
 
 }
