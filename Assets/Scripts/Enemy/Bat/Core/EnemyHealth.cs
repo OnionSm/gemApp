@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHealth : MonoBehaviour, IDamageable
+public class EnemyHealth : MonoBehaviour, IDamageable, IDeadable
 {
     [SerializeField] private float max_health;
     [SerializeField] private float current_health;
@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [SerializeField] private Image health_bar;
     [SerializeField] private Image health_bar_erase;
     [SerializeField] private float lerp_speed;
+    [SerializeField] private Canvas bat_canvas;
     private void Awake()
     {
         this.animationManager = GetComponentInChildren<EnemyAnimationManager>();
@@ -49,10 +50,11 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             current_health = 0;
             if (is_alive)
             {
+                bat_canvas.gameObject.SetActive(false);
                 animationManager.SetDeathTrigger();
+                rigid_body.gravityScale = 100f;
                 StartCoroutine(DestroyBat());
                 Death();
-                rigid_body.isKinematic = true;
                 this.is_alive = false;
             }
         }
@@ -107,5 +109,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public void Death()
     {
         PlayerManager.Instance.AddExp(Random.Range(3,8));
+    }
+
+    public bool IsDead()
+    {
+        if (current_health <= 0)
+            return true;
+        return false;
     }
 }

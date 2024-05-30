@@ -29,15 +29,13 @@ public class BulletImpart : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        
-        if (collider.gameObject.layer == 10 || damage == 0 || collider.gameObject.layer == 8)
+        bool check_dead = collider.gameObject.GetComponent<IDeadable>()?.IsDead() ?? false;
+        if (collider.gameObject.layer == 10 ||  collider.gameObject.layer == 8 || check_dead)
             return;
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        GetComponent<Rigidbody2D>().isKinematic = true;
+        //GetComponent<Rigidbody2D>().isKinematic = true;
         Transform arrow = EffectSpawner.Instance.Spawn(effect_prefab_name, transform.position, new Vector3(1, 1, 1));
         arrow.gameObject.SetActive(true);
         SendDamage(collider);
-        damage = 0;
         BulletSpawner.Instance.Despawn(gameObject.transform);
 
     }

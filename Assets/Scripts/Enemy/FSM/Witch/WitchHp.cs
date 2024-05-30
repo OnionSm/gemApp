@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WitchHp : EnemyHP, IDamageable
+public class WitchHp : EnemyHP, IDamageable, IDeadable
 {
     private float time_to_disappear = 10f;
     private float count_to_disappear = 10f;
@@ -78,5 +78,12 @@ public class WitchHp : EnemyHP, IDamageable
         yield return new WaitForSeconds(time_to_disappear);
         Debug.Log("Ready to destroy");
         Destroy(gameObject);
+    }
+
+    public bool IsDead()
+    {
+        if (WitchManager.Instance.CurrentHp <= 0)
+            return true;
+        return false;
     }
 }

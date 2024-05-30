@@ -34,8 +34,8 @@ public class EnemyCheckPos : OnionBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        
-        if (other.CompareTag("Enemy"))
+        bool check_dead = other.gameObject.GetComponent<IDeadable>()?.IsDead() ?? false;
+        if (other.CompareTag("Enemy") && !check_dead)
         {
             this.have_enemy = true;
             this.enemy_pos = other.transform.position;
