@@ -42,5 +42,6 @@ public class ScenesTrasitionManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         SceneManager.LoadSceneAsync(nameScenes);
+
     }
 }

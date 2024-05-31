@@ -16,6 +16,7 @@ public class PlayerUIManager : MonoBehaviour
     public Image main_panel;
     public Image properties_panel;
     public Image setting_panel;
+    public Image death_panel;
 
     [Header("Music Sound Slider")]
     public Slider music_slider;
@@ -74,6 +75,7 @@ public class PlayerUIManager : MonoBehaviour
         main_panel.gameObject.SetActive(true);
         properties_panel.gameObject.SetActive(false);
         setting_panel.gameObject.SetActive(false);
+        death_panel.gameObject.SetActive(false);
     }
     // Update is called once per frame
 
@@ -106,6 +108,16 @@ public class PlayerUIManager : MonoBehaviour
     {
         setting_panel.gameObject.SetActive(false);
         AudioManager.Instance.PlaySFXSound("button2");
+    }
+    public void OpenDeathPanel()
+    {
+        death_panel.gameObject.SetActive(true);
+        PauseGame();
+    }
+    public void CloseDeathPanel()
+    {
+        ScenesTrasitionManager.Instance.NextLevel("SampleScene");
+        ResumeGame();
     }
     public void PauseGame()
     {

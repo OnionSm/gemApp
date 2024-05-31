@@ -25,3 +25,5 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 83b14e25709ee3848a3c028d82608c29, type: 3}
   - name: darkrise_battle_theme
     clip: {fileID: 8300000, guid: 90e3989489a74c2489eec989e3fcad02, type: 3}
+  - name: main_menu_theme
+    clip: {fileID: 8300000, guid: 8e3725ce09e30d04e91e4795651f0a8b, type: 3}

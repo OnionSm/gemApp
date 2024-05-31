@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InGameManager : MonoBehaviour
 {
+
     [SerializeField] private EnemyConfigs enemyConfigs;
     [SerializeField] private LevelConfigs all_level_configs;
     [SerializeField] private SkillConfigs all_skill_configs;
@@ -21,8 +22,9 @@ public class InGameManager : MonoBehaviour
         else
         {
             Debug.Log("More than one InGameManager");
+            Destroy(gameObject);
         }
-        
+        DontDestroyOnLoad(gameObject);
     }
     void Start()
     {

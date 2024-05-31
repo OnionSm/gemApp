@@ -60,11 +60,18 @@ public class PlayerHp : MonoBehaviour, IDamageable
         {
             PlayerAnimation.Instance.SetTriggerDeath();
             alive = false;
+            StartCoroutine(Death());
         }
     }
 
     public void TakeDamage(float amount)
     {
         PlayerManager.Instance.MinusHp(amount);
+    }
+    IEnumerator Death()
+    {
+        AudioManager.Instance.AudioSourceEnemyFx.mute = true;
+        yield return new WaitForSeconds(2f);
+        PlayerUIManager.Instance.OpenDeathPanel();
     }
 }

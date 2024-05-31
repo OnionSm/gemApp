@@ -1,12 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource audio_source_bgm;
+    public AudioSource AudioSourceBGM
+    {
+        get { return audio_source_bgm; }
+        set { audio_source_bgm = value;}
+    }
+
     [SerializeField] private AudioSource audio_source_fx;
+    public AudioSource AudioSourceFx
+    {
+        get { return audio_source_fx; }
+        set { audio_source_fx = value; }
+    }
     [SerializeField] private AudioSource audio_source_enemy_fx;
+    public AudioSource AudioSourceEnemyFx
+    {
+        get { return audio_source_enemy_fx; }
+        set { audio_source_enemy_fx = value;}
+    }
 
     [SerializeField] private Audios all_audio_configs;
 
@@ -28,7 +45,16 @@ public class AudioManager : MonoBehaviour
         all_audio_configs = InGameManager.Instance.GetAllAudiosConfigs();
         if(all_audio_configs != null ) 
         {
-            PlayBGM("darkrise_battle_theme");
+            string name = SceneManager.GetActiveScene().name;
+            if (name.Equals("SampleScene"))
+            {
+                PlayBGM("darkrise_battle_theme");
+            }
+            else if(name.Equals("Scene1"))
+            {
+                PlayBGM("main_menu_theme");
+                Debug.Log("Play main menu theme");
+            }
         }
     }
     // Update is called once per frame

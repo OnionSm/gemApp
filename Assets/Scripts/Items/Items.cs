@@ -25,7 +25,7 @@ public enum Rarity
     Epic,
     Legendary
 }
-public class Items 
+public class Items  
 {
     public Type type;
     public Rarity rarity;

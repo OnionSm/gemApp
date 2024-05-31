@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -69,5 +69,17 @@ public class FileHandlerData
             Debug.LogException(e);
         }
 
+    }
+    public void DeleteFile(String fullPath)
+    {
+        if (File.Exists(fullPath))
+        {
+            File.Delete(fullPath);
+            Debug.Log("File deleted: ");
+        }
+        else
+        {
+            Debug.Log("File not found: " + fullPath);
+        }
     }
 }

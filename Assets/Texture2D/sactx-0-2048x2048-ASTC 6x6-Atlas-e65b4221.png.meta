@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -239,8 +252,8 @@ TextureImporter:
       name: panel_invalid_name
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
+        x: 3
+        y: 4
         width: 745
         height: 241
       alignment: 0
@@ -277,6 +290,132 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: clock_icon
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 964
+        width: 219
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d18d6f9bee76df45a3df514f5344fe6
+      internalID: -826824256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minute_arrow_icon
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 1284
+        width: 84
+        height: 20
+      alignment: 9
+      pivot: {x: 0.07192449, y: 0.487439}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f995f825a683941a85f3314503c707
+      internalID: 1052636955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hour_arrow_icon
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 1226
+        width: 20
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.09233324}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83b4960141dd264e9e957ed298caa62
+      internalID: -2015974566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: purple_button
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 653
+        width: 498
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 13, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc3cf7a372531b4d99b2e51614927e7
+      internalID: 468476018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: red_button
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 488
+        width: 590
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 19, z: 15, w: 17}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56524791924a3ac4bacfb1cef7dc2a6a
+      internalID: -1068442728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blue_button
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 637
+        width: 687
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 15, y: 14, z: 14, w: 15}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc87257bf7586947ab971cc66b7e2f6
+      internalID: 2004083442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -288,13 +427,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      blue_button: 2004083442
       button_background_1: 1912202193
       character_select_box: -1652185174
+      clock_icon: -826824256
+      hour_arrow_icon: -2015974566
       lv_enemy: 702260496
+      minute_arrow_icon: 1052636955
       new_character_box: 816091233
       panel_invalid_name: -1108466581
       panel_padding_bottom: -1414932424
       panel_padding_top: -1155710471
+      purple_button: 468476018
+      red_button: -1068442728
       x_button: 660023153
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

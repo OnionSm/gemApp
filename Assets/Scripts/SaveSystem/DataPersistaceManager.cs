@@ -18,6 +18,12 @@ public class DataPersistaceManager : MonoBehaviour
         get { return slot_choosen; }
         set { slot_choosen = value; }
     }
+    [SerializeField] private SaveSlot slot_delete;
+    public SaveSlot SlotDelete
+    {
+        get { return slot_delete; }
+        set { slot_delete = value; }
+    }
     private void Awake()
     {
         persistent_path = Application.persistentDataPath;
@@ -164,5 +170,9 @@ public class DataPersistaceManager : MonoBehaviour
     public bool CheckNameFileExist(String name)
     {
         return fileHandlerData.CheckFileExist(persistent_path, $"{name}.txt");
+    }
+    public void DeleteSlotSave(String name)
+    {
+        fileHandlerData.DeleteFile(Path.Combine(persistent_path, $"{name}.txt"));
     }
 }

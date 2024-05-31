@@ -22,7 +22,12 @@ public class MainScreenUIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI input_field;
     [SerializeField] private Image invalid_input_panel;
     [SerializeField] private Image nickname_used_panel;
+    [SerializeField] private Image deleting_noti_panel;
+    [SerializeField] private TextMeshProUGUI deleting_noti_text;
+
     [SerializeField] private List<CharHistoryUI> list_char_history;
+
+    private int character_panel_deleting;
     
     // Start is called before the first frame update
     void Start()
@@ -46,9 +51,11 @@ public class MainScreenUIManager : MonoBehaviour
         input_name_panel.gameObject.SetActive(false);
         invalid_input_panel.gameObject.SetActive(false);
         nickname_used_panel.gameObject.SetActive(false);
+        deleting_noti_panel.gameObject.SetActive(false);    
     }
     public void ClickSwitchHero()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         main_panel.gameObject.SetActive(false);
         char_history_panel.gameObject.SetActive(true);
         char_his_upper_text.text = $" Your Character ({DataPersistaceManager.instance.gameData.Count}/5)";
@@ -66,53 +73,58 @@ public class MainScreenUIManager : MonoBehaviour
     }
     public void ClickHeroInHistory(int value)
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         char_history_panel.gameObject.SetActive(false);
         main_panel.gameObject.SetActive(true);
         DataPersistaceManager.instance.SlotChoosen = DataPersistaceManager.instance.gameData[value];
         main_panel_username_text.text = DataPersistaceManager.instance.SlotChoosen.character_name;
         main_panel_lv_text.text = $"Lv {DataPersistaceManager.instance.SlotChoosen.level}";
     }
-    public void ClickDeleteHeroHistory(int value)
-    {
-
-    }
     public void ClickCharHistoryBack()
     {
+        AudioManager.Instance.PlaySFXSound("button2");
         char_history_panel.gameObject.SetActive(false);
         main_panel.gameObject.SetActive(true);
     }
     public void ClickAddHero()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         char_history_panel.gameObject.SetActive(false);
         choose_char_panel.gameObject.SetActive(true);
     }
     public void ClickAddCharBack()
     {
+        AudioManager.Instance.PlaySFXSound("button2");
         choose_char_panel.gameObject.SetActive(false);
         char_history_panel.gameObject.SetActive(true);
     }
     public void HeroDetail()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         choose_char_panel.gameObject.SetActive(false);
         char_detail.gameObject.SetActive(true);
     }
     public void HeroDetailBack()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         char_detail.gameObject.SetActive(false);
         choose_char_panel.gameObject.SetActive(true);
     }
     public void SelectButton()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         char_detail.gameObject.SetActive(false);
         input_name_panel.gameObject.SetActive(true);
     }
     public void InputNickNameBack()
     {
+        AudioManager.Instance.PlaySFXSound("button2");
         input_name_panel.gameObject.SetActive(false);
         char_detail.gameObject.SetActive(true);
     }
     public void ApplyButton()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         string pattern = "^[a-zA-Z0-9]{3,16}";
         string input = input_field.text;
 
@@ -135,15 +147,38 @@ public class MainScreenUIManager : MonoBehaviour
     }
     public void CloseInvalidPanel()
     {
+        AudioManager.Instance.PlaySFXSound("button2");
         invalid_input_panel.gameObject.SetActive(false);    
     }
     public void OpenNicknameUsedPanel()
     {
+        AudioManager.Instance.PlaySFXSound("button0");
         nickname_used_panel.gameObject.SetActive(true);
     }
     public void CloseNicknameUsedPanel()
     {
+        AudioManager.Instance.PlaySFXSound("button2");
         nickname_used_panel.gameObject.SetActive(false);
+    }
+    public void OpenDeleteCharacterPanel(int value)
+    {
+        AudioManager.Instance.PlaySFXSound("button0");
+        deleting_noti_panel.gameObject.SetActive(true);
+        character_panel_deleting = value;
+        DataPersistaceManager.instance.SlotDelete = DataPersistaceManager.instance.gameData[value];
+        deleting_noti_text.text = $"Are you sure you want to delete {DataPersistaceManager.instance.SlotDelete.character_name} ?";
+    }
+    public void CloseDeleteCharacterNotiPanel()
+    {
+        AudioManager.Instance.PlaySFXSound("button0");
+        deleting_noti_panel.gameObject.SetActive(false);
+    }
+    public void DeleteCharacter()
+    {
+        AudioManager.Instance.PlaySFXSound("button0");
+        DataPersistaceManager.instance.DeleteSlotSave(DataPersistaceManager.instance.SlotDelete.character_name);
+        deleting_noti_panel.gameObject.SetActive(false);
+        list_char_history[character_panel_deleting].panel.gameObject.SetActive(false);
     }
 
     public void LoadScene()
